@@ -1,0 +1,19 @@
+root { 
+    display: block;
+}
+
+html {
+  background-color:orange;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input {text-align: center;}
+
+div.srodek {
+    text-align: center;
+    margin-top: 50px;
+}
