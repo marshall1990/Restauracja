@@ -9,7 +9,7 @@
 //session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
 //session.setAttribute( "userName", "hariseldon" );
 //session.setAttribute( "password", "123qwe" );
-//ewtrtyt
+//ewtrtyt jhghjg
 
 session.setAttribute( "url", "jdbc:mysql://wirtres.host-ed.me:3306/" );
 session.setAttribute( "dbName", "wirtresh_dania" );
