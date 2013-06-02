@@ -34,7 +34,7 @@ session.setAttribute( "password", "123qwe" );
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="index.css" />
-        <title>Witaj w Wirtualnej</title>
+        <title>Witaj w Wirtualnej Restauracji</title>
     </head>
     <body>
        <div class="menulogreg">  
