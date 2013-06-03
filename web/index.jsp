@@ -33,28 +33,69 @@ session.setAttribute( "password", "123qwe" );
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="index.css" />
-        <title>Witaj w Wirtualnej Restauracji 1</title>
+        <link rel="stylesheet" type="text/css" href="css/html5reset-1.6.1.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Witamy w Wirtualnej Restauracji</title>
     </head>
     <body>
-       <div class="menulogreg">  
-            <div class="naglowek">Witaj w Wirtualnej Restauracji</div> 
-            <div class="logreg">Zaloguj się:</div>
-            <form action="zalogowanie.jsp" method="post">
-                <div class="lewa">Login:</div><div class="prawa"><input type="text" name="login"/></div>
-                <div class="lewa">Hasło:</div><div class="prawa"><input type="text" name="password"/></div>
-                <div class="srodek"><input type="submit" value="OK"/></div>
-            </form>       
+        <header>
+            <div class="container">
+                <h1>WIRTUALNA RESTAURACJA</h1>
+                <form action="zalogowanie.jsp" method="post">
+                    <ul>
+                        <li>
+                            <label for="login">Podaj login:</label>
+                            <input type="text" name="login" id="login" />
+                        </li>
+                        <li>
+                            <label for="password">Podaj hasło:</label>
+                            <input type="password" name="password" id="password" />
+                        </li>
+                        <li>
+                            <input type="submit" value="Zaloguj się"/>
+                        </li>
+                    </ul>
+                </form> 
+            </div>   
+        </header>
             
-            <div class="logreg">Zarejestruj się:</div>
-            <form action="rejestrowanie.jsp" method="get">
-                <div class="lewa">Imię:</div><div class="prawa"><input type="text" name="imie"/></div>
-                <div class="lewa">Nazwisko:</div><div class="prawa"><input type="text" name="nazwisko"/></div>
-                <div class="lewa">Login:</div><div class="prawa"><input type="text" name="login"/></div>
-                <div class="lewa">Hasło:</div><div class="prawa"><input type="text" name="password"/></div>
-                <div class="srodek"><input type="submit" value="OK"/></div>
-            </form>
-        </div> 
+        <section>
+            <div class="container">
+                <article>
+                    <h1>Rejestracja</h1>
+                    <form action="rejestrowanie.jsp" method="get">
+                        <ul>
+                            <li>
+                                <label for="name">Podaj imię:</label>
+                                <input type="text" name="imie" id="name" />
+                            </li>
+                            <li>
+                                <label for="surname">Podaj nazwisko:</label>
+                                <input type="text" name="nazwisko" id="surname" />
+                            </li>
+                            <li>
+                                <label for="reg_login">Podaj login:</label>
+                                <input type="text" name="login" id="reg_login" />
+                            </li>
+                            <li>
+                                <label for="reg_password">Podaj hasło:</label>
+                                <input type="password" name="password" id="reg_password" />
+                            </li>
+                            <li>
+                                <input type="submit" value="Zarejestruj się"/>
+                            </li>
+                        </ul>
+                    </form>
+                </article>
+                <aside>
+                    <h3>Wirtualna Restauracja pomoże Ci odkryć kulinarne bogactwa miasta.</h3>
+                    <img src="img/login.jpg" alt="restauracja" />
+                </aside>
+            </div>
+        </section>
+        
+        <footer>
+            Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
+        </footer> 
     </body>
 </html>
-
