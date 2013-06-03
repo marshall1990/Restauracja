@@ -43,7 +43,7 @@ if (walidator.weryfikujdanie().equals("Brak")) {
                rst.next();
                userID=rst.getString(1);
                
-               sql="insert into `dania`.`danie` values (?,?,?,?)";
+               sql="insert into `danie` values (?,?,?,?)";
                PreparedStatement statement1=conn.prepareStatement(sql);
                statement1.setInt(1,0);
                statement1.setString(2,walidator.getNazwadania());

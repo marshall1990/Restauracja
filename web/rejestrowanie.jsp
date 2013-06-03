@@ -27,7 +27,7 @@ if (walidator.weryfikuj().equals("Brak")) {
         
         if (rst.getInt(1)>0)  blad="Taki login został już zarejestrowany, musisz wybrać inny.";
                 else {
-                sql="insert into `dania`.`users` values (?,?,?,?,?,?)";
+                sql="insert into `users` values (?,?,?,?,?,?)";
                 PreparedStatement statement=conn.prepareStatement(sql);
                 statement.setInt(1,0);
                 statement.setString(2,walidator.getImie());
