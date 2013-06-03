@@ -16,6 +16,7 @@ header{
     background: -ms-linear-gradient(top,  #3c0000 0%,#492400 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #3c0000 0%,#492400 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c0000', endColorstr='#492400',GradientType=0 ); /* IE6-9 */   
+    height: 130px;
 }
 
 section {
@@ -162,6 +163,15 @@ section aside {
     float: left;
 }
 
+section#image {
+    padding: 0;
+    background: none;
+}
+
+section#image:before {
+    display: none;
+}
+
 aside img {
     width: 500px;
     border: rgb(100, 100, 100) 1px solid;
@@ -200,6 +210,84 @@ p.red {
     float: right;
 }
 
-.login_fault form input {
+.login_fault a.btn_submit {
     margin-bottom: 0;
+}
+
+nav ul {
+    margin: 0;
+}
+
+nav ul li {
+    border-right: 1px #5b3425 solid;
+    width: auto;
+    padding: 20px 25px;
+    position: relative;
+    top: -10px;
+}
+
+nav ul li:last-child, nav ul li:last-child a {
+    border: none;
+    text-transform: none;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Menu.jsp */
+
+section.windows .container {
+    position: relative;
+    top: -200px;
+}
+
+section.windows article {
+    background-color: #FFFFFF;
+    border: 1px solid #cccccc;
+    padding: 25px;
+    margin: 0 25px 0;
+    min-height: 375px;
+    width: 285px;
+    float: left;
+}
+
+section.windows article:nth-child(n+4) {
+    position: relative;
+    top: 20px;
+}
+
+section.windows article h3 {
+    font-size: 34px;
+    padding-bottom: 15px;
+    border-bottom: 2px #d1d1d1 dotted;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+section.windows article img {
+    border: 7px #edebe7 solid;
+    width: 270px;
+    margin: 15px 0;
+}
+
+section.windows article p {
+    text-align: justify;
+    line-height: 18px;
+}
+
+/* Colors */
+
+.rose {
+    color: #b41300;
+}
+
+.orange {
+    color: #f79e01;
+}
+
+.brown {
+    color: #3b0000;
 }

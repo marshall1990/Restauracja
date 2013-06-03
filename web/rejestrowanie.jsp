@@ -84,9 +84,7 @@ if (walidator.weryfikuj().equals("Brak")) {
                 <article>
                     <h1>Uwaga!</h1>
                     <p class="red"><%=blad %></p>
-                    <form name="reg" action="index.jsp">
-                        <input class="btn_submit" type="submit" value="OK" />
-                    </form>
+                    <a href="index.jsp" class="btn_submit">OK</a>
                 </article>
                 <aside>
                     <h3>Wirtualna Restauracja pomoże Ci odkryć kulinarne bogactwa miasta.</h3>

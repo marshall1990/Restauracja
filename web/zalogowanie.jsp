@@ -59,9 +59,7 @@ if (walidator.weryfikuj2().equals("Brak")) {
                 <h1>WIRTUALNA RESTAURACJA</h1>
                 <div class="login_fault">
                     <p class="red login"><%=blad %></p>
-                    <form action="index.jsp" name="reg">
-                        <input class="btn_submit" type="submit" value="OK" />
-                    </form> 
+                    <a href="index.jsp" class="btn_submit">OK</a>
                 </div>  
             </div>   
         </header>
