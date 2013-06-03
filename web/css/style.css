@@ -80,7 +80,7 @@ header li:last-child {
     width: 110px;
 }
 
-header li:last-child input, section article li:last-child input {
+header li:last-child input, section article li:last-child input, .btn_submit {
     -moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
     -webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
     box-shadow:inset 0px 1px 0px 0px #fff6af;
@@ -102,14 +102,14 @@ header li:last-child input, section article li:last-child input {
     text-shadow:1px 1px 0px #ffee66;
 }
 
-header li:last-child input:hover, section article li:last-child input:hover {
+header li:last-child input:hover, section article li:last-child input:hover, .btn_submit:hover {
     background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64) );
     background:-moz-linear-gradient( center top, #ffab23 5%, #ffec64 100% );
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64');
     background-color:#ffab23;
 }
 
-header li:last-child input:active, section article li:last-child input:active {
+header li:last-child input:active, section article li:last-child input:active, .btn_submit:active {
     position:relative;
     top:1px;
 }
@@ -153,7 +153,7 @@ section article label {
     display: inline-block;
 }
 
-section article li:last-child input {
+section article li:last-child input, .btn_submit {
     margin: 20px 0;
     padding:6px 24px;
 }
@@ -171,4 +171,35 @@ aside img {
 
 aside h3 {
     font-size: 20px;
+}
+
+p.red {
+    font-size: 18px;
+    color: rgb(255, 0, 0);
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.login_fault {
+    float: right;
+    width: 480px;
+}
+
+.login_fault p {
+    width: 380px;
+    float: left;
+    margin-top: 20px;
+}
+
+.login_fault p.red {
+    margin-bottom: 0;
+    line-height: 18px;
+}
+
+.login_fault form {
+    float: right;
+}
+
+.login_fault form input {
+    margin-bottom: 0;
 }

@@ -1,8 +1,8 @@
 <%@page import="org.apache.commons.beanutils.BeanUtils"%>
 <%@page import="org.apache.commons.beanutils.BeanUtilsBean"%>
-<%@ page import="org.mypackage.hello.*" %>
-<%@ page import="java.sql.*" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="org.mypackage.hello.*" %>
+<%@page import="java.sql.*" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
 Connection conn = null;
@@ -53,14 +53,50 @@ if (walidator.weryfikuj().equals("Brak")) {
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="rejestrowanie.css" />
-        <title>Rejestracja</title>
+        <link rel="stylesheet" type="text/css" href="css/html5reset-1.6.1.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Witamy w Wirtualnej Restauracji</title>
     </head>
     <body>
-        <h1><%=blad %></h1>
-        <form name="reg" action="index.jsp">
-            <div class="srodek"> <input type="submit" value="OK" /></div>
-        </form>
-      
+        <header>
+            <div class="container">
+                <h1>WIRTUALNA RESTAURACJA</h1>
+                <form action="zalogowanie.jsp" method="post">
+                    <ul>
+                        <li>
+                            <label for="login">Podaj login:</label>
+                            <input type="text" name="login" id="login" />
+                        </li>
+                        <li>
+                            <label for="password">Podaj hasło:</label>
+                            <input type="password" name="password" id="password" />
+                        </li>
+                        <li>
+                            <input type="submit" value="Zaloguj się" />
+                        </li>
+                    </ul>
+                </form> 
+            </div>   
+        </header>
+            
+        <section>
+            <div class="container">
+                <article>
+                    <h1>Uwaga!</h1>
+                    <p class="red"><%=blad %></p>
+                    <form name="reg" action="index.jsp">
+                        <input class="btn_submit" type="submit" value="OK" />
+                    </form>
+                </article>
+                <aside>
+                    <h3>Wirtualna Restauracja pomoże Ci odkryć kulinarne bogactwa miasta.</h3>
+                    <img src="img/login.jpg" alt="restauracja" />
+                </aside>
+            </div>
+        </section>
+        
+        <footer>
+            Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
+        </footer> 
     </body>
 </html>

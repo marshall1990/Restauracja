@@ -74,28 +74,28 @@ public class Rejestrator {
         blad = "Brak";
         
         if ((imie.equals("Brak")) || (imie.trim().equals(""))) {
-            blad="Niepoprawne imię";
+            blad="Wprowadzono niepoprawne imię";
          }
         if ((nazwisko.equals("Brak")) || (nazwisko.trim().equals(""))) {
             if (blad.equals("Brak")) {
-                blad="Niepoprawne nazwisko";
+                blad="Wprowadzono niepoprawne nazwisko";
              } else {
-                blad=blad+", niepoprawne nazwisko";
+                blad=blad+",<br />niepoprawne nazwisko";
              }
         }
         if ((login.equals("Brak")) || (login.trim().equals(""))) {
             if (blad.equals("Brak")) {
-              blad="Niepoprawny login";
+              blad="Wprowadzono niepoprawny login";
             } else {
-                blad=blad+", niepoprawny login";
+                blad=blad+",<br />niepoprawny login";
             }
         }
   
         if ((password.equals("Brak")) || (password.trim().equals(""))) {
             if (blad.equals("Brak")) {
-                  blad="Niepoprawne hasło";
+                  blad="Wprowadzono niepoprawne hasło";
             } else {
-                blad=blad+", niepoprawne hasło";
+                blad=blad+",<br />niepoprawne hasło";
                 }
         }
         return blad;
@@ -105,14 +105,14 @@ public class Rejestrator {
         blad = "Brak";
         
         if ((login.equals("Brak")) || (login.trim().equals(""))) {
-             blad="Niepoprawny login";     
+             blad="Wprowadzono niepoprawny login";     
          }
   
         if ((password.equals("Brak")) || (password.trim().equals(""))) {
             if (blad.equals("Brak")) {
-                  blad="Niepoprawne hasło";
+                  blad="Wprowadzono niepoprawne hasło";
             } else {
-                blad=blad+", niepoprawne hasło";
+                blad=blad+",<br />niepoprawne hasło";
                 }
         }
         return blad;
@@ -122,14 +122,14 @@ public class Rejestrator {
         blad = "Brak";
         
         if ((getNazwadania().equals("Brak")) || (getNazwadania().trim().equals(""))) {
-             blad="Nieprawidłowa nazwa dania";     
+             blad="Wprowadzono nieprawidłowa nazwa dania";     
          }
   
         if ((getPrzepis().equals("Brak")) || (getPrzepis().trim().equals(""))) {
             if (blad.equals("Brak")) {
-                  blad="Nieprawidłowy przepis";
+                  blad="Wprowadzono nieprawidłowy przepis";
             } else {
-                blad=blad+", nieprawidłowy przepis";
+                blad=blad+",<br />nieprawidłowy przepis";
                 }
         }
         return blad;

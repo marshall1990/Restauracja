@@ -49,14 +49,60 @@ if (walidator.weryfikuj2().equals("Brak")) {
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="rejestrowanie.css" />
-        <title>Logowanie</title>
+        <link rel="stylesheet" type="text/css" href="css/html5reset-1.6.1.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Witamy w Wirtualnej Restauracji</title>
     </head>
     <body>
-        <h1><%=blad %></h1>
-        <form name="reg" action="index.jsp">
-            <div class="srodek"> <input type="submit" value="OK" /></div>
-        </form>
-      
+        <header>
+            <div class="container">
+                <h1>WIRTUALNA RESTAURACJA</h1>
+                <div class="login_fault">
+                    <p class="red login"><%=blad %></p>
+                    <form action="index.jsp" name="reg">
+                        <input class="btn_submit" type="submit" value="OK" />
+                    </form> 
+                </div>  
+            </div>   
+        </header>
+            
+        <section>
+            <div class="container">
+                <article>
+                    <h1>Rejestracja</h1>
+                    <form action="rejestrowanie.jsp" method="get">
+                        <ul>
+                            <li>
+                                <label for="name">Podaj imię:</label>
+                                <input type="text" name="imie" id="name" />
+                            </li>
+                            <li>
+                                <label for="surname">Podaj nazwisko:</label>
+                                <input type="text" name="nazwisko" id="surname" />
+                            </li>
+                            <li>
+                                <label for="reg_login">Podaj login:</label>
+                                <input type="text" name="login" id="reg_login" />
+                            </li>
+                            <li>
+                                <label for="reg_password">Podaj hasło:</label>
+                                <input type="password" name="password" id="reg_password" />
+                            </li>
+                            <li>
+                                <input type="submit" value="Zarejestruj się"/>
+                            </li>
+                        </ul>
+                    </form>
+                </article>
+                <aside>
+                    <h3>Wirtualna Restauracja pomoże Ci odkryć kulinarne bogactwa miasta.</h3>
+                    <img src="img/login.jpg" alt="restauracja" />
+                </aside>
+            </div>
+        </section>
+        
+        <footer>
+            Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
+        </footer> 
     </body>
 </html>

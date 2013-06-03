@@ -52,7 +52,7 @@ session.setAttribute( "password", "123qwe" );
                             <input type="password" name="password" id="password" />
                         </li>
                         <li>
-                            <input type="submit" value="Zaloguj się"/>
+                            <input type="submit" value="Zaloguj się" />
                         </li>
                     </ul>
                 </form> 
