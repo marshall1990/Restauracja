@@ -5,7 +5,7 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
 <%
 Connection conn = null;

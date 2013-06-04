@@ -1,33 +1,49 @@
-<%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="org.apache.commons.beanutils.BeanUtils"%>
+<%@page import="org.mypackage.hello.Rejestrator"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
+<jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
+<jsp:setProperty name="zalogowany" property="*"/>
+
 <%
-//String url = "jdbc:mysql://mysql3.ph-hos.osemka.pl:3306/";
-//String url = "jdbc:mysql://localhost:3306/";
-//session.setAttribute( "url", "jdbc:mysql://sql09.freemysql.net:3306/" );
-//session.setAttribute( "dbName", "dania" );
-//session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
-//session.setAttribute( "userName", "hariseldon" );
-//session.setAttribute( "password", "123qwe" );
-//ewtrtyt jhghjg h
+Connection conn = null;
+ResultSet rst=null;
+String sql;
+String blad=null;
 
-session.setAttribute( "url", "jdbc:mysql://wirtres.host-ed.me:3306/" );
-session.setAttribute( "dbName", "wirtresh_dania" );
-session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
-session.setAttribute( "userName", "wirtresh_hari" );
-session.setAttribute( "password", "123qwe" );
+Rejestrator walidator = new Rejestrator();
+BeanUtils.populate(walidator, request.getParameterMap());
 
-session.setAttribute( "url", "jdbc:mysql://sql2.freesqldatabase.com:3306/" );
-session.setAttribute( "dbName", "sql28605" );
-session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
-session.setAttribute( "userName", "sql28605" );
-session.setAttribute( "password", "tM5!rI8*" );
-
-session.setAttribute( "url", "jdbc:mysql://johnny.heliohost.org:3306/" );
-session.setAttribute( "dbName", "hariseld_dania" );
-session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
-session.setAttribute( "userName", "hariseld_hari" );
-session.setAttribute( "password", "123qwe" );
+if (walidator.weryfikuj2().equals("Brak")) {
+        
+    try {
+  
+        Class.forName((String)session.getAttribute( "driver" )).newInstance();
+        conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));      
+        
+        sql="select count(login) from users where login='"+walidator.getLogin()+"' and password='"+walidator.getPassword()+"'";
+        Statement statement0=conn.createStatement();
+        rst=statement0.executeQuery(sql);
+        rst.next();
+        
+        
+        if (rst.getInt(1)>0) response.sendRedirect("menu.jsp");
+           else {
+              blad="Użytkownik o podanej nazwie lub podanym haśle nie istnieje.";
+             }
+        conn.close();    
+    }
+    catch (Exception e) {
+         e.printStackTrace();
+         blad="Błąd połączenia z bazą danych";    
+       }
+ }
+ else blad=walidator.weryfikuj2()+".";
 %>
 <!DOCTYPE html>
 <html>
@@ -41,21 +57,10 @@ session.setAttribute( "password", "123qwe" );
         <header>
             <div class="container">
                 <h1>WIRTUALNA RESTAURACJA</h1>
-                <form action="weryfikacja_logowania.jsp" method="post">
-                    <ul>
-                        <li>
-                            <label for="login">Podaj login:</label>
-                            <input type="text" name="login" id="login" />
-                        </li>
-                        <li>
-                            <label for="password">Podaj hasło:</label>
-                            <input type="password" name="password" id="password" />
-                        </li>
-                        <li>
-                            <input type="submit" value="Zaloguj się" />
-                        </li>
-                    </ul>
-                </form> 
+                <div class="login_fault">
+                    <p class="red login"><%=blad %></p>
+                    <a href="index.jsp" class="btn_submit">OK</a>
+                </div>  
             </div>   
         </header>
             
@@ -63,7 +68,7 @@ session.setAttribute( "password", "123qwe" );
             <div class="container">
                 <article>
                     <h1>Rejestracja</h1>
-                    <form action="weryfikacja_rejestracji.jsp" method="get">
+                    <form action="rejestrowanie.jsp" method="get">
                         <ul>
                             <li>
                                 <label for="name">Podaj imię:</label>

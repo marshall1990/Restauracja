@@ -1,6 +1,6 @@
 <%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>--%>
 <%@page import="java.sql.Connection"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <%@page language="java" import="java.sql.*" %>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
 <!DOCTYPE html>

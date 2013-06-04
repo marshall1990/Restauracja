@@ -264,6 +264,18 @@ nav ul li img {
     width: 40px;
 }
 
+nav ul li img:hover {
+    background-color: #ffec64;
+}
+
+nav ul li p {
+    padding: 12px;
+}
+
+nav ul li img {
+    width: 40px;
+}
+
 /* Menu.jsp */
 
 section.windows .container {
@@ -318,3 +330,14 @@ section.windows article p {
 .brown {
     color: #3b0000;
 }
+
+/* Error Page */
+
+div.errorpage {
+    text-align: center;
+    font-size: 25px;
+    color: #492400;
+    line-height: 30px;
+}
+
+
