@@ -21,13 +21,10 @@
         <section>
             <div class="container">
                 <article>
-                    <%
-                    Connection conn = null;
-                    ResultSet rst=null;
+<%
+ Connection conn = null;
+ ResultSet rst=null;
 
-                    try {
-                        Class.forName((String)session.getAttribute( "driver" )).newInstance();
-                        conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));   
 
 try {
     Class.forName((String)session.getAttribute( "driver" )).newInstance();
@@ -54,6 +51,7 @@ while (rst.next()) {
     </table> 
     <p><input type="submit" value="submit"/>
     </form>   
+    
      <%
            
             conn.close();
@@ -64,5 +62,4 @@ while (rst.next()) {
     }
 %>        
                       
-    </body>
-</html>
+
