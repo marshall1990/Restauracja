@@ -9,13 +9,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="wyszukiwanie_skladniki1.css" />
-        <title>JSP Page</title>
+        <title>Dania</title>
     </head>
     <body>
 <%
 Connection conn = null;
 ResultSet rst=null;
-String sql=null;
+String sql="";
 
 try {
     Class.forName((String)session.getAttribute( "driver" )).newInstance();
@@ -39,21 +39,17 @@ try {
     for(int i=0; i<dania_nazwy.length; i++) {
         statement.setString(i+1,dania_nazwy[i]);
       }
-    
-   // out.println(statement);
-            rst=statement.executeQuery();
+    rst=statement.executeQuery();
               
 while (rst.next()) {
             out.println(rst.getString(1)+",");
         }
            
             conn.close();
-           // out.println("Rozłączony z bazą");
-    
     }
 	catch (Exception e) {
   e.printStackTrace();
-  out.println("błąd rejestracji użytkownika");
+  out.println("Błąd połączenia z bazą danych");
     }
 %>        
         

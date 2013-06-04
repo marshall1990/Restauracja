@@ -41,7 +41,7 @@ session.setAttribute( "password", "123qwe" );
         <header>
             <div class="container">
                 <h1>WIRTUALNA RESTAURACJA</h1>
-                <form action="zalogowanie.jsp" method="post">
+                <form action="weryfikacja_logowania.jsp" method="post">
                     <ul>
                         <li>
                             <label for="login">Podaj login:</label>
@@ -63,7 +63,7 @@ session.setAttribute( "password", "123qwe" );
             <div class="container">
                 <article>
                     <h1>Rejestracja</h1>
-                    <form action="rejestrowanie.jsp" method="get">
+                    <form action="weryfikacja_rejestracji.jsp" method="get">
                         <ul>
                             <li>
                                 <label for="name">Podaj imię:</label>

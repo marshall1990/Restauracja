@@ -61,7 +61,7 @@ if (walidator.weryfikuj().equals("Brak")) {
         <header>
             <div class="container">
                 <h1>WIRTUALNA RESTAURACJA</h1>
-                <form action="zalogowanie.jsp" method="post">
+                <form action="weryfikacja_logowania.jsp" method="post">
                     <ul>
                         <li>
                             <label for="login">Podaj login:</label>

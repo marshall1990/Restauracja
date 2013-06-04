@@ -4,10 +4,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page language="java" import="java.sql.*" %>
 
-<%--<sql:setDataSource var="danias" driver="com.mysql.jdbc.Driver"
-url="jdbc:mysql://sql09.freemysql.net:3306/dania" user="hariseldon" password="123qwe"
-scope="session" /> --%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,31 +22,12 @@ try {
     conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));   
            
     String sql="SELECT skladnik FROM skladniki";
-    //String dania_nazwy[]= request.getParameterValues("skladnik");
-    
-    //if(dania_nazwy != null) for(int i=0; i<dania_nazwy.length; i++)
-       // { 
-      //     sql=sql+"SELECT `ID_dania` FROM `daniaskladniki` where `ID_skladnika` in (SELECT `ID_skladnika` from `skladniki` where `Skladnik`=?)";
-     //      if (i<dania_nazwy.length-1) sql=sql+" UNION ";
-       //           }        
-     //   { 
-       //    sql=sql+"SELECT `Nazwa` FROM danie where `ID_dania` in (SELECT `ID_dania` FROM `daniaskladniki` where `ID_skladnika` in (SELECT `ID_skladnika` from `skladniki` where `Skladnik`=?))";
-      //     if (i<dania_nazwy.length-1) sql=sql+" UNION ";
-           
-           
-    //    }
-    PreparedStatement statement=conn.prepareStatement( sql );
-    
-    //for(int i=0; i<dania_nazwy.length; i++) {
-   //     statement.setString(i+1,dania_nazwy[i]);
-   //   }
-    
-   // out.println(statement);
-            rst=statement.executeQuery();
+    PreparedStatement statement=conn.prepareStatement( sql );    
+    rst=statement.executeQuery();
  %>
  <h1>Składniki</h1>
                    
- <form name="form1" onsubmit="checkBoxValidation()" action="podaj_dania.jsp">
+ <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_dania.jsp">
  
  <table><%             
 while (rst.next()) {
@@ -65,14 +42,11 @@ while (rst.next()) {
     <p><input type="submit" value="submit"/>
     </form>   
      <%
-           
             conn.close();
-           // out.println("Rozłączony z bazą");
-    
     }
 	catch (Exception e) {
   e.printStackTrace();
-  out.println("błąd rejestracji użytkownika");
+  out.println("Błąd połączenia z bazą danych");
     }
 %>        
 

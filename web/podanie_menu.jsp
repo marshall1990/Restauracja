@@ -86,19 +86,19 @@
         <section class="windows">
             <div class="container">
                 <article>
-                    <h3 class="brown">Restauracje</h3>
+                    <h3 class="brown">Wszystkie dania</h3>
                     <img src="img/menu_img1.jpg" alt="restauracje" />
                     <p>Zawiera wszystkie lokale restauratora. Restaurator może dodawać oraz modyfikować lokale.</p>
                     <a class="btn_submit" href="#" >Więcej</a>
                 </article>
                 <article>
-                    <h3 class="orange">Menu</h3>
+                    <h3 class="orange">Wyszukiwanie po składnikach</h3>
                     <img src="img/menu_img2.jpg" alt="menu" />
                     <p>Wszystkie dania oferowane przez restauratora. Restaurator może dodawać oraz modyfikować swoje pozycje w menu.</p>
-                    <a class="btn_submit" href="#" >Więcej</a>
+                    <a class="btn_submit" href="zamowienie_skladniki.jsp" >Więcej</a>
                 </article>
                 <article>
-                    <h3 class="rose">Zamówienia</h3>
+                    <h3 class="rose">Wyszukiwanie po nazwie</h3>
                     <img src="img/menu_img3.jpg" alt="zamówienia" />
                     <p>Lista aktualnych zamówień. Restaurator może przeglądać statystyki zamówień.</p>
                     <a class="btn_submit" href="#" >Więcej</a>
