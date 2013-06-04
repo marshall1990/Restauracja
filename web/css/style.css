@@ -177,6 +177,10 @@ section#image:before {
     display: none;
 }
 
+section#image img {
+    width: 100%;
+}
+
 aside img {
     width: 500px;
     border: rgb(100, 100, 100) 1px solid;
