@@ -154,6 +154,11 @@ section article label {
     display: inline-block;
 }
 
+section article textarea {
+    resize: none;
+    margin-top: 10px;
+}
+
 section article li:last-child input, .btn_submit {
     margin: 20px 0;
     padding:6px 24px;
@@ -214,6 +219,11 @@ p.red {
     margin-bottom: 0;
 }
 
+nav {
+    overflow: hidden;
+    float: right;
+}
+
 nav ul {
     margin: 0;
 }
@@ -221,20 +231,37 @@ nav ul {
 nav ul li {
     border-right: 1px #5b3425 solid;
     width: auto;
-    padding: 20px 25px;
+    height: auto;
+    padding: 10px 20px;
     position: relative;
-    top: -10px;
 }
 
 nav ul li:last-child, nav ul li:last-child a {
     border: none;
     text-transform: none;
+    top: -15px;
+}
+
+nav ul li:first-child {
+    top: -12px;
 }
 
 nav ul li a {
     color: #FFFFFF;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+nav ul li img:hover {
+    background-color: #ffec64;
+}
+
+nav ul li p {
+    padding: 12px;
+}
+
+nav ul li img {
+    width: 40px;
 }
 
 /* Menu.jsp */
