@@ -2,7 +2,7 @@
 <%@page import="org.apache.commons.beanutils.BeanUtilsBean"%>
 <%@page import="org.mypackage.hello.*" %>
 <%@page import="java.sql.*" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 <%
 Connection conn = null;
@@ -61,7 +61,7 @@ if (walidator.weryfikuj().equals("Brak")) {
         <header>
             <div class="container">
                 <h1>WIRTUALNA RESTAURACJA</h1>
-                <form action="weryfikacja_logowania.jsp" method="post">
+                <form action="zalogowanie.jsp" method="post">
                     <ul>
                         <li>
                             <label for="login">Podaj login:</label>

@@ -1,6 +1,6 @@
 <%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%> --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <%@ page import="org.mypackage.hello.*" %>
 <%@ page import="java.sql.*" %>
 
@@ -9,13 +9,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="wyszukiwanie_skladniki1.css" />
-        <title>Dania</title>
+        <title>JSP Page</title>
     </head>
     <body>
 <%
 Connection conn = null;
 ResultSet rst=null;
-String sql="";
+String sql=null;
 
 try {
     Class.forName((String)session.getAttribute( "driver" )).newInstance();
@@ -39,17 +39,21 @@ try {
     for(int i=0; i<dania_nazwy.length; i++) {
         statement.setString(i+1,dania_nazwy[i]);
       }
-    rst=statement.executeQuery();
+    
+   // out.println(statement);
+            rst=statement.executeQuery();
               
 while (rst.next()) {
             out.println(rst.getString(1)+",");
         }
            
             conn.close();
+           // out.println("Rozłączony z bazą");
+    
     }
 	catch (Exception e) {
   e.printStackTrace();
-  out.println("Błąd połączenia z bazą danych");
+  out.println("błąd rejestracji użytkownika");
     }
 %>        
         

@@ -5,7 +5,7 @@
 <%@page import="org.mypackage.hello.Rejestrator"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
 <jsp:setProperty name="zalogowany" property="*"/>
@@ -32,7 +32,7 @@ if (walidator.weryfikuj2().equals("Brak")) {
         rst.next();
         
         
-        if (rst.getInt(1)>0) response.sendRedirect("podanie_menu.jsp");
+        if (rst.getInt(1)>0) response.sendRedirect("menu.jsp");
            else {
               blad="Użytkownik o podanej nazwie lub podanym haśle nie istnieje.";
              }
@@ -68,7 +68,7 @@ if (walidator.weryfikuj2().equals("Brak")) {
             <div class="container">
                 <article>
                     <h1>Rejestracja</h1>
-                    <form action="weryfikacja_rejestracji.jsp" method="get">
+                    <form action="rejestrowanie.jsp" method="get">
                         <ul>
                             <li>
                                 <label for="name">Podaj imię:</label>
