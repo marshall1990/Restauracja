@@ -61,20 +61,37 @@ if (walidator.weryfikujdanie().equals("Brak")) {
  }
  else blad=walidator.weryfikujdanie()+".";
 %>
-
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="rejestrowanie.css" />
-        <title>Dodawanie dania</title>
+        <link rel="stylesheet" type="text/css" href="css/html5reset-1.6.1.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Wirtualna Restauracja</title>
     </head>
     <body>
-        <h1><%=blad %></h1>
-        <form name="reg" action="dodajdanie.jsp">
-            <div class="srodek"> <input type="submit" value="OK" /></div>
-        </form>
-        
+        <header>
+            <div class="container">
+                <h1>WIRTUALNA RESTAURACJA</h1>
+                <jsp:include page="top_nav.jsp" />
+            </div>   
+        </header>
+            
+        <section>
+            <div class="container">
+                <article>
+                    <h1>Uwaga!</h1>
+                    <p class="red"><%=blad %></p>
+                    <a href="dodajdanie.jsp" class="btn_submit">OK</a>
+                </article>
+                <aside>
+                    <h3>Dodaj przepis dania, które chcesz skomponować.</h3>
+                    <img src="img/image_recipe.jpg" alt="przepis" />
+                </aside>
+            </div>
+        </section>
+        <footer>
+            Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
+        </footer> 
     </body>
 </html>
