@@ -1,4 +1,5 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
+<%@page import="org.apache.commons.beanutils.BeanUtils"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 <%
@@ -28,6 +29,18 @@ session.setAttribute( "dbName", "hariseld_dania" );
 session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
 session.setAttribute( "userName", "hariseld_hari" );
 session.setAttribute( "password", "123qwe" );
+
+session.setAttribute( "url2", "jdbc:mysql://johnny.heliohost.org:3306/" );
+session.setAttribute( "dbName2", "hariseld_zlecenia" );
+session.setAttribute( "driver2", "com.mysql.jdbc.Driver" );
+session.setAttribute( "userName2", "hariseld_hari" );
+session.setAttribute( "password2", "123qwe" );
+
+request.setAttribute( "url1", "jdbc:mysql://johnny.heliohost.org:3306/" );
+request.setAttribute( "dbName1", "hariseld_dania" );
+request.setAttribute( "driver1", "com.mysql.jdbc.Driver" );
+request.setAttribute( "userName1", "hariseld_hari" );
+request.setAttribute( "password1", "123qwe" );
 %>
 <!DOCTYPE html>
 <html>

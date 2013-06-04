@@ -20,6 +20,10 @@ if (walidator.weryfikuj().equals("Brak")) {
         Class.forName((String)session.getAttribute( "driver" )).newInstance();
         conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));   
         
+        
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        conn = DriverManager.getConnection("jdbc:mysql://johnny.heliohost.org:3306/"+"hariseld_dania","hariseld_hari","123qwe");
+        
         sql="select count(login) from users where login='"+walidator.getLogin()+"'";
         Statement statement0=conn.createStatement();
         rst=statement0.executeQuery(sql);

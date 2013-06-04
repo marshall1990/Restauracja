@@ -11,39 +11,11 @@
 <jsp:setProperty name="zalogowany" property="*"/>
 
 <%
-Connection conn = null;
-ResultSet rst=null;
-String sql;
 String blad=null;
-
 Rejestrator walidator = new Rejestrator();
 BeanUtils.populate(walidator, request.getParameterMap());
-
-if (walidator.weryfikuj2().equals("Brak")) {
-        
-    try {
-  
-        Class.forName((String)session.getAttribute( "driver" )).newInstance();
-        conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));      
-        
-        sql="select count(login) from users where login='"+walidator.getLogin()+"' and password='"+walidator.getPassword()+"'";
-        Statement statement0=conn.createStatement();
-        rst=statement0.executeQuery(sql);
-        rst.next();
-        
-        
-        if (rst.getInt(1)>0) response.sendRedirect("podanie_menu.jsp");
-           else {
-              blad="Użytkownik o podanej nazwie lub podanym haśle nie istnieje.";
-             }
-        conn.close();    
-    }
-    catch (Exception e) {
-         e.printStackTrace();
-         blad="Błąd połączenia z bazą danych";    
-       }
- }
- else blad=walidator.weryfikuj2()+".";
+blad=walidator.weryfikuj2();
+if (walidator.weryfikuj2().equals("Nie")) response.sendRedirect("podanie_menu.jsp");
 %>
 <!DOCTYPE html>
 <html>

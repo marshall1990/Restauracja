@@ -49,7 +49,7 @@ while (rst.next()) {
     }
 	catch (Exception e) {
   e.printStackTrace();
-  out.println("błąd rejestracji użytkownika");
+  out.println("Błąd połączenia z bazą danych");
     }
 %>        
                       

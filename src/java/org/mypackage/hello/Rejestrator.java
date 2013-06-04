@@ -4,6 +4,11 @@
  */
 package org.mypackage.hello;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class Rejestrator {
   
 	private String imie="Brak";
@@ -12,7 +17,12 @@ public class Rejestrator {
         private String password="Brak";
         private String nazwadania="Brak";
         private String przepis="Brak";
-
+        private String url1="jdbc:mysql://johnny.heliohost.org:3306/";
+        private String dbName1="hariseld_dania";
+        private String driver1="com.mysql.jdbc.Driver";
+        private String userName1="hariseld_hari";
+        private String password1="123qwe";
+        
     /**
      * @return the imie
      */
@@ -98,25 +108,53 @@ public class Rejestrator {
                 blad=blad+",<br />niepoprawne hasło";
                 }
         }
-        return blad;
-    }
+        
+        
+  
+       return blad;
+    }    
     public String weryfikuj2() {
-        String blad;
-        blad = "Brak";
+        String blad = "Nie";
+        Connection conn;
+        ResultSet rst;
+        String sql="1";
         
         if ((login.equals("Brak")) || (login.trim().equals(""))) {
              blad="Wprowadzono niepoprawny login";     
          }
   
         if ((password.equals("Brak")) || (password.trim().equals(""))) {
-            if (blad.equals("Brak")) {
+            if (blad.equals("Nie")) {
                   blad="Wprowadzono niepoprawne hasło";
             } else {
                 blad=blad+",<br />niepoprawne hasło";
                 }
         }
+        
+        if (blad.equals("Nie")) {
+        
+            try {
+                Class.forName(driver1).newInstance();
+                conn = DriverManager.getConnection(url1+dbName1,userName1,password1);  
+
+                sql="select count(login) from users where login='"+login+"' and password='"+password+"'";
+                Statement statement0=conn.createStatement();
+                rst=statement0.executeQuery(sql);
+                rst.next();
+                
+                if (rst.getInt(1)>0) {       } //response.sendRedirect("podanie_menu.jsp");
+                   else {
+                      blad="Użytkownik o podanej nazwie lub podanym haśle nie istnieje.";
+                     }
+                conn.close();    
+              }
+            catch (Exception e) {
+                 blad="Błąd połączenia z bazą danych";    
+               }
+          }   
         return blad;
     }
+    
     public String weryfikujdanie() {
         String blad;
         blad = "Brak";
