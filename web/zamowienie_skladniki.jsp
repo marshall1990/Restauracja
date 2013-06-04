@@ -21,45 +21,52 @@
         <section>
             <div class="container">
                 <article>
-<%
- Connection conn = null;
- ResultSet rst=null;
+                    <%
+                    Connection conn = null;
+                    ResultSet rst=null;
 
+                    try {
+                        Class.forName((String)session.getAttribute( "driver" )).newInstance();
+                        conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));   
 
-try {
-    Class.forName((String)session.getAttribute( "driver" )).newInstance();
-    conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));   
-           
-    String sql="SELECT skladnik FROM skladniki";
-   
-    PreparedStatement statement=conn.prepareStatement( sql );
-    rst=statement.executeQuery();
- %>
- <h1>Składniki</h1>
-                   
- <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_dania.jsp">
- 
- <table><%             
-while (rst.next()) {
-            %>
-    
-                                <tr>
-                                    <td><input type="checkbox" name="skladnik" value="<%=rst.getString(1)%>" /></td> <td><%=rst.getString(1)%></td>
-                                </tr>
-                            
-      <%  } %>
-    </table> 
-    <p><input type="submit" value="submit"/>
-    </form>   
-    
-     <%
-           
-            conn.close();
-    }
-	catch (Exception e) {
-  e.printStackTrace();
-  out.println("Błąd połączenia z bazą danych");
-    }
-%>        
-                      
+                        String sql="SELECT skladnik FROM skladniki";
 
+                        PreparedStatement statement=conn.prepareStatement( sql );
+                        rst=statement.executeQuery();
+                     %>
+                     <h1>Wybier składniki:</h1>         
+                     <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_dania.jsp">
+                         <ul>
+                            <%! int i = 0; %>
+                            <% while (rst.next()) {  %>
+                            <% i++; %>
+                            <li>
+                                <input id="check<%=i %>" type="checkbox" name="skladnik" value="<%=rst.getString(1)%>" />
+                                <label for="check<%=i %>"><%=rst.getString(1)%></label>
+                            </li>                                              
+                            <% } %> 
+                            <li>
+                                <input type="submit" value="OK"/>
+                            </li>
+                        </ul>
+                     </form>
+                    <%
+                        conn.close();
+                        }
+                        catch (Exception e) {
+                            e.printStackTrace();
+                            response.sendRedirect("errorsite.jsp");
+                        }
+                    %> 
+                </article>
+                <aside>
+                    <h3>Wybier składniki dania, które chcesz zamówić.</h3>
+                    <img src="img/image_recipe.jpg" alt="przepis" />
+                </aside>
+            </div>
+        </section>
+        <footer>
+            Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
+        </footer> 
+    </body>
+</html>
