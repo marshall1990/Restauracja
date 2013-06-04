@@ -5,7 +5,6 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
-
 <%
 Connection conn = null;
 ResultSet rst=null;
@@ -38,9 +37,28 @@ try {
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="css/html5reset-1.6.1.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Wirtualna Restauracja</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <header>
+            <div class="container">
+                <h1>WIRTUALNA RESTAURACJA</h1>
+                <jsp:include page="top_nav.jsp" /> 
+            </div>   
+        </header>
+            
+        <section>
+            <div class="container">
+                <article>
+                    <h1>Dodaj zdjęcia</h1>
+                    
+                </article>
+            </div>
+        </section>
+        <footer>
+            Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
+        </footer> 
     </body>
 </html>

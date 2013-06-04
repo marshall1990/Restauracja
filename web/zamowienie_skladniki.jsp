@@ -55,7 +55,7 @@
                         }
                         catch (Exception e) {
                             e.printStackTrace();
-                            //response.sendRedirect("errorsite.jsp");
+                            response.sendRedirect("errorsite.jsp");
                         }
                     %> 
                 </article>
