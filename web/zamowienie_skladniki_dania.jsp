@@ -52,11 +52,35 @@
 
                        // out.println(statement);
                                 rst=statement.executeQuery();
+%>
+ <h1>Dania zawierające podane składniki</h1>
 
+ <form name="form1" onsubmit="checkBoxValidation()" action="weryfikacja_zamowienia.jsp">
+ 
+ <table><%             
                     while (rst.next()) {
-                                out.println(rst.getString(1)+",");
-                            }
+                            //    out.println(rst.getString(1)+",");
+                            
+%>
+                                <tr>
+                                    <td><input type="checkbox" name="danie" value="<%=rst.getString(1)%>" /></td> <td><%=rst.getString(1)%></td>
+                                    <td>
+                                        <select name="nazwa">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                        </select>
+                                    </td>
+                                </tr>  
+      <%  } %>
+    </table> 
+    <p><input type="submit" value="submit"/>
+    </form>   
 
+     <%      
                                 conn.close();
 
                         }
