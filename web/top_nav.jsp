@@ -6,19 +6,13 @@
             <p>Witaj <%= zalogowany.getLogin() %>, Wirtualna restauracja - zaprasza!</p>
         </li>
         <li>
-            <a href="#"><!--<img src="img/icon_home.png" alt="home" />-->
-                Home
-            </a>
+            <a href="podanie_menu.jsp">Home</a>
         </li>
         <li>
-            <a href="#"><!--<img src="img/icon_search.png" alt="home" />-->
-                Szukaj
-            </a>
+            <a href="#">Szukaj</a>
         </li>
         <li>
-            <a href="mailto:marshall1990@onet.eu"><!--<img src="img/icon_mail.png" alt="home" />-->
-                Kontakt
-            </a>
+            <a href="kontakt.jsp">Kontakt</a>
         </li>
         <li>
             <a class="btn_submit" href="index.jsp">Wyloguj</a>

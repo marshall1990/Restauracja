@@ -52,7 +52,15 @@
                                 <input type="submit" value="OK"/>
                             </li>
                         </ul>
-                    </form> 
+                    </form>
+                    <%
+                        conn.close();
+                        }
+                        catch (Exception e) {
+                            e.printStackTrace();
+                            response.sendRedirect("errorsite.jsp");
+                        }
+                    %> 
                 </article>
                 <aside>
                     <h3>Dodaj przepis dania, które chcesz skomponować.</h3>
@@ -65,11 +73,3 @@
         </footer> 
     </body>
 </html>
-                    <%
-                        conn.close();
-                        }
-                        catch (Exception e) {
-                            e.printStackTrace();
-                            response.sendRedirect("errorsite.jsp");
-                        }
-                    %> 

@@ -55,15 +55,15 @@ header:before, section:before, footer:before {
 }
 
 header:before {
-    background: url(../img/header_border_top.png) 0px 0 repeat-x;
+    background: url('../img/header_border_top.png') 0px 0 repeat-x;
 }
 
 section:before {
-    background: url(../img/content_border_top.png) 5px 0 repeat-x;
+    background: url('../img/content_border_top.png') 5px 0 repeat-x;
 }
 
 footer:before {
-    background: url(../img/footer_border_top.png) 15px 0 repeat-x;
+    background: url('../img/footer_border_top.png') 15px 0 repeat-x;
 }
 
 header ul {
@@ -239,33 +239,26 @@ nav ul li {
 nav ul li:last-child, nav ul li:last-child a {
     border: none;
     text-transform: none;
-    top: 0px;
-}
-
-nav ul li:first-child {
-    top: 0px;
 }
 
 nav ul li a {
     color: #FFFFFF;
     text-decoration: none;
-    text-transform: none;
-}
-
-nav ul li img:hover {
-    background-color: #ffec64;
 }
 
 nav ul li p {
     padding: 12px;
 }
 
-nav ul li img {
-    width: 40px;
+nav ul li:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23) );
+    background:-moz-linear-gradient( center top, #ffec64 5%, #ffab23 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23');
+    background-color:#ffec64;
 }
 
-nav ul li img:hover {
-    background-color: #ffec64;
+nav ul li:hover:first-child, nav ul li:hover:last-child {
+    background: none;
 }
 
 nav ul li p {
@@ -280,7 +273,7 @@ nav ul li img {
 
 section.windows .container {
     position: relative;
-    top: -200px;
+    margin: -200px auto 30px auto;
 }
 
 section.windows article {
@@ -288,7 +281,7 @@ section.windows article {
     border: 1px solid #cccccc;
     padding: 25px;
     margin: 0 25px 0;
-    min-height: 375px;
+    min-height: 400px;
     width: 285px;
     float: left;
 }
@@ -299,7 +292,7 @@ section.windows article:nth-child(n+4) {
 }
 
 section.windows article h3 {
-    font-size: 34px;
+    font-size: 31px;
     padding-bottom: 15px;
     border-bottom: 2px #d1d1d1 dotted;
     text-transform: uppercase;
@@ -340,4 +333,17 @@ div.errorpage {
     line-height: 30px;
 }
 
+/* Kontakt */
 
+section aside .earth {
+    margin-left: 150px;
+    width: 420px;
+    height: 420px;
+    background: url('../img/earth.png') no-repeat;
+    position: relative;
+    -webkit-animation: rotate-planet 15s infinite linear;
+    -moz-animation: rotate-planet 15s infinite linear;
+    -ms-animation: rotate-planet 15s infinite linear;
+    -o-animation: rotate-planet 15s infinite linear;
+    animation: rotate-planet 15s infinite linear;
+}
