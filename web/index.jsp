@@ -1,5 +1,5 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 <%
 //String url = "jdbc:mysql://mysql3.ph-hos.osemka.pl:3306/";

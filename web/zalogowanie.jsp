@@ -5,7 +5,7 @@
 <%@page import="org.mypackage.hello.Rejestrator"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
 <jsp:setProperty name="zalogowany" property="*"/>

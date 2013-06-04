@@ -2,7 +2,7 @@
 <%@page import="org.apache.commons.beanutils.BeanUtilsBean"%>
 <%@page import="org.mypackage.hello.*" %>
 <%@page import="java.sql.*" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 <%
 Connection conn = null;
