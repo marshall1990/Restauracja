@@ -26,22 +26,22 @@
         <section class="windows">
             <div class="container">
                 <article>
-                    <h3 class="brown">Wszystkie dania</h3>
+                    <a class="brown" href="#"><h3>Wszystkie dania</h3></a>
                     <img src="img/menu_img1.jpg" alt="restauracje" />
                     <p>Zawiera wszystkie lokale restauratora. Restaurator może dodawać oraz modyfikować lokale.</p>
-                    <a class="btn_submit" href="#" >Więcej</a>
+                    <a class="btn_submit" href="#" >Wybierz</a>
                 </article>
                 <article>
-                    <h3 class="orange">Wyszukiwanie po składnikach</h3>
+                    <a class="orange" href="zamowienie_skladniki.jsp"><h3>Wyszukiwanie po składnikach</h3></a>
                     <img src="img/menu_img2.jpg" alt="menu" />
                     <p>Wszystkie dania oferowane przez restauratora. Restaurator może dodawać oraz modyfikować swoje pozycje w menu.</p>
-                    <a class="btn_submit" href="zamowienie_skladniki.jsp" >Więcej</a>
+                    <a class="btn_submit" href="zamowienie_skladniki.jsp" >Wybierz</a>
                 </article>
                 <article>
-                    <h3 class="rose">Wyszukiwanie po nazwie</h3>
+                    <a class="rose" href="#"><h3>Wyszukiwanie po nazwie</h3></a>
                     <img src="img/menu_img3.jpg" alt="zamówienia" />
                     <p>Lista aktualnych zamówień. Restaurator może przeglądać statystyki zamówień.</p>
-                    <a class="btn_submit" href="#" >Więcej</a>
+                    <a class="btn_submit" href="#" >Wybierz</a>
                 </article>               
             </div>
         </section>
