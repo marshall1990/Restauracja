@@ -7,17 +7,17 @@
         </li>
         <li>
             <a href="#"><!--<img src="img/icon_home.png" alt="home" />-->
-                HOME
+                Home
             </a>
         </li>
         <li>
             <a href="#"><!--<img src="img/icon_search.png" alt="home" />-->
-                SZUKAJ
+                Szukaj
             </a>
         </li>
         <li>
             <a href="mailto:marshall1990@onet.eu"><!--<img src="img/icon_mail.png" alt="home" />-->
-                KONTAKT
+                Kontakt
             </a>
         </li>
         <li>

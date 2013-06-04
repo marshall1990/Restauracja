@@ -249,7 +249,7 @@ nav ul li:first-child {
 nav ul li a {
     color: #FFFFFF;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 nav ul li img:hover {
@@ -269,7 +269,7 @@ nav ul li img:hover {
 }
 
 nav ul li p {
-    padding: 12px;
+    padding: 0 12px;
 }
 
 nav ul li img {
