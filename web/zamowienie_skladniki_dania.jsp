@@ -15,7 +15,7 @@
 <%
 Connection conn = null;
 ResultSet rst=null;
-String sql=null;
+String sql="";
 
 try {
     Class.forName((String)session.getAttribute( "driver" )).newInstance();
@@ -48,7 +48,6 @@ while (rst.next()) {
         }
            
             conn.close();
-           // out.println("Rozłączony z bazą");
     
     }
 	catch (Exception e) {

@@ -32,7 +32,7 @@ if (walidator.weryfikuj2().equals("Brak")) {
         rst.next();
         
         
-        if (rst.getInt(1)>0) response.sendRedirect("menu.jsp");
+        if (rst.getInt(1)>0) response.sendRedirect("podanie_menu.jsp");
            else {
               blad="Użytkownik o podanej nazwie lub podanym haśle nie istnieje.";
              }
@@ -68,7 +68,7 @@ if (walidator.weryfikuj2().equals("Brak")) {
             <div class="container">
                 <article>
                     <h1>Rejestracja</h1>
-                    <form action="rejestrowanie.jsp" method="get">
+                    <form action="weryfikacja_rejestracji.jsp" method="get">
                         <ul>
                             <li>
                                 <label for="name">Podaj imię:</label>
