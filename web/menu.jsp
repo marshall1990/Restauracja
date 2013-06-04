@@ -1,53 +1,8 @@
 <%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>--%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page language="java" import="java.sql.*" %>
-
+<%@page language="java" import="java.sql.*" %>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
-<!--<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="menu.css" />
-        <title>Menu</title>
-    </head>
-    <body>
-        <div class="hello"> 
-            Witaj <%= zalogowany.getLogin() %>, Wirtualna restauracja - zaprasza!  
-        </div>
-        <div class="main">
-            <div class="wiersz">
-                <div class="kolumna">
-                    <form name="B1" action="menu.jsp">
-                            <input type="submit" value="Przeglądaj dania i zamawiaj" name="przegladaj" /> 
-                    </form></div>
-                <div class="kolumna">
-                    <form name="B2" action="menu.jsp">
-                            <input type="submit" value="Wyszukaj danie po nazwie" name="przegladaj" /> 
-                    </form></div>
-                <div class="kolumna">
-                    <form name="B3" action="wyszukiwanie_skladniki.jsp">
-                            <input type="submit" value="Wyszukaj danie po składnikach" name="przegladaj" /> 
-                    </form></div>
-            </div>
-            <div class="wiersz">
-                <div class="kolumna">
-                    <form name="B4" action="dodajdanie.jsp">
-                            <input type="submit" value="Dodaj danie" name="przegladaj" /> 
-                    </form></div>
-                <div class="kolumna">
-                    <form name="B5" action="menu.jsp">
-                            <input type="submit" value="Wyloguj" name="przegladaj" /> 
-                    </form></div>
-                <div class="kolumna">
-                    <form name="B6" action="menu.jsp">
-                            <input ID="I6" type="submit" value="" name="przegladaj" /> 
-                    </form></div>  
-            </div> 
-        </div>
-    </body>
-</html>
--->
 <!DOCTYPE html>
 <html>
     <head>
@@ -63,13 +18,16 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">Strona Główna</a>
+                            <p>Witaj <%= zalogowany.getLogin() %>, Wirtualna restauracja - zaprasza!</p>
                         </li>
                         <li>
-                            <a href="#">Restauracje</a>
+                            <a href="#"><img src="img/icon_home.png" alt="home" /></a>
                         </li>
                         <li>
-                            <a href="#">Menu</a>
+                            <a href="#"><img src="img/icon_search.png" alt="home" /></a>
+                        </li>
+                        <li>
+                            <a href="mailto:marshall1990@onet.eu"><img src="img/icon_mail.png" alt="home" /></a>
                         </li>
                         <li>
                             <a class="btn_submit" href="index.jsp">Wyloguj</a>
@@ -102,7 +60,7 @@
                     <img src="img/menu_img3.jpg" alt="zamówienia" />
                     <p>Lista aktualnych zamówień. Restaurator może przeglądać statystyki zamówień.</p>
                     <a class="btn_submit" href="#" >Więcej</a>
-                </article>
+                </article>               
             </div>
         </section>
         
