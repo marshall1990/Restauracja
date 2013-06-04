@@ -6,6 +6,7 @@ package org.mypackage.hello;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -80,21 +81,23 @@ public class Rejestrator {
     }
     
     public String weryfikuj() {
-        String blad;
-        blad = "Brak";
+        String blad = "Nie";
+        Connection conn;
+        ResultSet rst;
+        String sql="1";
         
         if ((imie.equals("Brak")) || (imie.trim().equals(""))) {
             blad="Wprowadzono niepoprawne imię";
          }
         if ((nazwisko.equals("Brak")) || (nazwisko.trim().equals(""))) {
-            if (blad.equals("Brak")) {
+            if (blad.equals("Nie")) {
                 blad="Wprowadzono niepoprawne nazwisko";
              } else {
                 blad=blad+",<br />niepoprawne nazwisko";
              }
         }
         if ((login.equals("Brak")) || (login.trim().equals(""))) {
-            if (blad.equals("Brak")) {
+            if (blad.equals("Nie")) {
               blad="Wprowadzono niepoprawny login";
             } else {
                 blad=blad+",<br />niepoprawny login";
@@ -102,17 +105,53 @@ public class Rejestrator {
         }
   
         if ((password.equals("Brak")) || (password.trim().equals(""))) {
-            if (blad.equals("Brak")) {
+            if (blad.equals("Nie")) {
                   blad="Wprowadzono niepoprawne hasło";
             } else {
                 blad=blad+",<br />niepoprawne hasło";
                 }
         }
         
+        if (blad.equals("Nie")) {
+        
+            try {
+
+                Class.forName(driver1).newInstance();
+                conn = DriverManager.getConnection(url1+dbName1,userName1,password1);   
+
+                sql="select count(login) from users where login='"+login+"'";
+                Statement statement0=conn.createStatement();
+                rst=statement0.executeQuery(sql);
+                rst.next();
+
+                if (rst.getInt(1)>0) {
+                    blad="Taki login został już zarejestrowany, musisz wybrać inny.";
+                }
+                        else {
+                        sql="insert into `users` values (?,?,?,?,?,?)";
+                        PreparedStatement statement=conn.prepareStatement(sql);
+                        statement.setInt(1,0);
+                        statement.setString(2,imie);
+                        statement.setString(3,nazwisko);
+                        statement.setString(4,login);
+                        statement.setString(5,password);
+                        statement.setInt(6,0);
+                        statement.executeUpdate();
+                        blad="Dziękujemy za rejestrację. Zaloguj się.";
+                  }
+
+                conn.close();
+               }
+              catch (Exception e) {
+                 blad="Błąd połączenia z bazą danych";
+               }
+        }
         
   
        return blad;
     }    
+    
+    
     public String weryfikuj2() {
         String blad = "Nie";
         Connection conn;
