@@ -239,11 +239,11 @@ nav ul li {
 nav ul li:last-child, nav ul li:last-child a {
     border: none;
     text-transform: none;
-    top: -15px;
+    top: 0px;
 }
 
 nav ul li:first-child {
-    top: -12px;
+    top: 0px;
 }
 
 nav ul li a {
