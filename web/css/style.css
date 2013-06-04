@@ -55,15 +55,15 @@ header:before, section:before, footer:before {
 }
 
 header:before {
-    background: url(../img/header_border_top.png) 0px 0 repeat-x;
+    background: url('../img/header_border_top.png') 0px 0 repeat-x;
 }
 
 section:before {
-    background: url(../img/content_border_top.png) 5px 0 repeat-x;
+    background: url('../img/content_border_top.png') 5px 0 repeat-x;
 }
 
 footer:before {
-    background: url(../img/footer_border_top.png) 15px 0 repeat-x;
+    background: url('../img/footer_border_top.png') 15px 0 repeat-x;
 }
 
 header ul {
@@ -273,7 +273,7 @@ nav ul li img {
 
 section.windows .container {
     position: relative;
-    top: -200px;
+    margin: -200px auto 30px auto;
 }
 
 section.windows article {
@@ -331,4 +331,19 @@ div.errorpage {
     font-size: 25px;
     color: #492400;
     line-height: 30px;
+}
+
+/* Kontakt */
+
+section aside .earth {
+    margin-left: 150px;
+    width: 420px;
+    height: 420px;
+    background: url('../img/earth.png') no-repeat;
+    position: relative;
+    -webkit-animation: rotate-planet 15s infinite linear;
+    -moz-animation: rotate-planet 15s infinite linear;
+    -ms-animation: rotate-planet 15s infinite linear;
+    -o-animation: rotate-planet 15s infinite linear;
+    animation: rotate-planet 15s infinite linear;
 }

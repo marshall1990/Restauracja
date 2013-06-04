@@ -12,7 +12,7 @@
             <a href="#">Szukaj</a>
         </li>
         <li>
-            <a href="mailto:marshall1990@onet.eu">Kontakt</a>
+            <a href="kontakt.jsp">Kontakt</a>
         </li>
         <li>
             <a class="btn_submit" href="index.jsp">Wyloguj</a>
