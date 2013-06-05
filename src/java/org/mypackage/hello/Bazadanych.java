@@ -4,27 +4,19 @@
  */
 package org.mypackage.hello;
 
-/**
- session.setAttribute( "url", "jdbc:mysql://johnny.heliohost.org:3306/" );
-session.setAttribute( "dbName", "hariseld_dania" );
-session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
-session.setAttribute( "userName", "hariseld_hari" );
-session.setAttribute( "password", "123qwe" );
 
-session.setAttribute( "url2", "jdbc:mysql://johnny.heliohost.org:3306/" );
-session.setAttribute( "dbName2", "hariseld_zlecenia" );
-session.setAttribute( "driver2", "com.mysql.jdbc.Driver" );
-session.setAttribute( "userName2", "hariseld_hari" );
-session.setAttribute( "password2", "123qwe" );
- */
 public class Bazadanych {
-    
-    
     private String url1="jdbc:mysql://johnny.heliohost.org:3306/";
     private String dbName1="hariseld_dania";
     private String driver1="com.mysql.jdbc.Driver";
     private String userName1="hariseld_hari";
     private String password1="123qwe";
+
+//session.setAttribute( "url2", "jdbc:mysql://johnny.heliohost.org:3306/" );
+//session.setAttribute( "dbName2", "hariseld_zlecenia" );
+//session.setAttribute( "driver2", "com.mysql.jdbc.Driver" );
+//session.setAttribute( "userName2", "hariseld_hari" );
+//session.setAttribute( "password2", "123qwe" );
 
     /**
      * @return the url1
@@ -95,4 +87,6 @@ public class Bazadanych {
     public void setPassword1(String password1) {
         this.password1 = password1;
     }
+
+   
 }
