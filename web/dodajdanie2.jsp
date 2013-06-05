@@ -1,7 +1,6 @@
 <%@page import="org.mypackage.hello.Dodaniedania"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="org.apache.commons.beanutils.BeanUtils"%>
-<%@page import="org.mypackage.hello.Rejestrator"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>

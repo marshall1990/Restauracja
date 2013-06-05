@@ -63,7 +63,7 @@
                     %> 
                 </article>
                 <aside>
-                    <h3>Wybier składniki dania, które chcesz zamówić.</h3>
+                    <h3>Wybierz składniki dania, które chcesz zamówić.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

@@ -8,7 +8,7 @@
 String blad=null;
 Rejestrowanie walidator = new Rejestrowanie();
 BeanUtils.populate(walidator, request.getParameterMap());
-blad=walidator.weryfikuj();    
+blad=walidator.weryfikuj();   
 %>
 
 <!DOCTYPE html>

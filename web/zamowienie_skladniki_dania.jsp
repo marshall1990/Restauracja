@@ -43,17 +43,13 @@
                             { 
                                sql=sql+"SELECT `Nazwa` FROM danie where `ID_dania` in (SELECT `ID_dania` FROM `daniaskladniki` where `ID_skladnika` in (SELECT `ID_skladnika` from `skladniki` where `Skladnik`=?))";
                                if (i<dania_nazwy.length-1) sql=sql+" UNION ";
-
-
                             }
                         PreparedStatement statement=conn.prepareStatement(sql);
 
                         for(int i=0; i<dania_nazwy.length; i++) {
                             statement.setString(i+1,dania_nazwy[i]);
                           }
-
-                       // out.println(statement);
-                                rst=statement.executeQuery();
+                         rst=statement.executeQuery();
                         %>
                          <h1>Dania zawierające podane składniki:</h1>
                          <form name="form1" onsubmit="checkBoxValidation()" action="weryfikacja_zamowienia.jsp">
@@ -86,23 +82,9 @@
                         }
                     %>        
 
-                    <%--<sql:query var="result2" dataSource="${danias}">
-                                   SELECT nazwa from danie where danie.ID_dania in (SELECT ID_dania FROM daniaskladniki where ID_skladnika in dania_nazwy[])
-                                </sql:query>       
-
-                            <c:forEach var="row" items="${result2.rowsByIndex}">
-
-                                            <c:forEach var="column" items="${row}">
-                                                <%--  <td><c:out value="${column}"/></td>               (SELECT ID_skladnika FROM skladniki)                            --%>
-
-                                                <%--         <p><input type="text" name="nazwy_dan" value="${column}" />${column}</p>
-
-                                            </c:forEach>
-
-                                    </c:forEach> --%>
                 </article>
                 <aside>
-                    <h3>Wybier dania, które chcesz zamówić.</h3>
+                    <h3>Wybierz dania, które chcesz zamówić.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>
