@@ -1,5 +1,6 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> --%>
+<%@page import="org.mypackage.hello.Bazadanych"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <%@page language="java" import="java.sql.*" %>
 <!DOCTYPE html>
@@ -27,8 +28,9 @@
                     ResultSet rst=null;
 
                     try {
-                        Class.forName((String)session.getAttribute( "driver" )).newInstance();
-                        conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));   
+                        Bazadanych baza = new Bazadanych(); 
+                        Class.forName(baza.getDriver1()).newInstance();
+                        conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());    
 
                         String sql="SELECT skladnik FROM skladniki";
 

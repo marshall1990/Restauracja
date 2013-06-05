@@ -2,46 +2,6 @@
 <%@page import="org.apache.commons.beanutils.BeanUtils"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
-<%
-//String url = "jdbc:mysql://mysql3.ph-hos.osemka.pl:3306/";
-//String url = "jdbc:mysql://localhost:3306/";
-//session.setAttribute( "url", "jdbc:mysql://sql09.freemysql.net:3306/" );
-//session.setAttribute( "dbName", "dania" );
-//session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
-//session.setAttribute( "userName", "hariseldon" );
-//session.setAttribute( "password", "123qwe" );
-//ewtrtyt jhghjg h
-
-session.setAttribute( "url", "jdbc:mysql://wirtres.host-ed.me:3306/" );
-session.setAttribute( "dbName", "wirtresh_dania" );
-session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
-session.setAttribute( "userName", "wirtresh_hari" );
-session.setAttribute( "password", "123qwe" );
-
-session.setAttribute( "url", "jdbc:mysql://sql2.freesqldatabase.com:3306/" );
-session.setAttribute( "dbName", "sql28605" );
-session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
-session.setAttribute( "userName", "sql28605" );
-session.setAttribute( "password", "tM5!rI8*" );
-
-session.setAttribute( "url", "jdbc:mysql://johnny.heliohost.org:3306/" );
-session.setAttribute( "dbName", "hariseld_dania" );
-session.setAttribute( "driver", "com.mysql.jdbc.Driver" );
-session.setAttribute( "userName", "hariseld_hari" );
-session.setAttribute( "password", "123qwe" );
-
-session.setAttribute( "url2", "jdbc:mysql://johnny.heliohost.org:3306/" );
-session.setAttribute( "dbName2", "hariseld_zlecenia" );
-session.setAttribute( "driver2", "com.mysql.jdbc.Driver" );
-session.setAttribute( "userName2", "hariseld_hari" );
-session.setAttribute( "password2", "123qwe" );
-
-request.setAttribute( "url1", "jdbc:mysql://johnny.heliohost.org:3306/" );
-request.setAttribute( "dbName1", "hariseld_dania" );
-request.setAttribute( "driver1", "com.mysql.jdbc.Driver" );
-request.setAttribute( "userName1", "hariseld_hari" );
-request.setAttribute( "password1", "123qwe" );
-%>
 <!DOCTYPE html>
 <html>
     <head>

@@ -1,8 +1,8 @@
+<%@page import="org.mypackage.hello.Logowanie"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="org.apache.commons.beanutils.BeanUtils"%>
-<%@page import="org.mypackage.hello.Rejestrator"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
@@ -12,10 +12,10 @@
 
 <%
 String blad=null;
-Rejestrator walidator = new Rejestrator();
+Logowanie walidator = new Logowanie();
 BeanUtils.populate(walidator, request.getParameterMap());
-blad=walidator.weryfikuj2();
-if (walidator.weryfikuj2().equals("Nie")) response.sendRedirect("podanie_menu.jsp");
+blad=walidator.weryfikuj();
+if (walidator.weryfikuj().equals("Nie")) response.sendRedirect("podanie_menu.jsp");
 %>
 <!DOCTYPE html>
 <html>

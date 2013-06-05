@@ -29,9 +29,10 @@
                     String sql="";
 
                     try {
-                        Class.forName((String)session.getAttribute( "driver" )).newInstance();
-                        conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));   
-
+                        Bazadanych baza = new Bazadanych(); 
+                        Class.forName(baza.getDriver1()).newInstance();
+                        conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());
+                        
                         String dania_nazwy[]= request.getParameterValues("skladnik");
 
                         if(dania_nazwy != null) for(int i=0; i<dania_nazwy.length; i++)

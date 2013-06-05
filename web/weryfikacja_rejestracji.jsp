@@ -6,7 +6,7 @@
 
 <%
 String blad=null;
-Rejestrator walidator = new Rejestrator();
+Rejestrowanie walidator = new Rejestrowanie();
 BeanUtils.populate(walidator, request.getParameterMap());
 blad=walidator.weryfikuj();    
 %>
