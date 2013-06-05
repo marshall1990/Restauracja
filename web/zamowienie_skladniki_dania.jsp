@@ -52,19 +52,14 @@
 
                        // out.println(statement);
                                 rst=statement.executeQuery();
-%>
- <h1>Dania zawierające podane składniki</h1>
-
- <form name="form1" onsubmit="checkBoxValidation()" action="weryfikacja_zamowienia.jsp">
- 
- <table><%             
-                    while (rst.next()) {
-                            //    out.println(rst.getString(1)+",");
-                            
-%>
-                                <tr>
-                                    <td><input type="checkbox" name="danie" value="<%=rst.getString(1)%>" /></td> <td><%=rst.getString(1)%></td>
-                                    <td>
+                        %>
+                         <h1>Dania zawierające podane składniki:</h1>
+                         <form name="form1" onsubmit="checkBoxValidation()" action="weryfikacja_zamowienia.jsp">
+                             <ul>
+                                 <%while (rst.next()) {%>
+                                 <li>
+                                     <label><%=rst.getString(1)%></label>
+                                     <div class="styled-select">
                                         <select name="nazwa">
                                             <option>1</option>
                                             <option>2</option>
@@ -72,21 +67,20 @@
                                             <option>4</option>
                                             <option>5</option>
                                             <option>6</option>
-                                        </select>
-                                    </td>
-                                </tr>  
-      <%  } %>
-    </table> 
-    <p><input type="submit" value="submit"/>
-    </form>   
-
-     <%      
-                                conn.close();
-
+                                        </select>                                     
+                                     </div>
+                                 </li>
+                                 <% } %>
+                                 <li>
+                                    <input type="submit" value="Dalej"/>  
+                                 </li>
+                            </ul>
+                         </form>   
+                             <% conn.close();
                         }
-                            catch (Exception e) {
-                      e.printStackTrace();
-                      out.println("błąd rejestracji użytkownika");
+                        catch (Exception e) {
+                            e.printStackTrace();
+                            out.println("błąd rejestracji użytkownika");
                         }
                     %>        
 
@@ -106,7 +100,7 @@
                                     </c:forEach> --%>
                 </article>
                 <aside>
-                    <h3>Wybier składniki dania, które chcesz zamówić.</h3>
+                    <h3>Wybier dania, które chcesz zamówić.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

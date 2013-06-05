@@ -42,7 +42,7 @@
                             <% i++; %>
                             <li>
                                 <input id="check<%=i %>" type="checkbox" name="skladnik" value="<%=rst.getString(1)%>" />
-                                <label for="check<%=i %>"><%=rst.getString(1)%></label>
+                                <label class="css-label" for="check<%=i %>"><%=rst.getString(1)%></label>
                             </li>                                              
                             <% } %> 
                             <li>

@@ -3,6 +3,51 @@ body {
     background-color: #d1d1d1;
 }
 
+/* Controls */
+
+input[type=checkbox] {
+        display:none;
+}
+
+input[type=checkbox] + label.css-label {
+    padding-left:20px;
+    height:15px; 
+    display:inline-block;
+    line-height:15px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox]:checked + label.css-label {
+    background-position: 0 -15px;
+}
+
+label.css-label {
+    background-image: url('../img/lite-orange-check.png');
+}
+
+div.styled-select {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    overflow: hidden;
+    background: url('../img/select-arrow.png') no-repeat right white;
+    border: 1px solid #ffab23;
+}
+
+div.styled-select select {
+    background: transparent;
+    width: 50px;
+    height: 20px;
+    border: none;
+    -webkit-appearance: none;
+}
+
+/* Structure */
+
 header, section, footer {
     padding: 0 0 35px 0px;
 }
@@ -312,6 +357,12 @@ section.windows article img {
 section.windows article p {
     text-align: justify;
     line-height: 18px;
+}
+
+section.windows article a.btn_submit {
+    position: absolute;
+    bottom: 10px;
+    margin-left: 90px;
 }
 
 /* Colors */
