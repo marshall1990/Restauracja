@@ -170,6 +170,7 @@ header h1 {
     font-weight: bolder;
     width: 200px;
     color: rgb(247, 216, 120);
+    margin-left: 35px;
 }
 
 div.container {

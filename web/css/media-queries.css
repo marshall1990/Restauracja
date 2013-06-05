@@ -28,4 +28,188 @@
     section.windows article p {
         min-height: 80px;
     }
+    
+    section aside {
+        width: 400px;
+    }
+    
+    section aside img {
+        width: 350px;
+    }
+    
+    section aside .earth {
+        width: 300px;
+        height: 300px;
+        background: url('../img/earth_tablet.png');
+        margin-left: 80px;
+    }
+}
+
+@media all and (min-width: 701px) and (max-width: 940px) {
+    div.container {
+        width: 700px;
+    }
+    
+    section.windows div.container { 
+        text-align: center;
+    }
+    
+    header h1 {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    header ul {
+        text-align: center;
+        width: 100%;
+    }
+    
+    section.windows article {
+        width: 150px;
+        min-height: 365px;
+        margin-bottom: 10px;
+        padding: 15px;
+    }
+    
+    section.windows article h3 {
+        font-size: 18px;
+        min-height: 55px;
+    }
+    
+    section.windows article img {
+        width: 140px;
+        border: 4px #cccccc solid;
+        margin: 10px 0;
+    }
+    
+    nav ul li p.msg_desktop {
+        display: none;
+    }
+    
+    nav ul li p.msg_tablet {
+        display: block;
+    }
+    
+    section.windows article p {
+        min-height: 125px;
+    }
+    
+    section aside {
+        width: 300px;
+    }
+    
+    aside img {
+        width: 260px;
+    }
+    
+    section aside .earth {
+        width: 300px;
+        height: 300px;
+        background: url('../img/earth_tablet.png');
+        margin-left: 40px;
+    }
+    
+    section article {
+        width: 320px;
+    }
+    
+    .login_fault p {
+        width: 65%;
+    }
+    
+    .login_fault {
+        width: 100%;
+        float: none;
+    }
+}
+
+@media all and (max-width: 700px) {
+    div.container {
+        width: auto;
+    }
+    
+    section.windows div.container {
+        margin: 0;
+    }
+    
+    header {
+        height: auto;
+        padding-bottom: 0;
+    }
+    
+    header h1 {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    
+    header ul {
+        float: none;
+        text-align: center;
+    }
+    
+    header ul li {
+        display: block;
+        width: 100% !important;
+        margin: 20px 0;
+    }
+    
+    header ul li label {
+        margin-right: 20px;
+    }
+    
+    section aside {
+        display: none;
+    }
+    
+    section article {
+        width: 100%;
+        text-align: center;
+    }
+    
+    section.windows article {
+        width: auto;
+        min-height: 0;
+        margin: 0 10px 30px;
+    }
+    
+    section.windows article img {
+        float: left;
+        margin-right: 10px;
+        width: auto;
+        max-width: 230px;
+    }
+    
+    section.windows article p {
+        margin-top: 15px;
+    }
+    
+    nav ul li p.msg_desktop {
+        display: none;
+    }
+    
+    nav {
+        overflow: visible;
+        float: none;
+    }
+    
+    header ul li:first-child {
+        overflow: hidden;
+    }
+    
+    header ul li {
+        margin: 10px 0;
+        padding: 0;
+    }
+    
+    header ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+    
+    header ul li:last-child a {
+        margin: 10px 0;
+    }
 }
