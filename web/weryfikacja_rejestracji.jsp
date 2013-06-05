@@ -17,6 +17,7 @@ blad=walidator.weryfikuj();
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/html5reset-1.6.1.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/media-queries.css" />
         <title>Witamy w Wirtualnej Restauracji</title>
     </head>
     <body>

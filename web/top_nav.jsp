@@ -3,7 +3,8 @@
 <nav>
     <ul>
         <li>
-            <p>Witaj <%= zalogowany.getLogin() %>, Wirtualna restauracja - zaprasza!</p>
+            <p class="msg_desktop">Witaj <%= zalogowany.getLogin() %>, Wirtualna restauracja - zaprasza!</p>
+            <p class="msg_tablet">Witaj <%= zalogowany.getLogin() %> w wirtualnej restauracji!</p>
         </li>
         <li>
             <a href="podanie_menu.jsp">Home</a>

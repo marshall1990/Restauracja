@@ -1,0 +1,31 @@
+@media all and (min-width: 941px) and (max-width: 1170px) {
+    div.container {
+        width: 940px;
+    }
+    
+    section.windows article {
+        width: 210px;
+        min-height: 350px;
+    }
+    
+    section.windows article h3 {
+        font-size: 22px;
+        min-height: 44px;
+    }
+    
+    section.windows article img {
+        width: 195px;
+    }
+    
+    nav ul li p.msg_desktop {
+        display: none;
+    }
+    
+    nav ul li p.msg_tablet {
+        display: block;
+    }
+    
+    section.windows article p {
+        min-height: 80px;
+    }
+}

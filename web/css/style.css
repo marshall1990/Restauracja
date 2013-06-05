@@ -314,6 +314,10 @@ nav ul li p {
     padding: 0 12px;
 }
 
+nav ul li p.msg_tablet {
+    display: none;
+}
+
 nav ul li img {
     width: 40px;
 }
@@ -329,10 +333,15 @@ section.windows article {
     background-color: #FFFFFF;
     border: 1px solid #cccccc;
     padding: 25px;
-    margin: 0 25px 0;
+    margin: 0 25px 45px;
     min-height: 400px;
     width: 285px;
     float: left;
+    text-align: center
+}
+
+section.windows article a:first-child {
+    text-align: left;
 }
 
 section.windows article:nth-child(n+4) {
@@ -357,13 +366,9 @@ section.windows article img {
 section.windows article p {
     text-align: justify;
     line-height: 18px;
+    min-height: 55px;
 }
 
-section.windows article a.btn_submit {
-    position: absolute;
-    bottom: 10px;
-    margin-left: 90px;
-}
 
 /* Colors */
 
