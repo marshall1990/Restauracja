@@ -1,6 +1,7 @@
 <%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%> --%>
-<%@page contentType="text/html" pageEncoding="utf-8" errorPage="errorsite.jsp"%>
+<%@page import="java.util.ArrayList"%>
+<%@page contentType="text/html" pageEncoding="utf-8" %>
 <%@ page import="org.mypackage.hello.*" %>
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
@@ -23,48 +24,27 @@
         <section>
             <div class="container">
                 <article>
-                    <%
-                    Connection conn = null;
-                    ResultSet rst=null;
-                    String sql="";
-
-                    try {
-                        Bazadanych baza = new Bazadanych(); 
-                        Class.forName(baza.getDriver1()).newInstance();
-                        conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());
-                        
-                        String dania_nazwy[]= request.getParameterValues("skladnik");
-
-                        if(dania_nazwy != null) for(int i=0; i<dania_nazwy.length; i++)
-                           // { 
-                          //     sql=sql+"SELECT `ID_dania` FROM `daniaskladniki` where `ID_skladnika` in (SELECT `ID_skladnika` from `skladniki` where `Skladnik`=?)";
-                         //      if (i<dania_nazwy.length-1) sql=sql+" UNION ";
-                           //           }        
-                            { 
-                               sql=sql+"SELECT `Nazwa` FROM danie where `ID_dania` in (SELECT `ID_dania` FROM `daniaskladniki` where `ID_skladnika` in (SELECT `ID_skladnika` from `skladniki` where `Skladnik`=?))";
-                               if (i<dania_nazwy.length-1) sql=sql+" UNION ";
-                            }
-                        PreparedStatement statement=conn.prepareStatement(sql);
-
-                        for(int i=0; i<dania_nazwy.length; i++) {
-                            statement.setString(i+1,dania_nazwy[i]);
-                          }
-                         rst=statement.executeQuery();
-                        %>
+                  <%            
+                    Daniaposkladnikach dania = new Daniaposkladnikach();
+                    if (dania.weryfikuj(request.getParameterValues("skladnik")).equals("Tak")) response.sendRedirect("errorsite.jsp");
+                  %>
                          <h1>Dania zawierające podane składniki:</h1>
                          <form name="form1" onsubmit="checkBoxValidation()" action="weryfikacja_zamowienia.jsp">
                              <ul>
-                                 <%while (rst.next()) {%>
+                                 <%!    int i = 0; %>
+                                 <% for( i=0; i<dania.dania.size(); i++) { %>
                                  <li>
-                                     <label><%=rst.getString(1)%></label>
+                                     <input type="checkbox" name="wybranedania" value="<%=dania.dania.get(i)%>" />
+                                     <label class="css-label" ><%=dania.dania.get(i)%></label>
                                      <div class="styled-select">
-                                        <select name="nazwa">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
+                                        <select name="ilosc">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
                                         </select>                                     
                                      </div>
                                  </li>
@@ -74,14 +54,6 @@
                                  </li>
                             </ul>
                          </form>   
-                             <% conn.close();
-                        }
-                        catch (Exception e) {
-                            e.printStackTrace();
-                            out.println("błąd rejestracji użytkownika");
-                        }
-                    %>        
-
                 </article>
                 <aside>
                     <h3>Wybierz dania, które chcesz zamówić.</h3>

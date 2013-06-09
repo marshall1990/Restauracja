@@ -37,7 +37,7 @@
                         PreparedStatement statement=conn.prepareStatement( sql );
                         rst=statement.executeQuery();
                      %>
-                     <h1>Wybier składniki:</h1>         
+                     <h1>Wybierz składniki:</h1>         
                      <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_dania.jsp">
                          <ul>
                             <%! int i = 0; %>

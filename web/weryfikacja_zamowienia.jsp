@@ -8,9 +8,16 @@ ResultSet rst=null;
 String sql;
 String blad=null;
 
+String wybranedania[]= request.getParameterValues("wybranedania");
+String ilosc[]= request.getParameterValues("ilosc");
+
+String all="";
+if(wybranedania != null) for(int i=0; i<wybranedania.length; i++) {
+    all=all+wybranedania[i];
 
 
 
+}
 
 %>
 <!DOCTYPE html>
