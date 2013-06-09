@@ -29,15 +29,15 @@
                     if (dania.weryfikuj(request.getParameterValues("skladnik")).equals("Tak")) response.sendRedirect("errorsite.jsp");
                   %>
                          <h1>Dania zawierające podane składniki:</h1>
-                         <form name="form1" onsubmit="checkBoxValidation()" action="weryfikacja_zamowienia.jsp">
+                         <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_potwierdzenie.jsp">
                              <ul>
                                  <%!    int i = 0; %>
                                  <% for( i=0; i<dania.dania.size(); i++) { %>
                                  <li>
-                                     <input type="checkbox" name="wybranedania" value="<%=dania.dania.get(i)%>" />
+                                     <input type="hidden" name="zamowionedania" value="<%=dania.dania.get(i)%>" />
                                      <label class="css-label" ><%=dania.dania.get(i)%></label>
                                      <div class="styled-select">
-                                        <select name="ilosc">
+                                        <select name="iloscdan">
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>

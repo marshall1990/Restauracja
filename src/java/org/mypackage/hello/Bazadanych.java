@@ -11,6 +11,12 @@ public class Bazadanych {
     private String driver1="com.mysql.jdbc.Driver";
     private String userName1="hariseld_hari";
     private String password1="123qwe";
+    
+    private String url2="jdbc:postgresql://johnny.heliohost.org:5432/";
+    private String dbName2="hariseld_zlecenia";
+    private String driver2="org.postgresql.Driver";
+    private String userName2="hariseld";
+    private String password2="123qwe";
 
 //session.setAttribute( "url2", "jdbc:mysql://johnny.heliohost.org:3306/" );
 //session.setAttribute( "dbName2", "hariseld_zlecenia" );
@@ -86,6 +92,76 @@ public class Bazadanych {
      */
     public void setPassword1(String password1) {
         this.password1 = password1;
+    }
+
+    /**
+     * @return the url2
+     */
+    public String getUrl2() {
+        return url2;
+    }
+
+    /**
+     * @param url2 the url2 to set
+     */
+    public void setUrl2(String url2) {
+        this.url2 = url2;
+    }
+
+    /**
+     * @return the dbName2
+     */
+    public String getDbName2() {
+        return dbName2;
+    }
+
+    /**
+     * @param dbName2 the dbName2 to set
+     */
+    public void setDbName2(String dbName2) {
+        this.dbName2 = dbName2;
+    }
+
+    /**
+     * @return the driver2
+     */
+    public String getDriver2() {
+        return driver2;
+    }
+
+    /**
+     * @param driver2 the driver2 to set
+     */
+    public void setDriver2(String driver2) {
+        this.driver2 = driver2;
+    }
+
+    /**
+     * @return the userName2
+     */
+    public String getUserName2() {
+        return userName2;
+    }
+
+    /**
+     * @param userName2 the userName2 to set
+     */
+    public void setUserName2(String userName2) {
+        this.userName2 = userName2;
+    }
+
+    /**
+     * @return the password2
+     */
+    public String getPassword2() {
+        return password2;
+    }
+
+    /**
+     * @param password2 the password2 to set
+     */
+    public void setPassword2(String password2) {
+        this.password2 = password2;
     }
 
    
