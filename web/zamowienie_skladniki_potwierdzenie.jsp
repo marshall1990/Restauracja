@@ -26,6 +26,8 @@
  <% 
 String[] zamowione=request.getParameterValues("zamowionedania");
 String[] ilosc=request.getParameterValues("iloscdan");
+String wynos=request.getParameter("nawynos");
+if (wynos==null) wynos=" w lokalu";
 %>                   
 <h1>Dania wybrane przez Ciebie:</h1>
                          <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_weryfikacja.jsp">
@@ -49,6 +51,15 @@ String[] ilosc=request.getParameterValues("iloscdan");
                                      </div>
                                  </li>
                                  <% } %>
+                                 <li>
+                                     <% if (wynos.equals(" na wynos")) { %> 
+                                        <input id="w" type="checkbox" checked="checked" name="nawynos" value=" na wynos" />
+                                        <label class="css-label" for="w">Zaznacz dla dań na wynos</label>
+                                     <% } else { %>
+                                        <input id="w" type="checkbox" name="nawynos" value=" na wynos" />
+                                        <label class="css-label" for="w">Zaznacz dla dań na wynos</label>
+                                     <%}%>
+                                 </li>
                                  <li>
                                     <input type="submit" value="Potwierdź zamówienie"/>  
                                  </li>

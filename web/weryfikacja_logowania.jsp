@@ -15,7 +15,10 @@ String blad=null;
 Logowanie walidator = new Logowanie();
 BeanUtils.populate(walidator, request.getParameterMap());
 blad=walidator.weryfikuj();
-if (walidator.weryfikuj().equals("Nie")) response.sendRedirect("podanie_menu.jsp");
+if (walidator.weryfikuj().equals("Nie")) {
+    if (zalogowany.getLogin().equals("Kucharz")) { response.sendRedirect("daniadowykonania.jsp");}
+      else response.sendRedirect("podanie_menu.jsp");
+}
 %>
 <!DOCTYPE html>
 <html>

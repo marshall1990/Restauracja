@@ -51,10 +51,8 @@ public class Daniaposkladnikach {
 
                 rst=statement.executeQuery();
 
-                int j = 0;
                 while (rst.next()) {
                    dania.add(rst.getString(1));
-                   j++;
                  }
                 conn.close();
             }   

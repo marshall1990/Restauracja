@@ -48,10 +48,14 @@
                                         </select>                                     
                                      </div>
                                  </li>
-                                 <% } %>
+                                 <% } %>                            
+                                 <li>
+                                    <input id="w" type="checkbox" name="nawynos" value=" na wynos" />
+                                    <label class="css-label" for="w">Zaznacz dla dań na wynos</label>
+                                 </li>
                                  <li>
                                     <input type="submit" value="Dalej"/>  
-                                 </li>
+                                 </li>                            
                             </ul>
                          </form>   
                 </article>

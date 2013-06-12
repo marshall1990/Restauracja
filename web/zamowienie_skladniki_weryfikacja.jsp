@@ -27,7 +27,9 @@
                 <article>
 <%
 Weryfikacjazamowienia dania = new Weryfikacjazamowienia();
-dania.weryfikuj(request.getParameterValues("zamowionedania"),request.getParameterValues("iloscdan"),zalogowany.getLogin());
+String wynos=request.getParameter("nawynos");
+if (wynos==null) wynos=" w lokalu";
+dania.weryfikuj(request.getParameterValues("zamowionedania"),request.getParameterValues("iloscdan"),zalogowany.getLogin(),wynos);
 %>
 <h1>Zamówienie złożone, dziękujemy.</h1>
                         

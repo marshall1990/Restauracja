@@ -22,7 +22,7 @@ public class Weryfikacjazamowienia {
      * @param ilosc
      * @return
      */
-    public String weryfikuj(String dania[], String ilosc[],String zalogowany) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+    public String weryfikuj(String dania[], String ilosc[],String zalogowany, String nawynos) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
        
         Connection conn;
         ResultSet rst;
@@ -46,7 +46,7 @@ public class Weryfikacjazamowienia {
             Class.forName(baza.getDriver2()).newInstance();
             conn = DriverManager.getConnection(baza.getUrl2()+baza.getDbName2(), baza.getUserName2(),baza.getPassword2());
               
-            sql="insert into lista_zamowien values (?,?)";
+            sql="insert into lista_zamowien values (?,?,?)";
             PreparedStatement statement1;
             statement1=conn.prepareStatement(sql);
             
@@ -54,6 +54,7 @@ public class Weryfikacjazamowienia {
                 for (int j=0;j<Integer.parseInt(ilosc[i]);j++) {
                     statement1.setString(1,dania[i]);
                     statement1.setString(2,Integer.toString(ID));
+                    statement1.setString(3,nawynos);
                     statement1.executeUpdate();
                 }
             }
