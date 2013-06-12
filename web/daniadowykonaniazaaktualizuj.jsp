@@ -1,11 +1,12 @@
 
 
-<%@page import="org.mypackage.hello.Listadan"%>
+<%@page import="org.mypackage.hello.Przeniesieniedan"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-Listadan listadan = new Listadan();
-listadan.wyswietl("lista_zamowien");
+String k;
+Przeniesieniedan przenies = new Przeniesieniedan();
+k=przenies.przenies(request.getParameterValues("wykonanedania"));
 %>
 <html>
     <head>
@@ -17,17 +18,18 @@ listadan.wyswietl("lista_zamowien");
         <form name="form1" onsubmit="checkBoxValidation()" action="daniadowykonaniazaaktualizuj.jsp">
                              <ul>
                                  <%!    int i = 0; %>
-                                 <% for( i=0; i<listadan.dania.size(); i=i+4) { %>
+                                 <% for( i=0; i<przenies.dania.size(); i=i+4) { %>
                                  <li>
-                                     <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=listadan.dania.get(i+3)%>" />
-                                     <label class="css-label" for="check<%=i %>" ><%=listadan.dania.get(i)%></label> 
-                                     <label class="css-label" for="check<%=i %>"><%=listadan.dania.get(i+2)%></label> dla 
-                                     <label class="css-label" for="check<%=i %>"><%=listadan.dania.get(i+1)%></label>
+                                     <input type="checkbox" name="wykonanedania" value="<%=przenies.dania.get(i+3)%>" />
+                                     <label class="css-label" ><%=przenies.dania.get(i)%></label> 
+                                     <label class="css-label" ><%=przenies.dania.get(i+2)%></label> dla 
+                                     <label class="css-label" ><%=przenies.dania.get(i+1)%></label>
                                  </li>
                                  <% } %>
                                  <li>
                                     <input type="submit" value="Dalej"/>  
                                  </li>
+                                 <%=k%>
                             </ul>
                          </form>
         
