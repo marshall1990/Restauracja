@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <%
 Listadan listadan = new Listadan();
-listadan.wyswietl("lista_zamowien");
+listadan.wyswietl("lista_dostawca");
 %>
 <html>
     <head>
@@ -14,7 +14,7 @@ listadan.wyswietl("lista_zamowien");
     </head>
     <body>
         <h1>Hello World!</h1>
-        <form name="form1" onsubmit="checkBoxValidation()" action="daniadowykonaniazaaktualizuj.jsp">
+        <form name="form1" onsubmit="checkBoxValidation()" action="dostawcadaniadowykonaniazaaktualizuj.jsp">
                              <ul>
                                  <%!    int i = 0; %>
                                  <% for( i=0; i<listadan.dania.size(); i=i+4) { %>
@@ -29,8 +29,6 @@ listadan.wyswietl("lista_zamowien");
                                     <input type="submit" value="Dalej"/>  
                                  </li>
                             </ul>
-                         </form>
-        
-        
+                         </form>      
     </body>
 </html>

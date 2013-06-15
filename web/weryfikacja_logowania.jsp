@@ -16,8 +16,11 @@ Logowanie walidator = new Logowanie();
 BeanUtils.populate(walidator, request.getParameterMap());
 blad=walidator.weryfikuj();
 if (walidator.weryfikuj().equals("Nie")) {
-    if (zalogowany.getLogin().equals("Kucharz")) { response.sendRedirect("daniadowykonania.jsp");}
-      else response.sendRedirect("podanie_menu.jsp");
+    if (zalogowany.getLogin().equals("kucharz")) { response.sendRedirect("kucharzdaniadowykonania.jsp");}
+    if (zalogowany.getLogin().equals("kelner")) { response.sendRedirect("kelnerdaniadowykonania.jsp");}
+    if (zalogowany.getLogin().equals("dostawca")) { response.sendRedirect("dostawcadaniadowykonania.jsp");}
+    if (zalogowany.getLogin().equals("restaurator")) { response.sendRedirect("restauratordaniadowykonania.jsp");}
+    response.sendRedirect("podanie_menu.jsp");
 }
 %>
 <!DOCTYPE html>
