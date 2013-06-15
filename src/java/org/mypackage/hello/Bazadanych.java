@@ -6,6 +6,7 @@ package org.mypackage.hello;
 
 
 public class Bazadanych {
+    //Test1
     private String url1="jdbc:mysql://johnny.heliohost.org:3306/";
     private String dbName1="hariseld_dania";
     private String driver1="com.mysql.jdbc.Driver";
