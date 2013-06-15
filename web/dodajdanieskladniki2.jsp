@@ -1,9 +1,10 @@
 
+<%@page import="org.mypackage.hello.Bazadanych"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
-<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,8 +31,9 @@
                     String blad=null;
 
                     try {
-                        Class.forName((String)session.getAttribute( "driver" )).newInstance();
-                        conn = DriverManager.getConnection((String)session.getAttribute( "url" )+(String)session.getAttribute( "dbName" ),(String)session.getAttribute( "userName" ),(String)session.getAttribute( "password" ));   
+                        Bazadanych baza = new Bazadanych(); 
+                        Class.forName(baza.getDriver1()).newInstance();
+                        conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());   
 
                         String sql="SELECT skladnik,ID_skladnika FROM skladniki ORDER BY skladnik";
 
@@ -39,7 +41,7 @@
                         rst=statement.executeQuery();
                     %>
                     <h1>Wybier składniki dania, które chcesz skomponować.</h1>     
-                    <form onsubmit="checkBoxValidation()" action="dodajzdjecia.jsp">
+                    <form onsubmit="checkBoxValidation()" action="dodajdanieskladniki3.jsp">
                         <ul>
                             <%! int i = 0; %>
                             <% while (rst.next()) {  %>
@@ -54,6 +56,9 @@
                             </li>
                         </ul>
                     </form>
+                            
+                    <input type="hidden" name="nazwadania" value="<%=request.getParameter("nazwadania")%>" />
+                            
                     <%
                         conn.close();
                         }

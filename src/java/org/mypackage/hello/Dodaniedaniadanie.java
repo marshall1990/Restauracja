@@ -8,13 +8,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
  *
  * @author Marzena
  */
-public class Dodaniedania {
+public class Dodaniedaniadanie {
     
     private String nazwadania="Brak";
     private String przepis="Brak";
@@ -47,7 +48,7 @@ public class Dodaniedania {
         this.przepis = przepis;
     }
     
-    public String weryfikuj() {
+    public String weryfikuj(String Login) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
         String blad;
         blad = "Nie";
         Connection conn = null;
@@ -70,7 +71,7 @@ public class Dodaniedania {
         
         if (blad.equals("Nie")) {
         
-            try {
+          //  try {
                 
                 Bazadanych baza = new Bazadanych(); 
                 Class.forName(baza.getDriver1()).newInstance();
@@ -85,14 +86,12 @@ public class Dodaniedania {
                     blad="Danie o takiej nazwie już jest w menu. Podaj inną nazwę";
                 }
                    else {
-                       
-                       Zalogowany zalogowany = new Zalogowany();   
                     
-                       sql="select ID_User from users where login='"+zalogowany.getLogin()+"' and password='"+zalogowany.getPassword()+"'";
+                       sql="select ID_User from users where login='"+Login+"'";
                        Statement statement0=conn.createStatement();
                        rst=statement0.executeQuery(sql);
                        rst.next();
-                       //userID=rst.getString(1);
+                       userID=rst.getString(1);
 
                        sql="insert into `danie` values (?,?,?,?)";
                        PreparedStatement statement1=conn.prepareStatement(sql);
@@ -103,10 +102,10 @@ public class Dodaniedania {
                        statement1.executeUpdate();
                      }
                 conn.close();    
-            }
-            catch (Exception e) {
-                 blad="Błąd połączenia z bazą danych";    
-               }
+         //  }
+           // catch (Exception e) {
+             //    blad="Błąd połączenia z bazą danych";    
+              // }
          }
          else {
             blad=blad+".";

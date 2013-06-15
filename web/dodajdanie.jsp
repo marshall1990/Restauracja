@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
 <!DOCTYPE html>
 <html>

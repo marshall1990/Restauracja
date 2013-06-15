@@ -1,17 +1,19 @@
-<%@page import="org.mypackage.hello.Dodaniedania"%>
+<%@page import="org.mypackage.hello.Dodaniedaniadanie"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="org.apache.commons.beanutils.BeanUtils"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
 <%
 String blad=null;
-Dodaniedania walidator = new Dodaniedania();
+Dodaniedaniadanie walidator = new Dodaniedaniadanie();//errorPage="errorsite.jsp"
 BeanUtils.populate(walidator, request.getParameterMap());
-blad=walidator.weryfikuj();
-if (walidator.weryfikuj().equals("Nie")) response.sendRedirect("dodajdanieskladniki.jsp");          
+blad=walidator.weryfikuj(zalogowany.getLogin());
+if (blad.equals("Nie")) response.sendRedirect("dodajdanieskladniki2.jsp");
+session.setAttribute("dodawanedanie",request.getParameter("nazwadania"));         
 %>
 <!DOCTYPE html>
 <html>
@@ -29,6 +31,8 @@ if (walidator.weryfikuj().equals("Nie")) response.sendRedirect("dodajdanieskladn
                 <jsp:include page="top_nav.jsp" />
             </div>   
         </header>
+            
+            <input type="hidden" name="nazwadania" value="<%=walidator.getNazwadania()%>" />
             
         <section>
             <div class="container">
