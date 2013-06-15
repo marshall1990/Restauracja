@@ -57,8 +57,6 @@
                         </ul>
                     </form>
                             
-                    <input type="hidden" name="nazwadania" value="<%=request.getParameter("nazwadania")%>" />
-                            
                     <%
                         conn.close();
                         }

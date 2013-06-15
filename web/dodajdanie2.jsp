@@ -32,8 +32,6 @@ session.setAttribute("dodawanedanie",request.getParameter("nazwadania"));
             </div>   
         </header>
             
-            <input type="hidden" name="nazwadania" value="<%=walidator.getNazwadania()%>" />
-            
         <section>
             <div class="container">
                 <article>
