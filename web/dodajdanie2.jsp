@@ -38,7 +38,7 @@ session.setAttribute("dodawanedanie",request.getParameter("nazwadania"));
             <div class="container">
                 <article>
                     <h1>Uwaga!</h1>
-                    <p class="red"><%=blad %></p>
+                    <p class="red"><%=walidator.getBlad()%></p>
                     <a href="dodajdanie.jsp" class="btn_submit">OK</a>
                 </article>
                 <aside>

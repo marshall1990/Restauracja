@@ -30,7 +30,7 @@ if (statystyka.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.js
         <section>
             <div class="container restaurator">
                 <article>
-                        <h1>Podsumowanie:</h1>
+                        <h1>Statystyka</h1>
                         <table>
                             <thead>
                                 <tr>
@@ -55,7 +55,7 @@ if (statystyka.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.js
                         </form>     
                 </article>
                 <aside>
-                    <h3>Wybierz zamówienia, które chcesz dostarczyć.</h3>
+                    <h3></h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

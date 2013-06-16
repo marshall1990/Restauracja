@@ -1,5 +1,6 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> --%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="org.mypackage.hello.Bazadanych"%>
 <%@page import="org.mypackage.hello.Listadan"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
@@ -7,7 +8,8 @@
 <!DOCTYPE html>
 <%
 Listadan listadan = new Listadan();
-listadan.wyswietl("lista_kelner");
+ArrayList<String> spisdan;
+spisdan = listadan.wyswietl("lista_kelner");
 if (listadan.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
 %>
 <html>
@@ -29,17 +31,17 @@ if (listadan.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp"
         <section>
             <div class="container dostawca">
                 <article>
-                        <h1>Wybierz dania:</h1>
+                        <h1>Zaznacz dania już dostarczone:</h1>
                         <form name="form1" onsubmit="checkBoxValidation()" action="kelnerdaniadowykonaniazaaktualizuj.jsp">
                              <ul>
                                  <%!    int i = 0; %>
-                                 <% for( i=0; i<listadan.dania.size(); i=i+4) { %>
+                                 <% for( i=0; i<spisdan.size(); i=i+4) { %>
                                  <li>
-                                     <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=listadan.dania.get(i+3)%>" />
+                                     <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=spisdan.get(i+3)%>" />
                                      <label class="css-label" for="check<%=i %>" >
-                                         <%=listadan.dania.get(i)%>
-                                         <%=listadan.dania.get(i+2)%> dla zamówienia nr 
-                                         <%=listadan.dania.get(i+1)%>
+                                         <%=spisdan.get(i)%>
+                                         <%=spisdan.get(i+2)%> dla zamówienia nr 
+                                         <%=spisdan.get(i+1)%>
                                      </label>
                                  </li>
                                  <% } %>
@@ -50,7 +52,7 @@ if (listadan.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp"
                          </form>      
                 </article>
                 <aside>
-                    <h3>Wybierz dania, które chcesz aby zostały wykonane.</h3>
+                    <h3></h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

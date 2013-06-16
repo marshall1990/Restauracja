@@ -40,7 +40,7 @@
                         PreparedStatement statement=conn.prepareStatement( sql );
                         rst=statement.executeQuery();
                     %>
-                    <h1>Wybier składniki dania, które chcesz skomponować.</h1>     
+                    <h1>Wybierz składniki dania:</h1>     
                     <form onsubmit="checkBoxValidation()" action="dodajdanieskladniki3.jsp">
                         <ul>
                             <%! int i = 0; %>
@@ -67,7 +67,7 @@
                     %> 
                 </article>
                 <aside>
-                    <h3>Dodaj przepis dania, które chcesz skomponować.</h3>
+                    <h3></h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

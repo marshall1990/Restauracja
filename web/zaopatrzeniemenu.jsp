@@ -31,7 +31,7 @@ if (braki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
         <section>
             <div class="container dostawca">
                 <article>
-                        <h1>Wybierz dania:</h1>
+                        <h1>Wybierz składniki, które już uzupełniłeś:</h1>
                         <form name="form1" onsubmit="checkBoxValidation()" action="zaopatrzenieuzupelnij.jsp">
                              <ul>
                                  <% for( int i=0; i<listaskladnikow.size();i++) { %>
@@ -49,7 +49,7 @@ if (braki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
                          </form>                           
                 </article>                    
                 <aside>
-                    <h3>Wybierz zamówienia, które chcesz wykonać.</h3>
+                    <h3></h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>
