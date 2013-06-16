@@ -52,7 +52,14 @@ if (statystyka.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.js
                                 <input type="submit" value="Dodaj danie"/>  
                             </li>
                         </ul>
-                        </form>     
+                        </form> 
+                        <form name="form1" onsubmit="checkBoxValidation()" action="dodajskladnik.jsp">
+                         <ul>
+                            <li>
+                                <input type="submit" value="Dodaj skladnik"/>  
+                            </li>
+                        </ul>
+                        </form> 
                 </article>
                 <aside>
                     <h3></h3>
