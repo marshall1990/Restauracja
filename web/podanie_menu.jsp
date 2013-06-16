@@ -27,10 +27,10 @@
         <section class="windows">
             <div class="container">
                 <article>
-                    <a class="brown" href="#"><h3>Wszystkie dania</h3></a>
+                    <a class="brown" href="zamowienie_wszystko.jsp"><h3>Wszystkie dania</h3></a>
                     <img src="img/menu_img1.jpg" alt="restauracje" />
                     <p>Zawiera wszystkie lokale restauratora. Restaurator może dodawać oraz modyfikować lokale.</p>
-                    <a class="btn_submit" href="#" >Wybierz</a>
+                    <a class="btn_submit" href="zamowienie_wszystko.jsp" >Wybierz</a>
                 </article>
                 <article>
                     <a class="orange" href="zamowienie_skladniki.jsp"><h3>Wyszukiwanie po składnikach</h3></a>

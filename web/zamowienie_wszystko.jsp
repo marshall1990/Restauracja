@@ -1,8 +1,9 @@
-
-
-<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
-
-
+<%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%> --%>
+<%@page import="java.util.ArrayList"%>
+<%@page contentType="text/html" pageEncoding="utf-8" %>
+<%@ page import="org.mypackage.hello.*" %>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,23 +24,22 @@
         <section>
             <div class="container">
                 <article>
-                    <% 
-                    String[] zamowione=request.getParameterValues("zamowionedania");
-                    String[] ilosc=request.getParameterValues("iloscdan");
-                    String wynos=request.getParameter("nawynos");
-                    if (wynos==null) wynos=" w lokalu";
-                    %>                   
-                    <h1>Potwierdź wybór.</h1>
-                         <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_weryfikacja.jsp">
+                  <%            
+                    Calemenu dania = new Calemenu();
+                    ArrayList<String> listadan;
+                    listadan=dania.wypisz();
+                    if (dania.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+                  %>
+                         <h1>Dania zawierające podane składniki:</h1>
+                         <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_potwierdzenie.jsp">
                              <ul>
                                  <%!    int i = 0; %>
-                                 <% for( i=0; i<zamowione.length; i++) { %>
+                                 <% for( i=0; i<listadan.size(); i++) { %>
                                  <li>
-                                     <input type="hidden" name="zamowionedania" value="<%=zamowione[i]%>" />
-                                     <label class="css-label" ><%=zamowione[i]%></label>
+                                     <input type="hidden" name="zamowionedania" value="<%=listadan.get(i)%>" />
+                                     <label class="css-label" ><%=listadan.get(i)%></label>
                                      <div class="styled-select">
                                         <select name="iloscdan">
-                                            <option value="<%=ilosc[i]%>"><%=ilosc[i]%></option>
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -50,19 +50,14 @@
                                         </select>                                     
                                      </div>
                                  </li>
-                                 <% } %>
+                                 <% } %>                            
                                  <li>
-                                     <% if (wynos.equals(" na wynos")) { %> 
-                                        <input id="w" type="checkbox" checked="checked" name="nawynos" value=" na wynos" />
-                                        <label class="css-label" for="w">Zaznacz dla dań na wynos</label>
-                                     <% } else { %>
-                                        <input id="w" type="checkbox" name="nawynos" value=" na wynos" />
-                                        <label class="css-label" for="w">Zaznacz dla dań na wynos</label>
-                                     <%}%>
+                                    <input id="w" type="checkbox" name="nawynos" value=" na wynos" />
+                                    <label class="css-label" for="w">Zaznacz dla dań na wynos</label>
                                  </li>
                                  <li>
-                                    <input type="submit" value="Potwierdź zamówienie"/>  
-                                 </li>
+                                    <input type="submit" value="Dalej"/>  
+                                 </li>                            
                             </ul>
                          </form>   
                 </article>
