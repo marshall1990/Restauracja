@@ -46,6 +46,16 @@ listadan.wyswietl("lista_zamowien");
                                  </li>
                             </ul>
                          </form>
+                                 
+                       <form name="form1" onsubmit="checkBoxValidation()" action="kucharzuzupelnijskladniki.jsp">
+                         <ul>
+                            <li>
+                                <input type="submit" value="Uzupełnij składniki"/>
+                            </li>
+                        </ul>
+                       </form>                                       
+                                 
+                                 
                 </article>
                 <aside>
                     <h3>Wybierz zamówienia, które chcesz wykonać.</h3>
