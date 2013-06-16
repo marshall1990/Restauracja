@@ -8,11 +8,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Zaopatrzenie {
-    public void uzupelnij(String id[]) {
+    public void uzupelnij(String id[]) throws SQLException {
 
-            Connection conn;
+            Connection conn = null;
             ResultSet rst;
             String sql;
             
@@ -30,8 +31,9 @@ public class Zaopatrzenie {
                     statement.executeUpdate();
                 }
                 
-                conn.close();
+
             }
             catch(Exception e){}
+            finally { conn.close(); }
     }
 }

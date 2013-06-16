@@ -48,7 +48,7 @@ public class Dodaniedaniadanie {
         this.przepis = przepis;
     }
     
-    public String weryfikuj(String Login) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
+    public String weryfikuj(String Login) throws SQLException  {
         String blad;
         blad = "Nie";
         Connection conn = null;
@@ -71,7 +71,7 @@ public class Dodaniedaniadanie {
         
         if (blad.equals("Nie")) {
         
-          //  try {
+            try {
                 
                 Bazadanych baza = new Bazadanych(); 
                 Class.forName(baza.getDriver1()).newInstance();
@@ -101,11 +101,11 @@ public class Dodaniedaniadanie {
                        statement1.setString(4,userID);
                        statement1.executeUpdate();
                      }
-                conn.close();    
-         //  }
-           // catch (Exception e) {
-             //    blad="Błąd połączenia z bazą danych";    
-              // }
+            }
+            catch (Exception e) {
+                 blad="Błąd połączenia z bazą danych";    
+               }
+            finally { conn.close(); }
          }
          else {
             blad=blad+".";

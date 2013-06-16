@@ -8,14 +8,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Brakujacedodaj {
 
     
     
-    public void dodaj(String[] braki){
+    public void dodaj(String[] braki) throws SQLException  {
     
-        Connection conn;
+        Connection conn = null;
         ResultSet rst;
         
      try {
@@ -32,10 +33,15 @@ public class Brakujacedodaj {
                 statement1.executeUpdate();
                }  
 
-            conn.close();       
+                   
           }
            catch (Exception e) {
-           }  
+           } 
+          finally { conn.close(); }
+
+
+//Czytaj więcej na: http://javastart.pl/programowanie-obiektowe/wyjatki-blok-try-catch/#ixzz2WO73fAFf
+
     }
     
 }

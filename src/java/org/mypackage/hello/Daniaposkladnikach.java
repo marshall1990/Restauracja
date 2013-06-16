@@ -26,9 +26,9 @@ public class Daniaposkladnikach {
      * @throws InstantiationException
      * @throws IllegalAccessException
      */
-    public String weryfikuj(String skladniki[]) {
+    public String weryfikuj(String skladniki[]) throws SQLException {
         
-        Connection conn;
+        Connection conn = null;
         ResultSet rst;
         String sql="";
 
@@ -54,10 +54,10 @@ public class Daniaposkladnikach {
                 while (rst.next()) {
                    dania.add(rst.getString(1));
                  }
-                conn.close();
             }   
         }
         catch (Exception e){ blad="Tak";}
+        finally { conn.close(); }
         return blad;
     }     
 }

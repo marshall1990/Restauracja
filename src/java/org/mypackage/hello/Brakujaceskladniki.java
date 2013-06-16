@@ -5,16 +5,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Brakujaceskladniki {
        
-    public ArrayList<String> wypisz() {
+    public ArrayList<String> wypisz() throws SQLException {
         
         ArrayList<String> skladniki;
         skladniki = new ArrayList<String>();
         
-        Connection conn;
+        Connection conn = null;
         ResultSet rst;
 
                     try {
@@ -30,11 +31,11 @@ public class Brakujaceskladniki {
                         while(rst.next()){
                            skladniki.add(rst.getString(1));
                          }
-                        conn.close();
                        }
                       catch (Exception e) {
                       
-                      }             
+                      }  
+                    finally { conn.close(); }
         return skladniki;
     }  
 }

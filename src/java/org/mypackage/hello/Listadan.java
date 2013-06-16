@@ -7,6 +7,7 @@ package org.mypackage.hello;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -18,10 +19,10 @@ public class Listadan {
      *
      * @param bazadan
      */
-    public void wyswietl(String bazadan) {    
+    public void wyswietl(String bazadan) throws SQLException {    
         
         String blad = "Nie";
-        Connection conn;
+        Connection conn = null;
         ResultSet rst;
         String sql;
         
@@ -40,9 +41,9 @@ public class Listadan {
                    dania.add(rst.getString(3));
                    dania.add(Integer.toString(rst.getInt(4)));
                  }
-                conn.close();
         }
         catch(Exception e) {}
+        finally { conn.close(); }
     }    
     
     

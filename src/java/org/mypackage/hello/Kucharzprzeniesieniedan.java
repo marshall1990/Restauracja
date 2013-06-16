@@ -13,21 +13,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Kucharzprzeniesieniedan {
-    
-      //public ArrayList<String> dania = new ArrayList<String>();  
-    
+      
     /**
      *
      * @param id
      */
-    public String przenies(String id[]) throws InstantiationException, SQLException, ClassNotFoundException, IllegalAccessException{
+    public String przenies(String id[]) throws SQLException {
 
             String ids = "(";
-            Connection conn;
+            Connection conn = null;
             ResultSet rst;
             String sql,sqlw,sqll,sqld;
             
-           // try {
+            try {
                 Bazadanych baza= new Bazadanych();
                 Class.forName(baza.getDriver2()).newInstance();
                 conn = DriverManager.getConnection(baza.getUrl2()+baza.getDbName2(), baza.getUserName2(),baza.getPassword2());
@@ -37,16 +35,8 @@ public class Kucharzprzeniesieniedan {
                 ids=ids.substring(0,ids.length()-1);
                 ids=ids+")";
                 sql="select * from lista_zamowien where id in "+ids;
-                //sql="select * from lista_zamowien where id in (27,28)";
                 Statement statement=conn.createStatement();
                 rst=statement.executeQuery(sql);
-
-                //while (rst.next()) {
-                  //     dania.add(rst.getString(1));
-                    //   dania.add(rst.getString(2));
-                      // dania.add(rst.getString(3));
-                       //dania.add(Integer.toString(rst.getInt(4)));
-                    // }
                 
                 sqlw="insert into lista_dostawca values (?,?,?,?)";
                 PreparedStatement statementw;
@@ -77,9 +67,9 @@ public class Kucharzprzeniesieniedan {
                 Statement statementd;
                 statementd=conn.createStatement();
                 statementd.executeUpdate(sqld);
-                conn.close();
-            //}
-           // catch(Exception e){}
+            }
+            catch(Exception e){}
+            finally { conn.close(); }
         return ids;
     }
 }

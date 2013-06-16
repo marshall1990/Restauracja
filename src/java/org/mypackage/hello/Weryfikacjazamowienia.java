@@ -22,14 +22,14 @@ public class Weryfikacjazamowienia {
      * @param ilosc
      * @return
      */
-    public String weryfikuj(String dania[], String ilosc[],String zalogowany, String nawynos) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+    public String weryfikuj(String dania[], String ilosc[],String zalogowany, String nawynos) throws SQLException  {
        
-        Connection conn;
+        Connection conn = null;
         ResultSet rst;
         String sql;
         Integer ID;
 
-        //try {
+        try {
             Bazadanych baza = new Bazadanych();
             
             Class.forName(baza.getDriver1()).newInstance();
@@ -59,10 +59,11 @@ public class Weryfikacjazamowienia {
                 }
             }
             
-            conn.close();
+
             
-        //}
-        //catch (Exception e){ blad="Tak";}
+        }
+        catch (Exception e){}
+        finally { conn.close(); }
         return zalogowany;
         
         

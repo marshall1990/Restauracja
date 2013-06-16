@@ -15,14 +15,14 @@ import java.sql.Statement;
 public class Dostawcaprzeniesieniedan {
     
     
-    public String przenies(String id[]) throws InstantiationException, SQLException, ClassNotFoundException, IllegalAccessException{
+    public String przenies(String id[]) throws SQLException {
 
             String ids = "(";
-            Connection conn;
+            Connection conn = null;
             ResultSet rst;
             String sql,sqlw,sqll,sqld;
             
-           // try {
+            try {
                 Bazadanych baza= new Bazadanych();
                 Class.forName(baza.getDriver2()).newInstance();
                 conn = DriverManager.getConnection(baza.getUrl2()+baza.getDbName2(), baza.getUserName2(),baza.getPassword2());
@@ -51,9 +51,9 @@ public class Dostawcaprzeniesieniedan {
                 Statement statementd;
                 statementd=conn.createStatement();
                 statementd.executeUpdate(sqld);
-                conn.close();
-            //}
-           // catch(Exception e){}
+            }
+            catch(Exception e){}
+            finally { conn.close(); }
         return ids;
     }
 }

@@ -25,14 +25,14 @@ public class Statystyka {
      * @throws ClassNotFoundException
      * @throws IllegalAccessException
      */
-    public int policz() throws InstantiationException, SQLException, ClassNotFoundException, IllegalAccessException{
+    public int policz() throws SQLException {
      
-     Connection conn2,conn1,conn;
+     Connection conn2,conn1,conn = null;
      ResultSet rst;
      String sqls,sql;
      int ile=0;
             
-           // try {
+            try {
                 Bazadanych baza = new Bazadanych(); 
                 Class.forName(baza.getDriver2()).newInstance();
                 conn = DriverManager.getConnection(baza.getUrl2()+baza.getDbName2(), baza.getUserName2(),baza.getPassword2()); 
@@ -47,9 +47,9 @@ public class Statystyka {
                         dania.add(Integer.toString(rst.getInt(2)));
                     }
                 }
-                conn.close();
-             //}
-           // catch(Exception e){}
+             }
+            catch(Exception e){}
+            finally { conn.close(); }
         return ile;
     }
 }

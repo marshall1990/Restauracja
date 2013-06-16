@@ -14,13 +14,13 @@ import java.sql.Statement;
 public class Dodaniedaniaskladniki {
     
     
-    public String dodaj(String skladniki[], String nazwa) throws ClassNotFoundException, InstantiationException, InstantiationException, IllegalAccessException, SQLException {
+    public String dodaj(String skladniki[], String nazwa) throws SQLException {
     
         Connection conn = null;
         ResultSet rst=null;
         
 
-        //try {
+        try {
             Bazadanych baza = new Bazadanych(); 
             Class.forName(baza.getDriver1()).newInstance();
             conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());
@@ -40,10 +40,10 @@ public class Dodaniedaniaskladniki {
                 statement1.executeUpdate();
                }  
 
-            conn.close();       
-         // }
-          //  catch (Exception e) {
-           //   }  
+     
+          }
+           catch (Exception e) {   }  
+           finally { conn.close(); }
         return nazwa;
 
     

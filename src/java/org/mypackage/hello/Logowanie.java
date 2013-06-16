@@ -7,6 +7,7 @@ package org.mypackage.hello;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 
@@ -46,9 +47,9 @@ public class Logowanie {
         this.password = password;
     }
     
-    public String weryfikuj() {
+    public String weryfikuj() throws SQLException {
         String blad = "Nie";
-        Connection conn;
+        Connection conn = null;
         ResultSet rst;
         String sql;
         
@@ -79,12 +80,12 @@ public class Logowanie {
                 if (rst.getInt(1)>0) {       } //response.sendRedirect("podanie_menu.jsp");
                    else {
                       blad="Użytkownik o podanej nazwie lub podanym haśle nie istnieje.";
-                     }
-                conn.close();    
+                     }  
               }
             catch (Exception e) {
                  blad="Błąd połączenia z bazą danych";    
                }
+            finally { conn.close(); }
           }
         else {
             blad=blad+".";

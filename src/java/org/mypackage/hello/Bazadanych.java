@@ -19,12 +19,6 @@ public class Bazadanych {
     private String userName2="hariseld";
     private String password2="123qwe";
 
-//session.setAttribute( "url2", "jdbc:mysql://johnny.heliohost.org:3306/" );
-//session.setAttribute( "dbName2", "hariseld_zlecenia" );
-//session.setAttribute( "driver2", "com.mysql.jdbc.Driver" );
-//session.setAttribute( "userName2", "hariseld_hari" );
-//session.setAttribute( "password2", "123qwe" );
-
     /**
      * @return the url1
      */
