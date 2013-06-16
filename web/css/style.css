@@ -356,6 +356,7 @@ section.windows article h3 {
     border-bottom: 2px #d1d1d1 dotted;
     text-transform: uppercase;
     font-weight: bold;
+    text-align: center;
 }
 
 section.windows article img {
@@ -413,4 +414,19 @@ section aside .earth {
 
 section div.dostawca article label {
     width: auto;
+}
+
+/* Restaurator */
+
+div.restaurator table {
+    width: 95%;
+}
+
+div.restaurator table thead {
+    font-weight: bold;
+}
+
+div.restaurator table td {
+    border: 1px solid #000000;
+    padding: 5px;
 }

@@ -25,24 +25,31 @@ statystyka.policz();
         </header>
             
         <section>
-            <div class="container dostawca">
+            <div class="container restaurator">
                 <article>
                         <h1>Podsumowanie:</h1>
-                             <ul>
-                                 <%!    int i = 0; %>
-                                 <% for( i=0; i<statystyka.dania.size(); i=i+2) { %>
-                                 <li>
-                                     <p><%=statystyka.dania.get(i)%> <%=statystyka.dania.get(i+1)%></p>
-                                 </li>
-                                 <% } %>
-                            </ul>   
-                            <form name="form1" onsubmit="checkBoxValidation()" action="dodajdanie.jsp">
-                             <ul>
-                                 <li>
-                                    <input type="submit" value="Dodaj danie"/>  
-                                 </li>
-                            </ul>
-                         </form>     
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Nazwa dania</td>
+                                    <td>Ilość</td>
+                                </tr>
+                            </thead>
+                            <%!    int i = 0; %>
+                            <% for( i=0; i<statystyka.dania.size(); i=i+2) { %>
+                            <tr>
+                                <td><%=statystyka.dania.get(i)%></td>
+                                <td><%=statystyka.dania.get(i+1)%></td>
+                            </tr>
+                            <% } %>
+                        </table>  
+                        <form name="form1" onsubmit="checkBoxValidation()" action="dodajdanie.jsp">
+                         <ul>
+                            <li>
+                                <input type="submit" value="Dodaj danie"/>  
+                            </li>
+                        </ul>
+                        </form>     
                 </article>
                 <aside>
                     <h3>Wybierz zamówienia, które chcesz dostarczyć.</h3>

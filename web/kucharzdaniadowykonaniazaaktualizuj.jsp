@@ -23,7 +23,7 @@ response.sendRedirect("kucharzdaniadowykonania.jsp");
                                  <li>
                                      <input type="checkbox" name="wykonanedania" value="<//%=przenies.dania.get(i+3)%>" />
                                      <label class="css-label" ><//%=przenies.dania.get(i)%></label> 
-                                     <label class="css-label" ><//%=przenies.dania.get(i+2)%></label> dla 
+                                     <label class="css-label" ><//%=przenies.dania.get(i+2)%></label> dla zamówienia nr  
                                      <label class="css-label" ><//%=przenies.dania.get(i+1)%></label>
                                  </li>
                                  <//% } %>

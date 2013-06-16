@@ -37,7 +37,7 @@ listadan.wyswietl("lista_dostawca");
                                      <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=listadan.dania.get(i+3)%>" />
                                      <label class="css-label" for="check<%=i %>">
                                      <%=listadan.dania.get(i)%>
-                                     <%=listadan.dania.get(i+2)%> dla
+                                     <%=listadan.dania.get(i+2)%> dla zamówienia nr 
                                      <%=listadan.dania.get(i+1)%>
                                      </label> 
                                  </li>
