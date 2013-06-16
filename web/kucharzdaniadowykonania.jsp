@@ -30,7 +30,22 @@ listadan.wyswietl("lista_zamowien");
                                  </li>
                             </ul>
                          </form>
-        
+        <form onsubmit="checkBoxValidation()" action="kucharzbrakujaceskladniki.jsp">
+                             <ul>
+                                 <%!    int i = 0; %>
+                                 <% for( i=0; i<listadan.dania.size(); i=i+4) { %>
+                                 <li>
+                                     <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=listadan.dania.get(i+3)%>" />
+                                     <label class="css-label" for="check<%=i %>" ><%=listadan.dania.get(i)%></label> 
+                                     <label class="css-label" for="check<%=i %>"><%=listadan.dania.get(i+2)%></label> dla 
+                                     <label class="css-label" for="check<%=i %>"><%=listadan.dania.get(i+1)%></label>
+                                 </li>
+                                 <% } %>
+                                 <li>
+                                    <input type="submit" value="Dalej"/>  
+                                 </li>
+                            </ul>
+                         </form>
         
     </body>
 </html>
