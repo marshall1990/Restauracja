@@ -15,18 +15,13 @@ import java.util.ArrayList;
 
 public class Statystyka {
     
-    public ArrayList<String> dania = new ArrayList<String>();
     
-    /**
-     *
-     * @return
-     * @throws InstantiationException
-     * @throws SQLException
-     * @throws ClassNotFoundException
-     * @throws IllegalAccessException
-     */
-    public int policz() throws SQLException {
+    private String blad="Nie";
+    
+    public ArrayList<String> policz() throws SQLException {
      
+     ArrayList<String> dania;
+     dania = new ArrayList<String>();
      Connection conn2,conn1,conn = null;
      ResultSet rst;
      String sqls,sql;
@@ -48,8 +43,18 @@ public class Statystyka {
                     }
                 }
              }
-            catch(Exception e){}
+            catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        }
             finally { conn.close(); }
-        return ile;
+        return dania;
+    }
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
+        return blad;
     }
 }

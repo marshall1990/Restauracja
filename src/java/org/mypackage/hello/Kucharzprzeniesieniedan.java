@@ -13,12 +13,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Kucharzprzeniesieniedan {
+    private String blad="Nie";
       
-    /**
-     *
-     * @param id
-     */
-    public String przenies(String id[]) throws SQLException {
+
+    public void przenies(String id[]) throws SQLException {
 
             String ids = "(";
             Connection conn = null;
@@ -68,8 +66,18 @@ public class Kucharzprzeniesieniedan {
                 statementd=conn.createStatement();
                 statementd.executeUpdate(sqld);
             }
-            catch(Exception e){}
+            catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        }
             finally { conn.close(); }
-        return ids;
+
+    }
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
+        return blad;
     }
 }

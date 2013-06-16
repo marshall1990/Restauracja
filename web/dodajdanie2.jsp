@@ -8,11 +8,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
 <%
-String blad=null;
-Dodaniedaniadanie walidator = new Dodaniedaniadanie();//errorPage="errorsite.jsp"
+Dodaniedaniadanie walidator = new Dodaniedaniadanie();
 BeanUtils.populate(walidator, request.getParameterMap());
-blad=walidator.weryfikuj(zalogowany.getLogin());
-if (blad.equals("Nie")) response.sendRedirect("dodajdanieskladniki2.jsp");
+walidator.weryfikuj(zalogowany.getLogin());
+if (walidator.getBlad().equals("Tak")) response.sendRedirect("errorsite.jsp");
+response.sendRedirect("dodajdanieskladniki2.jsp");
 session.setAttribute("dodawanedanie",request.getParameter("nazwadania"));         
 %>
 <!DOCTYPE html>

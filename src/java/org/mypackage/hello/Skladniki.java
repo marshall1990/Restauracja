@@ -9,8 +9,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Skladniki {
+    private String blad="Nie";
        
-    public ArrayList<String> wypisz() throws SQLException {
+    private ArrayList<String> wypisz() throws SQLException {
         
         ArrayList<String> skladniki;
         skladniki = new ArrayList<String>();
@@ -32,10 +33,18 @@ public class Skladniki {
                            skladniki.add(rst.getString(1));
                          }
                        }
-                      catch (Exception e) {
-                      
-                      }  
+                      catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        } 
                     finally { conn.close(); }
         return skladniki;
     }  
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
+        return blad;
+    }
 }

@@ -13,24 +13,17 @@ import java.util.ArrayList;
 
 
 public class Daniaposkladnikach {
-   
-   
-    public ArrayList<String> dania = new ArrayList<String>();
+ 
     private String blad="Nie";
 
-    /**
-     *
-     * @param skladniki
-     * @throws ClassNotFoundException
-     * @throws SQLException
-     * @throws InstantiationException
-     * @throws IllegalAccessException
-     */
-    public String weryfikuj(String skladniki[]) throws SQLException {
+    public ArrayList<String> weryfikuj(String skladniki[]) throws SQLException {
         
+        ArrayList<String> dania;
+        dania = new ArrayList<String>();
         Connection conn = null;
         ResultSet rst;
         String sql="";
+        
 
         try {
             Bazadanych baza = new Bazadanych(); 
@@ -56,8 +49,18 @@ public class Daniaposkladnikach {
                  }
             }   
         }
-        catch (Exception e){ blad="Tak";}
+        catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        } 
         finally { conn.close(); }
+        return dania;
+    }
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
         return blad;
     }     
 }

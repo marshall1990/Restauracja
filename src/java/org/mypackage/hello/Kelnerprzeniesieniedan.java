@@ -13,9 +13,10 @@ import java.sql.Statement;
 
 
 public class Kelnerprzeniesieniedan {
+    private String blad="Nie";
     
     
-    public String przenies(String id[]) throws SQLException {
+    public void przenies(String id[]) throws SQLException {
 
             String ids = "(";
             Connection conn = null;
@@ -53,8 +54,17 @@ public class Kelnerprzeniesieniedan {
                 statementd.executeUpdate(sqld);
                 conn.close();
             }
-            catch(Exception e){}
+            catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        }
             finally { conn.close(); }
-        return ids;
+    }
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
+        return blad;
     }
 }

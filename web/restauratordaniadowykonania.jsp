@@ -1,12 +1,14 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> --%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="org.mypackage.hello.Statystyka"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <%@page language="java" import="java.sql.*" %>
 <!DOCTYPE html>
 <% 
 Statystyka statystyka = new Statystyka();
-statystyka.policz();
+ArrayList<String> dania;
+dania=statystyka.policz();
 %>
 <html>
     <head>
@@ -36,10 +38,10 @@ statystyka.policz();
                                 </tr>
                             </thead>
                             <%!    int i = 0; %>
-                            <% for( i=0; i<statystyka.dania.size(); i=i+2) { %>
+                            <% for( i=0; i<dania.size(); i=i+2) { %>
                             <tr>
-                                <td><%=statystyka.dania.get(i)%></td>
-                                <td><%=statystyka.dania.get(i+1)%></td>
+                                <td><%=dania.get(i)%></td>
+                                <td><%=dania.get(i+1)%></td>
                             </tr>
                             <% } %>
                         </table>  

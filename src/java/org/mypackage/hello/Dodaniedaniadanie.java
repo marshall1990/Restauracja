@@ -19,6 +19,7 @@ public class Dodaniedaniadanie {
     
     private String nazwadania="Brak";
     private String przepis="Brak";
+    private String blad="Nie";
 
     /**
      * @return the nazwadania
@@ -48,9 +49,7 @@ public class Dodaniedaniadanie {
         this.przepis = przepis;
     }
     
-    public String weryfikuj(String Login) throws SQLException  {
-        String blad;
-        blad = "Nie";
+    public void weryfikuj(String Login) throws SQLException  {
         Connection conn = null;
         String sql;
         ResultSet rst=null;
@@ -61,15 +60,15 @@ public class Dodaniedaniadanie {
          }
   
         if ((getPrzepis().equals("Brak")) || (getPrzepis().trim().equals(""))) {
-            if (blad.equals("Nie")) {
+            if (getBlad().equals("Nie")) {
                   blad="Wprowadzono nieprawidłowy przepis";
             } else {
-                blad=blad+",<br />nieprawidłowy przepis";
+                blad=getBlad()+",<br />nieprawidłowy przepis";
                 }
         }
         
         
-        if (blad.equals("Nie")) {
+        if (getBlad().equals("Nie")) {
         
             try {
                 
@@ -102,16 +101,21 @@ public class Dodaniedaniadanie {
                        statement1.executeUpdate();
                      }
             }
-            catch (Exception e) {
-                 blad="Błąd połączenia z bazą danych";    
-               }
+            catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        }
             finally { conn.close(); }
          }
          else {
-            blad=blad+".";
+            blad=getBlad()+".";
         }
-        
-        
+    }
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
         return blad;
     }
 }

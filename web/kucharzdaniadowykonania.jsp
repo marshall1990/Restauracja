@@ -8,7 +8,8 @@
 <!DOCTYPE html>
 <%
 Listadan listadan = new Listadan();
-listadan.wyswietl("lista_zamowien");
+ArrayList<String> spisdan;
+spisdan=listadan.wyswietl("lista_zamowien");
 Brakujaceskladniki braki = new Brakujaceskladniki();
 ArrayList<String> listaskladnikow;
 listaskladnikow=braki.wypisz();
@@ -35,13 +36,13 @@ listaskladnikow=braki.wypisz();
                         <h1>Wybierz dania:</h1>
                         <form name="form1" onsubmit="checkBoxValidation()" action="kucharzdaniadowykonaniazaaktualizuj.jsp">
                              <ul>
-                                 <% for(int i=0; i<listadan.dania.size(); i=i+4) { %>
+                                 <% for(int i=0; i<spisdan.size(); i=i+4) { %>
                                  <li>
-                                     <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=listadan.dania.get(i+3)%>" />
+                                     <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=spisdan.get(i+3)%>" />
                                      <label class="css-label" for="check<%=i %>" >
-                                         <%=listadan.dania.get(i)%>
-                                         <%=listadan.dania.get(i+2)%> dla zamówienia nr 
-                                         <%=listadan.dania.get(i+1)%>
+                                         <%=spisdan.get(i)%>
+                                         <%=spisdan.get(i+2)%> dla zamówienia nr 
+                                         <%=spisdan.get(i+1)%>
                                      </label>
                                  </li>
                                  <% } %>

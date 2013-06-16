@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Zaopatrzenie {
+    private String blad="Nie";
     public void uzupelnij(String id[]) throws SQLException {
 
             Connection conn = null;
@@ -33,7 +34,17 @@ public class Zaopatrzenie {
                 
 
             }
-            catch(Exception e){}
+            catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        }
             finally { conn.close(); }
+    }
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
+        return blad;
     }
 }

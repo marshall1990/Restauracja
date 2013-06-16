@@ -13,15 +13,16 @@ import java.util.ArrayList;
 
 public class Listadan {
    
-    public ArrayList<String> dania = new ArrayList<String>();
+    private String blad="Nie";
     
     /**
      *
      * @param bazadan
      */
-    public void wyswietl(String bazadan) throws SQLException {    
+    public ArrayList<String> wyswietl(String bazadan) throws SQLException {    
         
-        String blad = "Nie";
+        ArrayList<String> dania;
+        dania = new ArrayList<String>();
         Connection conn = null;
         ResultSet rst;
         String sql;
@@ -42,9 +43,20 @@ public class Listadan {
                    dania.add(Integer.toString(rst.getInt(4)));
                  }
         }
-        catch(Exception e) {}
+        catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        }
         finally { conn.close(); }
+        return dania;
     }    
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
+        return blad;
+    }
     
     
 }

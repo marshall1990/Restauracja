@@ -12,9 +12,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Dodaniedaniaskladniki {
+    private String blad="Nie";
     
     
-    public String dodaj(String skladniki[], String nazwa) throws SQLException {
+    public void dodaj(String skladniki[], String nazwa) throws SQLException {
     
         Connection conn = null;
         ResultSet rst=null;
@@ -42,10 +43,19 @@ public class Dodaniedaniaskladniki {
 
      
           }
-           catch (Exception e) {   }  
+           catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        } 
            finally { conn.close(); }
-        return nazwa;
 
     
+    }
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
+        return blad;
     }
 }

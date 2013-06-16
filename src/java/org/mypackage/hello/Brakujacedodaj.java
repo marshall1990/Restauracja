@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class Brakujacedodaj {
 
-    
+    private String blad="Nie";
     
     public void dodaj(String[] braki) throws SQLException  {
     
@@ -31,17 +31,20 @@ public class Brakujacedodaj {
             for(int i=0; i<braki.length; i++) {      
                 statement1.setString(1,braki[i]);
                 statement1.executeUpdate();
-               }  
-
-                   
+               }                
           }
-           catch (Exception e) {
+          catch (Exception e) { 
+              System.out.println("Błąd połączenia z bazą danych."); 
+              blad="Tak";
            } 
           finally { conn.close(); }
+    }
 
-
-//Czytaj więcej na: http://javastart.pl/programowanie-obiektowe/wyjatki-blok-try-catch/#ixzz2WO73fAFf
-
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
+        return blad;
     }
     
 }

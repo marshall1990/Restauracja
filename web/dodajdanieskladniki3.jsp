@@ -8,9 +8,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 <%
-String k;
 Dodaniedaniaskladniki dodanie = new Dodaniedaniaskladniki();
-k=dodanie.dodaj(request.getParameterValues("skladnik"),(String)session.getAttribute("dodawanedanie"));
+dodanie.dodaj(request.getParameterValues("skladnik"),(String)session.getAttribute("dodawanedanie"));
 %>
 
 <!DOCTYPE html>
@@ -34,7 +33,6 @@ k=dodanie.dodaj(request.getParameterValues("skladnik"),(String)session.getAttrib
             <div class="container">
                 <article>
                     <h1>Dodałeś danie</h1>
-                    <%=k%>
                     <form  action="restauratordaniadowykonania.jsp">
                         <ul>
                             <li>

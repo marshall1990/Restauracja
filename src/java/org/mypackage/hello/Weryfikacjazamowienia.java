@@ -13,6 +13,7 @@ import java.sql.Statement;
 
 
 public class Weryfikacjazamowienia {
+    private String blad="Nie";
     
   
     
@@ -22,7 +23,7 @@ public class Weryfikacjazamowienia {
      * @param ilosc
      * @return
      */
-    public String weryfikuj(String dania[], String ilosc[],String zalogowany, String nawynos) throws SQLException  {
+    public void weryfikuj(String dania[], String ilosc[],String zalogowany, String nawynos) throws SQLException  {
        
         Connection conn = null;
         ResultSet rst;
@@ -62,10 +63,19 @@ public class Weryfikacjazamowienia {
 
             
         }
-        catch (Exception e){}
+        catch (Exception e) { 
+                        System.out.println("Błąd połączenia z bazą danych."); 
+                        blad="Tak";
+                        }
         finally { conn.close(); }
-        return zalogowany;
         
         
+    }
+
+    /**
+     * @return the blad
+     */
+    public String getBlad() {
+        return blad;
     }
 }
