@@ -408,3 +408,9 @@ section aside .earth {
     -o-animation: rotate-planet 15s infinite linear;
     animation: rotate-planet 15s infinite linear;
 }
+
+/* Dostawca */
+
+section div.dostawca article label {
+    width: auto;
+}

@@ -1,7 +1,7 @@
 
 
 <%@page import="org.mypackage.hello.Kucharzprzeniesieniedan"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <!DOCTYPE html>
 <%
 String k;
