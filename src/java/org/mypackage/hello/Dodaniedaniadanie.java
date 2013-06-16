@@ -73,8 +73,8 @@ public class Dodaniedaniadanie {
             try {
                 
                 Bazadanych baza = new Bazadanych(); 
-                Class.forName(baza.getDriver1()).newInstance();
-                conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());
+                Class.forName(baza.getDriver3()).newInstance();
+                conn = DriverManager.getConnection(baza.getUrl3()+baza.getDbName3(), baza.getUserName3(),baza.getPassword3());
                 
                 sql="select count(nazwa) from danie where nazwa='"+getNazwadania()+"'";
                 Statement statement=conn.createStatement();
