@@ -25,12 +25,12 @@
             <div class="container">
                 <article>
                   <%            
-                    Calemenu dania = new Calemenu();
+                    Danieponazwie dania = new Danieponazwie();
                     ArrayList<String> listadan;
-                    listadan=dania.wypisz();
+                    listadan=dania.wypisz(request.getParameter("nazwa"));
                     if (dania.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
                   %>
-                         <h1>Menu.</h1>
+                         <h1>Jeśli lista dań jest pusta to znaczy że w Menu nie ma dania, którego szukasz.</h1>
                          <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_potwierdzenie.jsp">
                              <ul>
                                  <%!    int i = 0; %>
