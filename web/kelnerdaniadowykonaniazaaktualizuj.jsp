@@ -4,5 +4,6 @@
 <%
 Kelnerprzeniesieniedan przenies = new Kelnerprzeniesieniedan();
 przenies.przenies(request.getParameterValues("wykonanedania"));
-response.sendRedirect("kelnerdaniadowykonania.jsp");
+if (przenies.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); }
+else { response.sendRedirect("kelnerdaniadowykonania.jsp");}
 %>

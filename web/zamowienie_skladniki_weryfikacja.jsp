@@ -28,6 +28,7 @@
                 String wynos=request.getParameter("nawynos");
                 if (wynos==null) wynos=" w lokalu";
                 dania.weryfikuj(request.getParameterValues("zamowionedania"),request.getParameterValues("iloscdan"),zalogowany.getLogin(),wynos);
+                if (dania.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
                 %>
                 <h1>Zamówienie złożone, dziękujemy.</h1>          
                 </article>

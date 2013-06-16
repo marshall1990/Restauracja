@@ -6,6 +6,7 @@
 <%
 Zaopatrzenie zaopatrzenie = new Zaopatrzenie();
 zaopatrzenie.uzupelnij(request.getParameterValues("dostarczone"));
-response.sendRedirect("zaopatrzeniemenu.jsp");
+if (zaopatrzenie.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); }
+else { response.sendRedirect("zaopatrzeniemenu.jsp");}
 %>
 

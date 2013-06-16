@@ -9,6 +9,7 @@
 Statystyka statystyka = new Statystyka();
 ArrayList<String> dania;
 dania=statystyka.policz();
+if (statystyka.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
 %>
 <html>
     <head>

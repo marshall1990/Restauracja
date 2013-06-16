@@ -29,6 +29,7 @@
                     Skladniki skladniki = new Skladniki();
                     ArrayList<String> listaskladnikow;
                     listaskladnikow=skladniki.wypisz();
+                    if (skladniki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
                      %>
                      <h1>Wybierz składniki:</h1>         
                      <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_dania.jsp">

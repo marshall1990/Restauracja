@@ -22,7 +22,7 @@ if (walidator.weryfikuj().equals("Nie")) {
     if (zalogowany.getLogin().equals("restaurator")) { response.sendRedirect("restauratordaniadowykonania.jsp");}
     if (zalogowany.getLogin().equals("zaopatrzenie")) { response.sendRedirect("zaopatrzeniemenu.jsp");}
     response.sendRedirect("podanie_menu.jsp");
-}
+} 
 %>
 <!DOCTYPE html>
 <html>

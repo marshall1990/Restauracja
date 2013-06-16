@@ -10,6 +10,7 @@
 <%
 Dodaniedaniaskladniki dodanie = new Dodaniedaniaskladniki();
 dodanie.dodaj(request.getParameterValues("skladnik"),(String)session.getAttribute("dodawanedanie"));
+if (dodanie.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
 %>
 
 <!DOCTYPE html>

@@ -10,9 +10,11 @@
 Listadan listadan = new Listadan();
 ArrayList<String> spisdan;
 spisdan=listadan.wyswietl("lista_zamowien");
+if (listadan.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
 Brakujaceskladniki braki = new Brakujaceskladniki();
 ArrayList<String> listaskladnikow;
 listaskladnikow=braki.wypisz();
+if (braki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
 %>
 <html>
     <head>

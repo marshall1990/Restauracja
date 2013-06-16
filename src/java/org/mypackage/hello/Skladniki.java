@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Skladniki {
     private String blad="Nie";
        
-    private ArrayList<String> wypisz() throws SQLException {
+    public ArrayList<String> wypisz() throws SQLException {
         
         ArrayList<String> skladniki;
         skladniki = new ArrayList<String>();

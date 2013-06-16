@@ -11,9 +11,11 @@
 Dodaniedaniadanie walidator = new Dodaniedaniadanie();
 BeanUtils.populate(walidator, request.getParameterMap());
 walidator.weryfikuj(zalogowany.getLogin());
-if (walidator.getBlad().equals("Tak")) response.sendRedirect("errorsite.jsp");
+if (walidator.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); } 
+else {
 response.sendRedirect("dodajdanieskladniki2.jsp");
-session.setAttribute("dodawanedanie",request.getParameter("nazwadania"));         
+session.setAttribute("dodawanedanie",request.getParameter("nazwadania"));
+}        
 %>
 <!DOCTYPE html>
 <html>

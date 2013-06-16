@@ -4,5 +4,6 @@
 <%
 Dostawcaprzeniesieniedan przenies = new Dostawcaprzeniesieniedan();
 przenies.przenies(request.getParameterValues("wykonanedania"));
-response.sendRedirect("dostawcadaniadowykonania.jsp");
+if (przenies.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); }
+else response.sendRedirect("dostawcadaniadowykonania.jsp");
 %>

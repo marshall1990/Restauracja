@@ -10,6 +10,7 @@
 Brakujaceskladniki braki = new Brakujaceskladniki();
 ArrayList<String> listaskladnikow;
 listaskladnikow=braki.wypisz();
+if (braki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
 %>
 <html>
     <head>

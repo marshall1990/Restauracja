@@ -5,6 +5,7 @@
 <%
 Brakujacedodaj braki = new Brakujacedodaj();
 braki.dodaj(request.getParameterValues("skladnik"));
-response.sendRedirect("kucharzdaniadowykonania.jsp");
+if (braki.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); }
+else { response.sendRedirect("kucharzdaniadowykonania.jsp"); }
 %>
 

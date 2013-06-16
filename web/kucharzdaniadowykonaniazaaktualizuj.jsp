@@ -4,10 +4,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <!DOCTYPE html>
 <%
-String k;
 Kucharzprzeniesieniedan przenies = new Kucharzprzeniesieniedan();
-k=przenies.przenies(request.getParameterValues("wykonanedania"));
-response.sendRedirect("kucharzdaniadowykonania.jsp");
+przenies.przenies(request.getParameterValues("wykonanedania"));
+if (przenies.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); }
+else { response.sendRedirect("kucharzdaniadowykonania.jsp");}
 %>
 <!--<html>
     <head>

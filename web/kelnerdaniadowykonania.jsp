@@ -8,6 +8,7 @@
 <%
 Listadan listadan = new Listadan();
 listadan.wyswietl("lista_kelner");
+if (listadan.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
 %>
 <html>
     <head>
