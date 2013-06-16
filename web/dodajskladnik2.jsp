@@ -3,6 +3,11 @@
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
+                <%
+                Skladnikidodaj skladniki = new Skladnikidodaj();
+                skladniki.wypisz(request.getParameter("nazwa"), request.getParameter("ilosc"), request.getParameter("opis"));
+                if (skladniki.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); }
+                %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,24 +21,22 @@
         <header>
             <div class="container">
                 <h1>WIRTUALNA RESTAURACJA</h1>
-                <jsp:include page="top_nav.jsp" />
+                <jsp:include page="top_nav.jsp" /> 
             </div>   
         </header>
             
         <section>
             <div class="container">
                 <article>
-                <%
-                Skladnikidodaj skladniki = new Skladnikidodaj();
-                skladniki.wypisz(request.getParameter("nazwa"), request.getParameter("ilosc"), request.getParameter("opis"));
-               // if (skladniki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
-                %>
-                <h1>Składnik został dodany.</h1>          
+                    <h1>Dodałeś składnik</h1>
+                    <form  action="restauratordaniadowykonania.jsp">
+                        <ul>
+                            <li>
+                                <input type="submit" value="Ok"/>
+                            </li>
+                        </ul>
+                    </form>
                 </article>
-                <aside>
-                    <h3></h3>
-                    <img src="img/image_recipe.jpg" alt="przepis" />
-                </aside>
             </div>
         </section>
         <footer>

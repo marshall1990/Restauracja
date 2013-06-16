@@ -56,7 +56,7 @@ if (statystyka.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.js
                         <form name="form1" onsubmit="checkBoxValidation()" action="dodajskladnik.jsp">
                          <ul>
                             <li>
-                                <input type="submit" value="Dodaj skladnik"/>  
+                                <input type="submit" value="Dodaj składnik"/>  
                             </li>
                         </ul>
                         </form> 
