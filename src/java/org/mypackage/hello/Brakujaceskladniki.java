@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class Skladniki {
+public class Brakujaceskladniki {
        
     public ArrayList<String> wypisz() {
         
@@ -18,11 +18,11 @@ public class Skladniki {
         ResultSet rst;
 
                     try {
-                        Bazadanych baza = new Bazadanych(); 
-                        Class.forName(baza.getDriver1()).newInstance();
-                        conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());    
+                        Bazadanych baza= new Bazadanych();
+                        Class.forName(baza.getDriver2()).newInstance();
+                        conn = DriverManager.getConnection(baza.getUrl2()+baza.getDbName2(), baza.getUserName2(),baza.getPassword2());    
 
-                        String sql="SELECT skladnik FROM skladniki ORDER BY skladnik";
+                        String sql="SELECT skladnik FROM braki ORDER BY skladnik";
 
                         PreparedStatement statement=conn.prepareStatement( sql );
                         rst=statement.executeQuery();
@@ -38,3 +38,4 @@ public class Skladniki {
         return skladniki;
     }  
 }
+

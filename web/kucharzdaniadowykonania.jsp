@@ -1,5 +1,7 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> --%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="org.mypackage.hello.Brakujaceskladniki"%>
 <%@page import="org.mypackage.hello.Listadan"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <%@page language="java" import="java.sql.*" %>
@@ -7,6 +9,9 @@
 <%
 Listadan listadan = new Listadan();
 listadan.wyswietl("lista_zamowien");
+Brakujaceskladniki braki = new Brakujaceskladniki();
+ArrayList<String> listaskladnikow;
+listaskladnikow=braki.wypisz();
 %>
 <html>
     <head>
@@ -30,8 +35,7 @@ listadan.wyswietl("lista_zamowien");
                         <h1>Wybierz dania:</h1>
                         <form name="form1" onsubmit="checkBoxValidation()" action="kucharzdaniadowykonaniazaaktualizuj.jsp">
                              <ul>
-                                 <%!    int i = 0; %>
-                                 <% for( i=0; i<listadan.dania.size(); i=i+4) { %>
+                                 <% for(int i=0; i<listadan.dania.size(); i=i+4) { %>
                                  <li>
                                      <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=listadan.dania.get(i+3)%>" />
                                      <label class="css-label" for="check<%=i %>" >
@@ -50,19 +54,41 @@ listadan.wyswietl("lista_zamowien");
                        <form name="form1" onsubmit="checkBoxValidation()" action="kucharzuzupelnijskladniki.jsp">
                          <ul>
                             <li>
-                                <input type="submit" value="Uzupełnij składniki"/>
+                                <input type="submit" value="Złóż zamówienie na składnki"/>
                             </li>
                         </ul>
                        </form>                                       
                                  
                                  
                 </article>
+                                
+                                 
+                                 
                 <aside>
                     <h3>Wybierz zamówienia, które chcesz wykonać.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>
         </section>
+                            
+       <section>
+            <div class="container dostawca">
+                
+                <article>
+                        <h1>Brakujące składniki</h1>
+                             <ul>
+                                 <% for( int i=0; i<listaskladnikow.size();i++) { %>
+                                 <li>
+                                     <label class="css-label" > <%=listaskladnikow.get(i)%> </label>
+                                 </li>
+                                 <% } %>
+                            </ul>                              
+                </article> 
+                
+                
+                
+        </div>
+        </section>                    
         <footer>
             Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
         </footer> 
