@@ -1,6 +1,6 @@
 
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 
 <!DOCTYPE html>
@@ -23,13 +23,13 @@
         <section>
             <div class="container">
                 <article>
- <% 
-String[] zamowione=request.getParameterValues("zamowionedania");
-String[] ilosc=request.getParameterValues("iloscdan");
-String wynos=request.getParameter("nawynos");
-if (wynos==null) wynos=" w lokalu";
-%>                   
-<h1>Dania wybrane przez Ciebie:</h1>
+                    <% 
+                    String[] zamowione=request.getParameterValues("zamowionedania");
+                    String[] ilosc=request.getParameterValues("iloscdan");
+                    String wynos=request.getParameter("nawynos");
+                    if (wynos==null) wynos=" w lokalu";
+                    %>                   
+                    <h1>Dania wybrane przez Ciebie:</h1>
                          <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_weryfikacja.jsp">
                              <ul>
                                  <%!    int i = 0; %>

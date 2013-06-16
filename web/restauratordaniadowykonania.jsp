@@ -1,7 +1,8 @@
-
-
+<%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> --%>
 <%@page import="org.mypackage.hello.Statystyka"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
+<%@page language="java" import="java.sql.*" %>
 <!DOCTYPE html>
 <% 
 Statystyka statystyka = new Statystyka();
@@ -10,26 +11,47 @@ statystyka.policz();
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="css/html5reset-1.6.1.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/media-queries.css" />
+        <title>Wirtualna Restauracja</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <header>
+            <div class="container">
+                <h1>WIRTUALNA RESTAURACJA</h1>
+                <jsp:include page="top_nav.jsp" />
+            </div>   
+        </header>
+            
+        <section>
+            <div class="container dostawca">
+                <article>
+                        <h1>Podsumowanie:</h1>
                              <ul>
                                  <%!    int i = 0; %>
                                  <% for( i=0; i<statystyka.dania.size(); i=i+2) { %>
                                  <li>
-                                     <label class="css-label" for="check<%=i %>" ><%=statystyka.dania.get(i)%></label> 
-                                     <label class="css-label" for="check<%=i %>"><%=statystyka.dania.get(i+1)%></label>
+                                     <p><%=statystyka.dania.get(i)%> <%=statystyka.dania.get(i+1)%></p>
                                  </li>
                                  <% } %>
                             </ul>   
                             <form name="form1" onsubmit="checkBoxValidation()" action="dodajdanie.jsp">
                              <ul>
-  
                                  <li>
                                     <input type="submit" value="Dodaj danie"/>  
                                  </li>
                             </ul>
                          </form>     
+                </article>
+                <aside>
+                    <h3>Wybierz zamówienia, które chcesz dostarczyć.</h3>
+                    <img src="img/image_recipe.jpg" alt="przepis" />
+                </aside>
+            </div>
+        </section>
+        <footer>
+            Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
+        </footer> 
     </body>
 </html>

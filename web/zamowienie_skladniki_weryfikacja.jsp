@@ -1,10 +1,8 @@
 <%@page import="org.mypackage.hello.Weryfikacjazamowienia"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,14 +23,13 @@
         <section>
             <div class="container">
                 <article>
-<%
-Weryfikacjazamowienia dania = new Weryfikacjazamowienia();
-String wynos=request.getParameter("nawynos");
-if (wynos==null) wynos=" w lokalu";
-dania.weryfikuj(request.getParameterValues("zamowionedania"),request.getParameterValues("iloscdan"),zalogowany.getLogin(),wynos);
-%>
-<h1>Zamówienie złożone, dziękujemy.</h1>
-                        
+                <%
+                Weryfikacjazamowienia dania = new Weryfikacjazamowienia();
+                String wynos=request.getParameter("nawynos");
+                if (wynos==null) wynos=" w lokalu";
+                dania.weryfikuj(request.getParameterValues("zamowionedania"),request.getParameterValues("iloscdan"),zalogowany.getLogin(),wynos);
+                %>
+                <h1>Zamówienie złożone, dziękujemy.</h1>          
                 </article>
                 <aside>
                     <h3>Wybierz dania, które chcesz zamówić.</h3>

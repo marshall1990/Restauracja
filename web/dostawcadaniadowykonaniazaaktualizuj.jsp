@@ -1,5 +1,5 @@
 <%@page import="org.mypackage.hello.Dostawcaprzeniesieniedan"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <!DOCTYPE html>
 <%
 Dostawcaprzeniesieniedan przenies = new Dostawcaprzeniesieniedan();
