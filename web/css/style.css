@@ -356,6 +356,9 @@ section.windows article h3 {
     border-bottom: 2px #d1d1d1 dotted;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+section.windows article:nth-child(2) h3 {
     text-align: center;
 }
 
