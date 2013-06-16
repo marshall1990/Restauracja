@@ -1,5 +1,7 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> --%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="org.mypackage.hello.Skladniki"%>
 <%@page import="org.mypackage.hello.Bazadanych"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <%@page language="java" import="java.sql.*" %>
@@ -24,28 +26,17 @@
             <div class="container">
                 <article>
                     <%
-                    Connection conn = null;
-                    ResultSet rst=null;
-
-                    try {
-                        Bazadanych baza = new Bazadanych(); 
-                        Class.forName(baza.getDriver1()).newInstance();
-                        conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());    
-
-                        String sql="SELECT skladnik FROM skladniki";
-
-                        PreparedStatement statement=conn.prepareStatement( sql );
-                        rst=statement.executeQuery();
+                    Skladniki skladniki = new Skladniki();
+                    ArrayList<String> listaskladnikow;
+                    listaskladnikow=skladniki.wypisz();
                      %>
                      <h1>Wybierz składniki:</h1>         
                      <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_dania.jsp">
                          <ul>
-                            <%! int i = 0; %>
-                            <% while (rst.next()) {  %>
-                            <% i++; %>
+                            <% for(int i=0;i<listaskladnikow.size();i++) {  %>
                             <li>
-                                <input id="check<%=i %>" type="checkbox" name="skladnik" value="<%=rst.getString(1)%>" />
-                                <label class="css-label" for="check<%=i %>"><%=rst.getString(1)%></label>
+                                <input id="check<%=i %>" type="checkbox" name="skladnik" value="<%=listaskladnikow.get(i)%>" />
+                                <label class="css-label" for="check<%=i %>"><%=listaskladnikow.get(i)%></label>
                             </li>                                              
                             <% } %> 
                             <li>
@@ -53,14 +44,6 @@
                             </li>
                         </ul>
                      </form>
-                    <%
-                        conn.close();
-                        }
-                        catch (Exception e) {
-                            e.printStackTrace();
-                            response.sendRedirect("errorsite.jsp");
-                        }
-                    %> 
                 </article>
                 <aside>
                     <h3>Wybierz składniki dania, które chcesz zamówić.</h3>
