@@ -1,7 +1,7 @@
 <%@page import="org.mypackage.hello.Skladnikidodaj"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp" %>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
                 <%
                 Skladnikidodaj skladniki = new Skladnikidodaj();
@@ -37,6 +37,9 @@
                         </ul>
                     </form>
                 </article>
+                <aside>
+                    <img src="img/image_recipe.jpg" alt="przepis" />
+                </aside>
             </div>
         </section>
         <footer>

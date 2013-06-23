@@ -34,7 +34,7 @@ if (listadan.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp"
                         <h1>Zaznacz dania już dostarczone:</h1>
                         <form name="form1" onsubmit="checkBoxValidation()" action="dostawcadaniadowykonaniazaaktualizuj.jsp">
                              <ul>
-                                 <%!    int i = 0; %>
+                                 <%!int i = 0; %>
                                  <% for( i=0; i<spisdan.size(); i=i+4) { %>
                                  <li>
                                      <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=spisdan.get(i+3)%>" />

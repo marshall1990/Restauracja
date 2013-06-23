@@ -37,7 +37,7 @@
                                  <% for( i=0; i<listadan.size(); i++) { %>
                                  <li>
                                      <input type="hidden" name="zamowionedania" value="<%=listadan.get(i)%>" />
-                                     <label class="css-label" ><%=listadan.get(i)%></label>
+                                     <label><%=listadan.get(i)%></label>
                                      <div class="styled-select">
                                         <select name="iloscdan">
                                             <option value="0">0</option>

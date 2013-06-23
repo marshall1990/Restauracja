@@ -53,45 +53,25 @@ if (braki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
                                  </li>
                             </ul>
                          </form>
-                                 
-                       <form name="form1" onsubmit="checkBoxValidation()" action="kucharzuzupelnijskladniki.jsp">
-                         <ul>
-                            <li>
-                                <input type="submit" value="Złóż zamówienie na składnki"/>
-                            </li>
-                        </ul>
-                       </form>                                       
-                                 
-                                 
-                </article>
-                                
-                                 
-                                 
+                         <h1>Brakujące składniki:</h1>        
+                         <form name="form1" onsubmit="checkBoxValidation()" action="kucharzuzupelnijskladniki.jsp">
+                          <ul>
+                             <% for( int i=0; i<listaskladnikow.size();i++) { %>
+                             <li>
+                                <p> <%=listaskladnikow.get(i)%></p>
+                             </li>
+                             <% } %> 
+                             <li>
+                                 <input type="submit" value="Złóż zamówienie na składnki"/>
+                             </li>
+                         </ul>
+                         </form>     
+                </article>              
                 <aside>
-                    <h3></h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>
-        </section>
-                            
-       <section>
-            <div class="container dostawca">
-                
-                <article>
-                        <h1>Brakujące składniki:</h1>
-                             <ul>
-                                 <% for( int i=0; i<listaskladnikow.size();i++) { %>
-                                 <li>
-                                     <label class="css-label" > <%=listaskladnikow.get(i)%> </label>
-                                 </li>
-                                 <% } %>
-                            </ul>                              
-                </article> 
-                
-                
-                
-        </div>
-        </section>                    
+        </section>                   
         <footer>
             Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
         </footer> 

@@ -42,6 +42,9 @@ if (dodanie.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp")
                         </ul>
                     </form>
                 </article>
+                <aside>
+                    <img src="img/image_recipe.jpg" alt="przepis" />
+                </aside>
             </div>
         </section>
         <footer>
