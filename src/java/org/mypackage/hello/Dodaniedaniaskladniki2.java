@@ -8,10 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Danieponazwie {
+public class Dodaniedaniaskladniki2 {
     private String blad="Nie";
        
-    public ArrayList<String> wypisz(String nazwa) throws SQLException {
+    public ArrayList<String> wypisz() throws SQLException {
         
         ArrayList<String> skladniki;
         skladniki = new ArrayList<String>();
@@ -23,15 +23,15 @@ public class Danieponazwie {
                         Bazadanych baza = new Bazadanych(); 
                         Class.forName(baza.getDriver1()).newInstance();
                         conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());    
-
-                        String sql="SELECT nazwa FROM danie WHERE nazwa=?";
+                        
+                        String sql="SELECT ID_skladnika,skladnik FROM skladniki ORDER BY skladnik";
 
                         PreparedStatement statement=conn.prepareStatement( sql );
-                        statement.setString(1,nazwa);
                         rst=statement.executeQuery();
                         
                         while(rst.next()){
                            skladniki.add(rst.getString(1));
+                           skladniki.add(rst.getString(2));
                          }
                        }
                       catch (Exception e) { 
@@ -41,6 +41,7 @@ public class Danieponazwie {
                     finally { conn.close(); }
         return skladniki;
     }  
+
     /**
      * @return the blad
      */

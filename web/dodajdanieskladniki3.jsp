@@ -1,3 +1,4 @@
+<%@page import="org.mypackage.hello.Przekierowania"%>
 <%@page import="org.mypackage.hello.Dodaniedaniaskladniki"%>
 <%@page import="org.mypackage.hello.Bazadanych"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -8,9 +9,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 <%
-Dodaniedaniaskladniki dodanie = new Dodaniedaniaskladniki();
-dodanie.dodaj(request.getParameterValues("skladnik"),(String)session.getAttribute("dodawanedanie"));
-if (dodanie.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+Przekierowania przekierowania = new Przekierowania();
+przekierowania.dodajdanieskladniki3(response,session,request);
 %>
 
 <!DOCTYPE html>

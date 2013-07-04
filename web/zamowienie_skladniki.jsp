@@ -1,5 +1,6 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> --%>
+<%@page import="org.mypackage.hello.Przekierowania"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.mypackage.hello.Skladniki"%>
 <%@page import="org.mypackage.hello.Bazadanych"%>
@@ -26,10 +27,9 @@
             <div class="container">
                 <article>
                     <%
-                    Skladniki skladniki = new Skladniki();
+                    Przekierowania przekierowania = new Przekierowania();
                     ArrayList<String> listaskladnikow;
-                    listaskladnikow=skladniki.wypisz();
-                    if (skladniki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+                    listaskladnikow=przekierowania.zamowienieskladniki(response);
                      %>
                      <h1>Wybierz składniki:</h1>         
                      <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_dania.jsp">

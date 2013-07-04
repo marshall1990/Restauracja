@@ -25,10 +25,9 @@
             <div class="container">
                 <article>
                   <%            
-                    Daniaposkladnikach dania = new Daniaposkladnikach();
+                    Przekierowania przekierowania = new Przekierowania();
                     ArrayList<String> listadan;
-                    listadan=dania.weryfikuj(request.getParameterValues("skladnik"));
-                    if (dania.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+                    listadan=przekierowania.zamowienieskladnikidania(response, request);
                   %>
                          <h1>Dania zawierające podane składniki:</h1>
                          <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_potwierdzenie.jsp">

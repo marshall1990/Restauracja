@@ -1,5 +1,6 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> --%>
+<%@page import="org.mypackage.hello.Przekierowania"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.mypackage.hello.Brakujaceskladniki"%>
 <%@page import="org.mypackage.hello.Listadan"%>
@@ -7,14 +8,11 @@
 <%@page language="java" import="java.sql.*" %>
 <!DOCTYPE html>
 <%
-Listadan listadan = new Listadan();
+Przekierowania przekierowania = new Przekierowania();
 ArrayList<String> spisdan;
-spisdan=listadan.wyswietl("lista_zamowien");
-if (listadan.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
-Brakujaceskladniki braki = new Brakujaceskladniki();
+spisdan=przekierowania.kucharzdaniadowykonania1(response);
 ArrayList<String> listaskladnikow;
-listaskladnikow=braki.wypisz();
-if (braki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+listaskladnikow=przekierowania.kucharzdaniadowykonania2(response);
 %>
 <html>
     <head>

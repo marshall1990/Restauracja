@@ -1,15 +1,15 @@
 <%-- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> --%>
+<%@page import="org.mypackage.hello.Przekierowania"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.mypackage.hello.Statystyka"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <%@page language="java" import="java.sql.*" %>
 <!DOCTYPE html>
 <% 
-Statystyka statystyka = new Statystyka();
+Przekierowania przekierowania = new Przekierowania();
 ArrayList<String> dania;
-dania=statystyka.policz();
-if (statystyka.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+dania=przekierowania.restauratordaniadowykonania(response);
 %>
 <html>
     <head>

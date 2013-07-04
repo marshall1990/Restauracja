@@ -1,11 +1,11 @@
+<%@page import="org.mypackage.hello.Przekierowania"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.mypackage.hello.Skladniki"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 <%
-Skladniki skladniki = new Skladniki();
+Przekierowania przekierowania = new Przekierowania();
 ArrayList<String> listaskladnikow;
-listaskladnikow=skladniki.wypisz();
-if (skladniki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+listaskladnikow=przekierowania.kucharzuzupelnijskladniki(response);
 %>
 <!DOCTYPE html>
 <html>

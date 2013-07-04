@@ -25,10 +25,9 @@
             <div class="container">
                 <article>
                   <%            
-                    Calemenu dania = new Calemenu();
-                    ArrayList<String> listadan;
-                    listadan=dania.wypisz();
-                    if (dania.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+                  Przekierowania przekierowania = new Przekierowania();  
+                  ArrayList<String> listadan;
+                  listadan=przekierowania.zamowieniewszystko(response);
                   %>
                          <h1>Menu</h1>
                          <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_potwierdzenie.jsp">

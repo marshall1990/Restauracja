@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
-<jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
+<jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/>
+
 <nav>
     <ul>
         <li>

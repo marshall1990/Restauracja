@@ -22,7 +22,8 @@ public class Kucharzprzeniesieniedan {
             Connection conn = null;
             ResultSet rst;
             String sql,sqlw,sqll,sqld;
-            
+            if (id == null || id.length < 1) {}
+            else {
             try {
                 Bazadanych baza= new Bazadanych();
                 Class.forName(baza.getDriver2()).newInstance();
@@ -71,6 +72,8 @@ public class Kucharzprzeniesieniedan {
                         blad="Tak";
                         }
             finally { conn.close(); }
+            
+            }
 
     }
 

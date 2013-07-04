@@ -11,10 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- *
- * @author Marzena
- */
+
 public class Dodaniedaniadanie {
     
     private String nazwadania="Brak";

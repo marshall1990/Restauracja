@@ -1,3 +1,4 @@
+<%@page import="org.mypackage.hello.Przekierowania"%>
 <%@page import="org.mypackage.hello.Dodaniedaniadanie"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="org.apache.commons.beanutils.BeanUtils"%>
@@ -8,14 +9,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
 <%
-Dodaniedaniadanie walidator = new Dodaniedaniadanie();
-BeanUtils.populate(walidator, request.getParameterMap());
-walidator.weryfikuj(zalogowany.getLogin());
-if (walidator.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); } 
-else {
-response.sendRedirect("dodajdanieskladniki2.jsp");
-session.setAttribute("dodawanedanie",request.getParameter("nazwadania"));
-}        
+String blad;
+Przekierowania przekierowania = new Przekierowania();
+blad=przekierowania.dodajdanie2(zalogowany,response,session,request);       
 %>
 <!DOCTYPE html>
 <html>
@@ -38,7 +34,7 @@ session.setAttribute("dodawanedanie",request.getParameter("nazwadania"));
             <div class="container">
                 <article>
                     <h1>Uwaga!</h1>
-                    <p class="red"><%=walidator.getBlad()%></p>
+                    <p class="red"><%=blad%></p>
                     <a href="dodajdanie.jsp" class="btn_submit">OK</a>
                 </article>
                 <aside>
@@ -47,6 +43,8 @@ session.setAttribute("dodawanedanie",request.getParameter("nazwadania"));
                 </aside>
             </div>
         </section>
+                              
+                    
         <footer>
             Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 
         </footer> 

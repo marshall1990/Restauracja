@@ -1,3 +1,4 @@
+<%@page import="org.mypackage.hello.Przekierowania"%>
 <%@page import="org.mypackage.hello.Logowanie"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Statement"%>
@@ -11,18 +12,9 @@
 <jsp:setProperty name="zalogowany" property="*"/>
 
 <%
+Przekierowania przekierowania = new Przekierowania();
 String blad=null;
-Logowanie walidator = new Logowanie();
-BeanUtils.populate(walidator, request.getParameterMap());
-blad=walidator.weryfikuj();
-if (walidator.weryfikuj().equals("Nie")) {
-    if (zalogowany.getLogin().equals("kucharz")) { response.sendRedirect("kucharzdaniadowykonania.jsp");}
-    if (zalogowany.getLogin().equals("kelner")) { response.sendRedirect("kelnerdaniadowykonania.jsp");}
-    if (zalogowany.getLogin().equals("dostawca")) { response.sendRedirect("dostawcadaniadowykonania.jsp");}
-    if (zalogowany.getLogin().equals("restaurator")) { response.sendRedirect("restauratordaniadowykonania.jsp");}
-    if (zalogowany.getLogin().equals("zaopatrzenie")) { response.sendRedirect("zaopatrzeniemenu.jsp");}
-    response.sendRedirect("podanie_menu.jsp");
-} 
+blad=przekierowania.weryfikacjalogowania(zalogowany, response, request);
 %>
 <!DOCTYPE html>
 <html>

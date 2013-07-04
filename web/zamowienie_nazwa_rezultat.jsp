@@ -25,10 +25,9 @@
             <div class="container">
                 <article>
                   <%            
-                    Danieponazwie dania = new Danieponazwie();
+                    Przekierowania przekierowania = new Przekierowania();
                     ArrayList<String> listadan;
-                    listadan=dania.wypisz(request.getParameter("nazwa"));
-                    if (dania.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+                    listadan=przekierowania.zamowienienazwarezultat(response, request);
                   %>
                          <h1>Jeśli lista dań jest pusta to znaczy że w Menu nie ma dania, którego szukasz.</h1>
                          <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_potwierdzenie.jsp">

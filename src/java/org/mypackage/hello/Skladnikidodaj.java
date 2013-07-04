@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 
 public class Skladnikidodaj {
-    private String blad="Nie";
+    private String blad="Dodałeś danie";
        
     public void wypisz(String nazwa, String ilosc, String opis) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalAccessException {
         
@@ -30,7 +30,7 @@ public class Skladnikidodaj {
                 blad=blad+",<br />niepoprawna ilość";
              }
         } 
-        if (blad.equals("Nie")) {
+        if (blad.equals("Dodałeś danie")) {
             
                     try {
                         Bazadanych baza = new Bazadanych(); 

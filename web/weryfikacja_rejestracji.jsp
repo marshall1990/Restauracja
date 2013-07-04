@@ -5,10 +5,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp"%>
 
 <%
+Przekierowania przekierowania = new Przekierowania();
 String blad=null;
-Rejestrowanie walidator = new Rejestrowanie();
-BeanUtils.populate(walidator, request.getParameterMap());
-blad=walidator.weryfikuj();   
+blad=przekierowania.weryfikacjarejestracji(request);  
 %>
 
 <!DOCTYPE html>

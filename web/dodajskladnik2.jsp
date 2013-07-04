@@ -1,12 +1,13 @@
+<%@page import="org.mypackage.hello.Przekierowania"%>
 <%@page import="org.mypackage.hello.Skladnikidodaj"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="errorsite.jsp" %>
 <jsp:useBean id="zalogowany" scope="session" class="org.mypackage.hello.Zalogowany"/> 
                 <%
-                Skladnikidodaj skladniki = new Skladnikidodaj();
-                skladniki.wypisz(request.getParameter("nazwa"), request.getParameter("ilosc"), request.getParameter("opis"));
-                if (skladniki.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); }
+                String blad;
+                Przekierowania przekierowania = new Przekierowania();
+                blad=przekierowania.dodajskladnik2(response,request);
                 %>
 <!DOCTYPE html>
 <html>
@@ -24,11 +25,12 @@
                 <jsp:include page="top_nav.jsp" /> 
             </div>   
         </header>
+                     
             
         <section>
             <div class="container">
                 <article>
-                    <h1>Dodałeś składnik</h1>
+                    <h1><%=blad%></h1>
                     <form  action="restauratordaniadowykonania.jsp">
                         <ul>
                             <li>

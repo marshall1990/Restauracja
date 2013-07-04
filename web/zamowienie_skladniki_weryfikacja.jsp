@@ -1,3 +1,4 @@
+<%@page import="org.mypackage.hello.Przekierowania"%>
 <%@page import="org.mypackage.hello.Weryfikacjazamowienia"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
@@ -24,11 +25,8 @@
             <div class="container">
                 <article>
                 <%
-                Weryfikacjazamowienia dania = new Weryfikacjazamowienia();
-                String wynos=request.getParameter("nawynos");
-                if (wynos==null) wynos=" w lokalu";
-                dania.weryfikuj(request.getParameterValues("zamowionedania"),request.getParameterValues("iloscdan"),zalogowany.getLogin(),wynos);
-                if (dania.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+                Przekierowania przekierowania = new Przekierowania();
+                przekierowania.zamowienieskladnikiweryfikacja(zalogowany, response, request);
                 %>
                 <h1>Zamówienie złożone, dziękujemy.</h1>          
                 </article>
