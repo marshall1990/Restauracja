@@ -24,13 +24,14 @@ public class Skladniki {
                         Class.forName(baza.getDriver1()).newInstance();
                         conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());    
 
-                        String sql="SELECT skladnik FROM skladniki ORDER BY skladnik";
+                        String sql="SELECT ID_Skladnika,skladnik FROM skladniki ORDER BY skladnik";
 
                         PreparedStatement statement=conn.prepareStatement( sql );
                         rst=statement.executeQuery();
                         
                         while(rst.next()){
                            skladniki.add(rst.getString(1));
+                           skladniki.add(rst.getString(2));
                          }
                        }
                       catch (Exception e) { 

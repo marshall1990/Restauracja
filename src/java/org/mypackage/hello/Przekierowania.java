@@ -271,4 +271,25 @@ public class Przekierowania  {
              
     
     }
+    
+    public void usundanie2 (HttpServletResponse response, HttpServletRequest request) throws IOException, SQLException {
+        
+                Restauratordanieusun dania = new Restauratordanieusun();
+                dania.usun(request.getParameterValues("usuwanedania"));
+                if (dania.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); }
+                    else { response.sendRedirect("usundanie.jsp");}
+             
+    
+    }
+    
+    
+    public void usunskladnik2 (HttpServletResponse response, HttpServletRequest request) throws IOException, SQLException {
+        
+                Restauratorskladnikusun skladnik = new Restauratorskladnikusun();
+                skladnik.usun(request.getParameterValues("usuwanyskladnik"));
+                if (skladnik.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad2.jsp"); }
+                    else { response.sendRedirect("usunskladnik.jsp");}
+             
+    
+    }
 }

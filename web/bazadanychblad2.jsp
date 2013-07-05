@@ -24,24 +24,23 @@
         <section>
             <div class="container">
                 <article>
-                    <h1>Błąd połączenia z bazą danych.</h1>
-                     <form name="form1"  action="index.jsp">
+                    <h1>Sprawdź czy usunąłeś dania zawierające usuwany składnik, jeśli już to zrobiłeś to znaczy że wystapił błąd połączenia z bazą danych.</h1>
+                    <form name="form1"  action="index.jsp">
                          <ul>
                             <li>
                                 <input type="submit" value="Ok"/>  
                             </li>
                         </ul>
                         </form> 
-                    
-                    
-                    
-                </article>
                 
+                
+                </article>
+               
                 <aside>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>
-           
+             
         </section>
         <footer>
             Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 

@@ -34,10 +34,10 @@
                      <h1>Wybierz składniki:</h1>         
                      <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_dania.jsp">
                          <ul>
-                            <% for(int i=0;i<listaskladnikow.size();i++) {  %>
+                            <% for(int i=0;i<listaskladnikow.size();i=i+2) {  %>
                             <li>
-                                <input id="check<%=i %>" type="checkbox" name="skladnik" value="<%=listaskladnikow.get(i)%>" />
-                                <label class="css-label" for="check<%=i %>"><%=listaskladnikow.get(i)%></label>
+                                <input id="check<%=i %>" type="checkbox" name="skladnik" value="<%=listaskladnikow.get(i+1)%>" />
+                                <label class="css-label" for="check<%=i %>"><%=listaskladnikow.get(i+1)%></label>
                             </li>                                              
                             <% } %> 
                             <li>

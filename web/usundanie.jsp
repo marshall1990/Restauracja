@@ -24,24 +24,32 @@
         <section>
             <div class="container">
                 <article>
-                    <h1>Błąd połączenia z bazą danych.</h1>
-                     <form name="form1"  action="index.jsp">
-                         <ul>
-                            <li>
-                                <input type="submit" value="Ok"/>  
-                            </li>
-                        </ul>
-                        </form> 
-                    
-                    
-                    
+                  <%            
+                  Przekierowania przekierowania = new Przekierowania();  
+                  ArrayList<String> listadan;
+                  listadan=przekierowania.zamowieniewszystko(response);
+                  %>
+                         <h1>Menu</h1>
+                         <form name="form1" onsubmit="checkBoxValidation()" action="usundanie2.jsp">
+                             <ul>
+                                 <%!    int i = 0; %>
+                                 <% for( i=0; i<listadan.size(); i=i+2) { %>
+                                 <li>                                
+                                     <input id="check<%=i %>" type="checkbox" name="usuwanedania" value="<%=listadan.get(i)%>" />
+                                     <label class="css-label" for="check<%=i %>"><%=listadan.get(i+1)%></label>
+                                 </li>
+                                 <% } %>                            
+                                 <li>
+                                    <input type="submit" value="Usuń"/>  
+                                 </li>                            
+                            </ul>
+                         </form>   
                 </article>
-                
                 <aside>
+                    <h3>Wybierz dania, które chcesz usunąć.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>
-           
         </section>
         <footer>
             Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 

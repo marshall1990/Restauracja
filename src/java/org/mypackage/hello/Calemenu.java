@@ -24,13 +24,14 @@ public class Calemenu {
                         Class.forName(baza.getDriver1()).newInstance();
                         conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());    
 
-                        String sql="SELECT nazwa FROM danie ORDER BY nazwa";
+                        String sql="SELECT ID_Dania,nazwa FROM danie ORDER BY nazwa";
 
                         PreparedStatement statement=conn.prepareStatement( sql );
                         rst=statement.executeQuery();
                         
                         while(rst.next()){
                            skladniki.add(rst.getString(1));
+                           skladniki.add(rst.getString(2));
                          }
                        }
                       catch (Exception e) { 

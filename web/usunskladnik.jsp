@@ -24,24 +24,32 @@
         <section>
             <div class="container">
                 <article>
-                    <h1>Błąd połączenia z bazą danych.</h1>
-                     <form name="form1"  action="index.jsp">
-                         <ul>
-                            <li>
-                                <input type="submit" value="Ok"/>  
-                            </li>
-                        </ul>
-                        </form> 
-                    
-                    
-                    
+                  <%            
+                    Przekierowania przekierowania = new Przekierowania();
+                    ArrayList<String> listaskladnikow;
+                    listaskladnikow=przekierowania.zamowienieskladniki(response);
+                  %>
+                         <h1>Menu</h1>
+                         <form name="form1" onsubmit="checkBoxValidation()" action="usunskladnik2.jsp">
+                             <ul>
+                                 <%!    int i = 0; %>
+                                 <% for( i=0; i<listaskladnikow.size(); i=i+2) { %>
+                                 <li>                                
+                                     <input id="check<%=i %>" type="checkbox" name="usuwanyskladnik" value="<%=listaskladnikow.get(i)%>" />
+                                     <label class="css-label" for="check<%=i %>"><%=listaskladnikow.get(i+1)%></label>
+                                 </li>
+                                 <% } %>                            
+                                 <li>
+                                    <input type="submit" value="Usuń"/>  
+                                 </li>                            
+                            </ul>
+                         </form>   
                 </article>
-                
                 <aside>
+                    <h3>Wybierz składnik, który chcesz usunąć.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>
-           
         </section>
         <footer>
             Created by Krzysztof Pazdyk & Dawid Ślusarczyk :: All rights reserved :: Copyright @ 2013 

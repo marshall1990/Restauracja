@@ -33,10 +33,10 @@
                          <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_potwierdzenie.jsp">
                              <ul>
                                  <%!    int i = 0; %>
-                                 <% for( i=0; i<listadan.size(); i++) { %>
+                                 <% for( i=0; i<listadan.size(); i=i+2) { %>
                                  <li>
-                                     <input type="hidden" name="zamowionedania" value="<%=listadan.get(i)%>" />
-                                     <label><%=listadan.get(i)%></label>
+                                     <input type="hidden" name="zamowionedania" value="<%=listadan.get(i+1)%>" />
+                                     <label><%=listadan.get(i+1)%></label>
                                      <div class="styled-select">
                                         <select name="iloscdan">
                                             <option value="0">0</option>

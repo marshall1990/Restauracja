@@ -46,20 +46,37 @@ dania=przekierowania.restauratordaniadowykonania(response);
                             </tr>
                             <% } %>
                         </table>  
-                        <form name="form1" onsubmit="checkBoxValidation()" action="dodajdanie.jsp">
+                        <form name="form1"  action="dodajdanie.jsp">
                          <ul>
                             <li>
                                 <input type="submit" value="Dodaj danie"/>  
                             </li>
                         </ul>
                         </form> 
-                        <form name="form1" onsubmit="checkBoxValidation()" action="dodajskladnik.jsp">
+                        <form name="form1" action="dodajskladnik.jsp">
                          <ul>
                             <li>
                                 <input type="submit" value="Dodaj składnik"/>  
                             </li>
                         </ul>
                         </form> 
+                        
+                        <form name="form1" action="usundanie.jsp">
+                         <ul>
+                            <li>
+                                <input type="submit" value="Usuń danie"/>  
+                            </li>
+                        </ul>
+                        </form> 
+                        
+                        <form name="form1"  action="usunskladnik.jsp">
+                         <ul>
+                            <li>
+                                <input type="submit" value="Usuń składnik"/>  
+                            </li>
+                        </ul>
+                        </form> 
+                        
                 </article>
                 <aside>
                     <h3></h3>
