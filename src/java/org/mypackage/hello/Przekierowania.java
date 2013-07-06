@@ -5,7 +5,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.servlet.http.*;
 import org.apache.commons.beanutils.BeanUtils;
-
+/**
+ * 
+ * Ta klasa zawiera metody wykorztstwanie do zminimalizowania ilości kodu jsp na stronach aplikacji.
+ */
 public class Przekierowania  {
     
     

@@ -6,7 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+/**
+ * 
+ * Ta klasa reprezentuje listę brakujących składników
+ */
 public class Brakujaceskladniki {
     private String blad="Nie";
     /**
