@@ -11,7 +11,7 @@
             <a href="podanie_menu.jsp">Home</a>
         </li>
         <li>
-            <a href="#">Szukaj</a>
+            <a href="zamowienie_skladniki.jsp">Szukaj</a>
         </li>
         <li>
             <a href="kontakt.jsp">Kontakt</a>

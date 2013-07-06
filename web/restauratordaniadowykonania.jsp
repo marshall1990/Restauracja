@@ -45,38 +45,25 @@ dania=przekierowania.restauratordaniadowykonania(response);
                                 <td><%=dania.get(i+1)%></td>
                             </tr>
                             <% } %>
-                        </table>  
-                        <form name="form1"  action="dodajdanie.jsp">
-                         <ul>
-                            <li>
-                                <input type="submit" value="Dodaj danie"/>  
-                            </li>
-                        </ul>
-                        </form> 
-                        <form name="form1" action="dodajskladnik.jsp">
-                         <ul>
-                            <li>
-                                <input type="submit" value="Dodaj składnik"/>  
-                            </li>
-                        </ul>
-                        </form> 
-                        
-                        <form name="form1" action="usundanie.jsp">
-                         <ul>
-                            <li>
-                                <input type="submit" value="Usuń danie"/>  
-                            </li>
-                        </ul>
-                        </form> 
-                        
-                        <form name="form1"  action="usunskladnik.jsp">
-                         <ul>
-                            <li>
-                                <input type="submit" value="Usuń składnik"/>  
-                            </li>
-                        </ul>
-                        </form> 
-                        
+                        </table> 
+                        <table class="table_btn">
+                            <tr>
+                                <td>
+                                    <a href="dodajdanie.jsp" class="btn_submit">Dodaj danie</a>
+                                </td>
+                                <td>
+                                    <a href="usundanie.jsp" class="btn_submit">Usuń danie</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="dodajskladnik.jsp" class="btn_submit">Dodaj składnik</a>
+                                </td>
+                                <td>
+                                    <a href="usunskladnik.jsp" class="btn_submit">Usuń składnik</a>
+                                </td>
+                            </tr>
+                        </table>
                 </article>
                 <aside>
                     <h3></h3>
