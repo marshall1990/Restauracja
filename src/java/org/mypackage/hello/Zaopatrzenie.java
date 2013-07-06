@@ -1,16 +1,21 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.mypackage.hello;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/**
+ * 
+ * Ta klasa reprezentuje uzupełnienie brakujących składników.
+ */
 public class Zaopatrzenie {
     private String blad="Nie";
+    /**
+     * Usuwanie składników z listy brakujących składników w restautacji.
+     * @param id tablica stringów zawierająca listę identyfikatorów składników, które zostały uzupełnione.
+     * @throws SQLException 
+     */
     public void uzupelnij(String id[]) throws SQLException {
 
             Connection conn = null;

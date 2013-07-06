@@ -1,17 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje weryfikowanie danych podanych podczas rejestarcji i rejestrowanie nowego użytkownika.
+ */
 public class Rejestrowanie {
     
     private String imie="Brak";
@@ -75,11 +74,17 @@ public class Rejestrowanie {
         this.password = password;
     }
     
+    
+    /**
+     * Weryfikuje czy dane podane podczas rejestracji były prawidłowe, sprawdza czy dany użytkownik już istnieje w systemie oraz jeśli nie istnieje to tworzy konto użytkownika.
+     * @return String zawierający informację czy wystapił błąd
+     * @throws SQLException 
+     */
     public String weryfikuj() throws SQLException {
         String blad = "Nie";
         Connection conn = null;
         ResultSet rst;
-        String sql="1";
+        String sql;
         
         if ((getImie().equals("Brak")) || (getImie().trim().equals(""))) {
             blad="Wprowadzono niepoprawne imię";

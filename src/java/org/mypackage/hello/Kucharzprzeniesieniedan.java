@@ -5,17 +5,24 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
+
+/**
+ * 
+ * Ta klasa reprezentuje wykonywanie dań przez kucharza.
+ */
 
 public class Kucharzprzeniesieniedan {
     private String blad="Nie";
       
-
+    /**
+     * Usuwa z listy dań do wykonania przez kucharza, wykonane dania i przenosi je do listy dań do dostarczenia dla kelnera i dostawcy
+     * @param id tablica Stringów zawierająca identyfikatory dań
+     * @throws SQLException 
+     */
     public void przenies(String id[]) throws SQLException {
 
             String ids = "(";

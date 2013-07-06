@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.mypackage.hello;
 
 import java.sql.Connection;
@@ -10,11 +7,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje dostarczanie dań przez dostawcę.
+ */
 public class Dostawcaprzeniesieniedan {
     private String blad="Nie";
     
-    
+    /**
+     * Usuwa z listy dań do dostarczenia przez dostawcę, dostarczone dania i przenosi je do listy dań dostarczonych
+     * @param id tablica Stringów zawierająca identyfikatory dań
+     * @throws SQLException 
+     */
     public void przenies(String id[]) throws SQLException {
 
             String ids = "(";

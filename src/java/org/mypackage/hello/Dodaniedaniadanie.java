@@ -10,7 +10,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje weryfikowanie nazwy dania i dodawanie dania do bazy danych.
+ */
 public class Dodaniedaniadanie {
     
     private String nazwadania="Brak";
@@ -44,7 +47,11 @@ public class Dodaniedaniadanie {
     public void setPrzepis(String przepis) {
         this.przepis = przepis;
     }
-    
+    /**
+     * Weryfikuje czy nazwa dania jest prawidłowa, jeśli tak dodaje danie do bazy danych
+     * @param Login osoby dodającej danie
+     * @throws SQLException 
+     */
     public void weryfikuj(String Login) throws SQLException  {
         Connection conn = null;
         String sql;
@@ -113,4 +120,6 @@ public class Dodaniedaniadanie {
     public String getBlad() {
         return blad;
     }
+    
+    
 }

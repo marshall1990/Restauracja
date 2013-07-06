@@ -1,20 +1,23 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje usuwanie dań z menu restauracji.
+ */
 public class Restauratordanieusun {
     private String blad="Nie";
     
-    
+    /**
+     * Usuwa dania z listy dań restauracji
+     * @param id tablica stringów zawierająca identyfikatory dań, które mają być usunięte.
+     * @throws SQLException 
+     */
     public void usun(String id[]) throws SQLException {
 
             String ids = "(";

@@ -1,12 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.mypackage.hello;
 
 /**
  *
- * @author Marzena
+ * Ta klasa reprezentuje osobę zalogowaną.
  */
 public class Zalogowany {
     private String login;

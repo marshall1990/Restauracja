@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.mypackage.hello;
 
 import java.sql.Connection;
@@ -10,17 +7,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje zatwierdzenie zamówionych dań do realizacji przez kucharza.
+ */
 public class Weryfikacjazamowienia {
     private String blad="Nie";
     
   
-    
     /**
-     *
-     * @param dania
-     * @param ilosc
-     * @return
+     * Dodanie dań zamówionych przez klienta do listy dań do wykonania przez kucharza.
+     * @param dania tablica stringów zawierająca listę dań zamówionych przez klienta.
+     * @param ilosc tablica stringów zawierająca infformacje na temat liczby zamówionych dań danego rodzaju.
+     * @param zalogowany login klienta zamawiającego danie
+     * @param nawynos określa czy danie było zamówione w lokalu czy na wynos
+     * @throws SQLException 
      */
     public void weryfikuj(String dania[], String ilosc[],String zalogowany, String nawynos) throws SQLException  {
        

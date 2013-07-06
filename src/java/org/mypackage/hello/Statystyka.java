@@ -1,31 +1,32 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje dane statystyczne na temat dań dostarczonych klientom.
+ */
 public class Statystyka {
     
     
     private String blad="Nie";
-    
+    /**
+     * 
+     * @return ArrayList<String> zawierającą listę dań które zostały do tej pory dostarczone klientom.
+     * @throws SQLException 
+     */
     public ArrayList<String> policz() throws SQLException {
      
      ArrayList<String> dania;
      dania = new ArrayList<String>();
-     Connection conn2,conn1,conn = null;
+     Connection conn = null;
      ResultSet rst;
-     String sqls,sql;
-     int ile=0;
+     String sql;
             
             try {
                 Bazadanych baza = new Bazadanych();

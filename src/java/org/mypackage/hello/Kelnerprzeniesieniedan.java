@@ -5,17 +5,23 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje dostarczanie dań przez kelnera.
+ */
 public class Kelnerprzeniesieniedan {
     private String blad="Nie";
     
-    
+    /**
+     * Usuwa z listy dań do dostarczenia przez kelnera, dostarczone dania i przenosi je do listy dań dostarczonych
+     * @param id tablica Stringów zawierająca identyfikatory dań
+     * @throws SQLException 
+     */
     public void przenies(String id[]) throws SQLException {
 
             String ids = "(";

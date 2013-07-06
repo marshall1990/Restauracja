@@ -5,19 +5,23 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
+/**
+ * 
+ * Ta klasa reprezentuje wyświetlanie zawartości tabeli z bazy danych
+ */
 public class Listadan {
    
     private String blad="Nie";
     
     /**
-     *
-     * @param bazadan
+     * 
+     * @param bazadan nazwa tabeli na której będzie wykonywana operacja
+     * @return ArrayList<String> zawiera listę rekordów bazy danych o nazwie @param bazadan
+     * @throws SQLException 
      */
     public ArrayList<String> wyswietl(String bazadan) throws SQLException {    
         

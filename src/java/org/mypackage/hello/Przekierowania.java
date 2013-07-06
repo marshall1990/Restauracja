@@ -26,7 +26,7 @@ public class Przekierowania  {
     public ArrayList<String> dodajdanieskladniki2(HttpServletResponse response) throws IOException, SQLException {
     
         ArrayList<String> listaskladnikow;
-        Dodaniedaniaskladniki2 skladniki = new Dodaniedaniaskladniki2();
+        Skladniki skladniki = new Skladniki();
         listaskladnikow=skladniki.wypisz();
         if (skladniki.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp");}
         return listaskladnikow;
@@ -130,7 +130,7 @@ public class Przekierowania  {
         Skladniki skladniki = new Skladniki();
         ArrayList<String> listaskladnikow;
         listaskladnikow=skladniki.wypisz();
-        if (skladniki.getBlad().equals("Tak")) response.sendRedirect("bazadanychblad.jsp");
+        if (skladniki.getBlad().equals("Tak")) { response.sendRedirect("bazadanychblad.jsp"); }
              
         return listaskladnikow;
     
@@ -161,7 +161,7 @@ public class Przekierowania  {
     public String weryfikacjalogowania (Zalogowany zalogowany, HttpServletResponse response,HttpServletRequest request) throws IllegalAccessException, InvocationTargetException, SQLException, IOException {
        
         
-        String blad=null;
+        String blad;
         Logowanie walidator = new Logowanie();
         BeanUtils.populate(walidator, request.getParameterMap());
         blad=walidator.weryfikuj();
@@ -185,7 +185,7 @@ public class Przekierowania  {
     public String weryfikacjarejestracji (HttpServletRequest request) throws IllegalAccessException, SQLException, InvocationTargetException {
     
     
-        String blad=null;
+        String blad;
         Rejestrowanie walidator = new Rejestrowanie();
         BeanUtils.populate(walidator, request.getParameterMap());
         blad=walidator.weryfikuj();   

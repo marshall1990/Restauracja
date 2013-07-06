@@ -5,16 +5,23 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * 
+ * Ta klasa reprezentuje przypisywanie składników do dania
+ */
 public class Dodaniedaniaskladniki {
     private String blad="Nie";
     
-    
+    /**
+     * Przypisuje daniu o nazwie @param nazwa listę składników @param skladniki, Zapisuje te dane w bazie danych
+     * @param skladniki dania
+     * @param nazwa dania 
+     * @throws SQLException 
+     */
     public void dodaj(String skladniki[], String nazwa) throws SQLException {
     
         Connection conn = null;

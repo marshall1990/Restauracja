@@ -2,16 +2,28 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje dodawanie nowego składnika do bazy danych składników restauracji.
+ */
 public class Skladnikidodaj {
     private String blad="Dodałeś danie";
-       
+    /**
+     * Weryfikacja czy podana nazwa składnika jest prawidłowa oraz czy taki składnik nie jest już w bazie danych, jeśli nie dodanie nowego składnika.
+     * @param nazwa składnika który chcemy dodać
+     * @param ilosc składnika jaka będzie w magazynie
+     * @param opis składnika
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     * @throws IllegalAccessException 
+     */   
     public void wypisz(String nazwa, String ilosc, String opis) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalAccessException {
         
 

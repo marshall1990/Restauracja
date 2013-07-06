@@ -2,15 +2,21 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+/**
+ * 
+ * Ta klasa reprezentuje listę wszystkich składników
+ */
 public class Skladniki {
     private String blad="Nie";
-       
+    /**
+     * 
+     * @return ArrayList<String> zawierającą listę wszystkich składników
+     * @throws SQLException 
+     */   
     public ArrayList<String> wypisz() throws SQLException {
         
         ArrayList<String> skladniki;
@@ -23,7 +29,7 @@ public class Skladniki {
                         Bazadanych baza = new Bazadanych(); 
                         conn = baza.connectKlientMySQL();
                         
-                        String sql="SELECT ID_Skladnika,skladnik FROM skladniki ORDER BY skladnik";
+                        String sql="SELECT ID_skladnika,skladnik FROM skladniki ORDER BY skladnik";
 
                         PreparedStatement statement=conn.prepareStatement( sql );
                         rst=statement.executeQuery();

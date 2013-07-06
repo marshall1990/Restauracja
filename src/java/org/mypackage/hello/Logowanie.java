@@ -5,12 +5,14 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje weryfikowanie danych podanych podczas logowania przez użytkownika 
+ */
 public class Logowanie {
   
 	
@@ -46,7 +48,11 @@ public class Logowanie {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+    /**
+     * weryfikuje czy dane podane podczas logowania są poprawne oraz czy konto użytkownika istnieje w systemie.
+     * @return String zawierający informację czy wystapił błąd
+     * @throws SQLException 
+     */
     public String weryfikuj() throws SQLException {
         String blad = "Nie";
         Connection conn = null;
