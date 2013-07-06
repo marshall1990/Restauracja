@@ -16,7 +16,7 @@ public class Danieponazwie {
     /**
      * 
      * @param nazwa dania ktore klient szuka
-     * @return ArrayList<String> zawierajaca liste dan o okreslonej nazwie
+     * @return ArrayList zawierajaca liste dan o okreslonej nazwie
      * @throws SQLException 
      */
     public ArrayList<String> wypisz(String nazwa) throws SQLException {

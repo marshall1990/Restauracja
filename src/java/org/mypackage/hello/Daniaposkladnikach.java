@@ -17,7 +17,7 @@ public class Daniaposkladnikach {
     /**
      * 
      * @param skladniki lista skladnikow, ktore wybral klient
-     * @return ArrayList<String> zawierajaca liste dan, ktore zawieraja skladniki skladniki znajdujace sie na liscie @param skladniki
+     * @return ArrayList zawierajaca liste dan, ktore zawieraja skladniki skladniki znajdujace sie na liscie @param skladniki
      * @throws SQLException 
      */
     public ArrayList<String> weryfikuj(String skladniki[]) throws SQLException {

@@ -14,7 +14,7 @@ public class Brakujaceskladniki {
     private String blad="Nie";
     /**
      * 
-     * @return ArrayList<String> zawierajaca liste brakujacych skladnikow 
+     * @return ArrayList zawierajaca liste brakujacych skladnikow 
      * @throws SQLException 
      */   
     public ArrayList<String> wypisz() throws SQLException {

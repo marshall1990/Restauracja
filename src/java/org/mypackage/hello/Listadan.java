@@ -20,7 +20,7 @@ public class Listadan {
     /**
      * 
      * @param bazadan nazwa tabeli na ktorej bedzie wykonywana operacja
-     * @return ArrayList<String> zawiera liste rekordow bazy danych o nazwie @param bazadan
+     * @return ArrayList zawiera liste rekordow bazy danych o nazwie @param bazadan
      * @throws SQLException 
      */
     public ArrayList<String> wyswietl(String bazadan) throws SQLException {    

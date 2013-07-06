@@ -17,7 +17,7 @@ public class Statystyka {
     private String blad="Nie";
     /**
      * 
-     * @return ArrayList<String> zawierajaca liste dan ktore zostaly do tej pory dostarczone klientom.
+     * @return ArrayList zawierajaca liste dan ktore zostaly do tej pory dostarczone klientom.
      * @throws SQLException 
      */
     public ArrayList<String> policz() throws SQLException {

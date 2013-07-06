@@ -16,7 +16,7 @@ public class Calemenu {
     private String blad="Nie";
     /**
      * 
-     * @return ArrayList<String> zawierajaca liste wszystkich dan w menu
+     * @return ArrayList zawierajaca liste wszystkich dan w menu
      * @throws SQLException 
      */   
     public ArrayList<String> wypisz() throws SQLException {

@@ -14,7 +14,7 @@ public class Skladniki {
     private String blad="Nie";
     /**
      * 
-     * @return ArrayList<String> zawierajaca liste wszystkich skladnikow
+     * @return ArrayList zawierajaca liste wszystkich skladnikow
      * @throws SQLException 
      */   
     public ArrayList<String> wypisz() throws SQLException {
