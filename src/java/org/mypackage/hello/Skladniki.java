@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 /**
  * 
- * Ta klasa reprezentuje listę wszystkich składników
+ * Ta klasa reprezentuje liste wszystkich skladnikow
  */
 public class Skladniki {
     private String blad="Nie";
     /**
      * 
-     * @return ArrayList<String> zawierającą listę wszystkich składników
+     * @return ArrayList<String> zawierajaca liste wszystkich skladnikow
      * @throws SQLException 
      */   
     public ArrayList<String> wypisz() throws SQLException {
@@ -40,7 +40,7 @@ public class Skladniki {
                          }
                        }
                       catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         } 
                     finally { conn.close(); }

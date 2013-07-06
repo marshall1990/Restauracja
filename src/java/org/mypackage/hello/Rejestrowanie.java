@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 /**
  * 
- * Ta klasa reprezentuje weryfikowanie danych podanych podczas rejestarcji i rejestrowanie nowego użytkownika.
+ * Ta klasa reprezentuje weryfikowanie danych podanych podczas rejestarcji i rejestrowanie nowego uzytkownika.
  */
 public class Rejestrowanie {
     
@@ -76,8 +76,8 @@ public class Rejestrowanie {
     
     
     /**
-     * Weryfikuje czy dane podane podczas rejestracji były prawidłowe, sprawdza czy dany użytkownik już istnieje w systemie oraz jeśli nie istnieje to tworzy konto użytkownika.
-     * @return String zawierający informację czy wystapił błąd
+     * Weryfikuje czy dane podane podczas rejestracji byly prawidlowe, sprawdza czy dany uzytkownik juz istnieje w systemie oraz jesli nie istnieje to tworzy konto uzytkownika.
+     * @return String zawierajacy informacje czy wystapil blad
      * @throws SQLException 
      */
     public String weryfikuj() throws SQLException {
@@ -87,7 +87,7 @@ public class Rejestrowanie {
         String sql;
         
         if ((getImie().equals("Brak")) || (getImie().trim().equals(""))) {
-            blad="Wprowadzono niepoprawne imię";
+            blad="Wprowadzono niepoprawne imie";
          }
         if ((getNazwisko().equals("Brak")) || (getNazwisko().trim().equals(""))) {
             if (blad.equals("Nie")) {
@@ -106,9 +106,9 @@ public class Rejestrowanie {
   
         if ((getPassword().equals("Brak")) || (getPassword().trim().equals(""))) {
             if (blad.equals("Nie")) {
-                  blad="Wprowadzono niepoprawne hasło";
+                  blad="Wprowadzono niepoprawne haslo";
             } else {
-                blad=blad+",<br />niepoprawne hasło";
+                blad=blad+",<br />niepoprawne haslo";
                 }
         }
         
@@ -125,7 +125,7 @@ public class Rejestrowanie {
                 rst.next();
 
                 if (rst.getInt(1)>0) {
-                    blad="Taki login został już zarejestrowany, musisz wybrać inny.";
+                    blad="Taki login zostal juz zarejestrowany, musisz wybrac inny.";
                 }
                         else {
                         sql="insert into `users` values (?,?,?,?,?,?)";
@@ -137,12 +137,12 @@ public class Rejestrowanie {
                         statement.setString(5, getPassword());
                         statement.setInt(6,0);
                         statement.executeUpdate();
-                        blad="Dziękujemy za rejestrację. Zaloguj się.";
+                        blad="Dziekujemy za rejestracje. Zaloguj sie.";
                   }
 
                }
               catch (Exception e) {
-                 blad="Błąd połączenia z bazą danych";
+                 blad="Blad polaczenia z baza danych";
                }
             finally { conn.close(); }
         }

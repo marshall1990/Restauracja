@@ -48,8 +48,8 @@ public class Dodaniedaniadanie {
         this.przepis = przepis;
     }
     /**
-     * Weryfikuje czy nazwa dania jest prawidłowa, jeśli tak dodaje danie do bazy danych
-     * @param Login osoby dodającej danie
+     * Weryfikuje czy nazwa dania jest prawidlowa, jesli tak dodaje danie do bazy danych
+     * @param Login osoby dodajacej danie
      * @throws SQLException 
      */
     public void weryfikuj(String Login) throws SQLException  {
@@ -59,14 +59,14 @@ public class Dodaniedaniadanie {
         String userID=null;
         
         if ((getNazwadania().equals("Brak")) || (getNazwadania().trim().equals(""))) {
-             blad="Wprowadzono nieprawidłowa nazwa dania";     
+             blad="Wprowadzono nieprawidlowa nazwa dania";     
          }
   
         if ((getPrzepis().equals("Brak")) || (getPrzepis().trim().equals(""))) {
             if (getBlad().equals("Nie")) {
-                  blad="Wprowadzono nieprawidłowy przepis";
+                  blad="Wprowadzono nieprawidlowy przepis";
             } else {
-                blad=getBlad()+",<br />nieprawidłowy przepis";
+                blad=getBlad()+",<br />nieprawidlowy przepis";
                 }
         }
         
@@ -84,7 +84,7 @@ public class Dodaniedaniadanie {
                 rst.next();
 
                 if (rst.getInt(1)>0) {
-                    blad="Danie o takiej nazwie już jest w menu. Podaj inną nazwę";
+                    blad="Danie o takiej nazwie juz jest w menu. Podaj inna nazwe";
                 }
                    else {
                     
@@ -104,7 +104,7 @@ public class Dodaniedaniadanie {
                      }
             }
             catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         }
             finally { conn.close(); }

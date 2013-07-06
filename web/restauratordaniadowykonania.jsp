@@ -52,7 +52,7 @@ dania=przekierowania.restauratordaniadowykonania(response);
                                     <a href="dodajdanie.jsp" class="btn_submit">Dodaj danie</a>
                                 </td>
                                 <td>
-                                    <a href="usundanie.jsp" class="btn_submit">Usuń danie</a>
+                                    <a href="usundanie.jsp" class="btn_submit">Usun danie</a>
                                 </td>
                             </tr>
                             <tr>
@@ -60,7 +60,7 @@ dania=przekierowania.restauratordaniadowykonania(response);
                                     <a href="dodajskladnik.jsp" class="btn_submit">Dodaj składnik</a>
                                 </td>
                                 <td>
-                                    <a href="usunskladnik.jsp" class="btn_submit">Usuń składnik</a>
+                                    <a href="usunskladnik.jsp" class="btn_submit">Usun składnik</a>
                                 </td>
                             </tr>
                         </table>

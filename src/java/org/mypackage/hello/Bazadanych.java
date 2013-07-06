@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 /**
  * 
- * Ta klasa reprezentuje połączenia z bazami danych.
+ * Ta klasa reprezentuje polaczenia z bazami danych.
  */
 public class Bazadanych {
   
@@ -26,7 +26,7 @@ public class Bazadanych {
     
     /**
      * 
-     * @return połączenie z bazą danych MySQL - ograniczone uprawnienia.
+     * @return polaczenie z baza danych MySQL - ograniczone uprawnienia.
      * @throws SQLException
      * @throws ClassNotFoundException 
      */
@@ -41,7 +41,7 @@ public class Bazadanych {
     
     /**
      * 
-     * @return połączenie z bazą danych MySQL - pełne uprawnienia.
+     * @return polaczenie z baza danych MySQL - pelne uprawnienia.
      * @throws SQLException
      * @throws ClassNotFoundException 
      */
@@ -56,7 +56,7 @@ public class Bazadanych {
     
     /**
      * 
-     * @return połączenie z bazą danych PostgreSQL - pełne uprawnienia.
+     * @return polaczenie z baza danych PostgreSQL - pelne uprawnienia.
      * @throws SQLException
      * @throws ClassNotFoundException 
      */

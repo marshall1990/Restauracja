@@ -7,13 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 /**
  * 
- * Ta klasa reprezentuje uzupełnienie brakujących składników.
+ * Ta klasa reprezentuje uzupelnienie brakujacych skladnikow.
  */
 public class Zaopatrzenie {
     private String blad="Nie";
     /**
-     * Usuwanie składników z listy brakujących składników w restautacji.
-     * @param id tablica stringów zawierająca listę identyfikatorów składników, które zostały uzupełnione.
+     * Usuwanie skladnikow z listy brakujacych skladnikow w restautacji.
+     * @param id tablica stringow zawierajaca liste identyfikatorow skladnikow, ktore zostaly uzupelnione.
      * @throws SQLException 
      */
     public void uzupelnij(String id[]) throws SQLException {
@@ -38,7 +38,7 @@ public class Zaopatrzenie {
 
             }
             catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         }
             finally { conn.close(); }

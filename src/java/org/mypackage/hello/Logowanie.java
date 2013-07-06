@@ -11,7 +11,7 @@ import java.sql.Statement;
 
 /**
  * 
- * Ta klasa reprezentuje weryfikowanie danych podanych podczas logowania przez użytkownika 
+ * Ta klasa reprezentuje weryfikowanie danych podanych podczas logowania przez uzytkownika 
  */
 public class Logowanie {
   
@@ -49,8 +49,8 @@ public class Logowanie {
         this.password = password;
     }
     /**
-     * weryfikuje czy dane podane podczas logowania są poprawne oraz czy konto użytkownika istnieje w systemie.
-     * @return String zawierający informację czy wystapił błąd
+     * weryfikuje czy dane podane podczas logowania sa poprawne oraz czy konto uzytkownika istnieje w systemie.
+     * @return String zawierajacy informacje czy wystapil blad
      * @throws SQLException 
      */
     public String weryfikuj() throws SQLException {
@@ -65,9 +65,9 @@ public class Logowanie {
   
         if ((getPassword().equals("Brak")) || (getPassword().trim().equals(""))) {
             if (blad.equals("Nie")) {
-                  blad="Wprowadzono niepoprawne hasło";
+                  blad="Wprowadzono niepoprawne haslo";
             } else {
-                blad=blad+",<br />niepoprawne hasło";
+                blad=blad+",<br />niepoprawne haslo";
                 }
         }
         
@@ -84,11 +84,11 @@ public class Logowanie {
                 
                 if (rst.getInt(1)>0) {       } //response.sendRedirect("podanie_menu.jsp");
                    else {
-                      blad="Użytkownik o podanej nazwie lub podanym haśle nie istnieje.";
+                      blad="Uzytkownik o podanej nazwie lub podanym hasle nie istnieje.";
                      }  
               }
             catch (Exception e) {
-                 blad="Błąd połączenia z bazą danych";    
+                 blad="Blad polaczenia z baza danych";    
                }
             finally { conn.close(); }
           }

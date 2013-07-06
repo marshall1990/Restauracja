@@ -19,7 +19,7 @@
         <section>
             <div class="container dostawca">
                 <article>
-                    <h1>Zamów danie:</h1>
+                    <h1>Zamow danie:</h1>
                     <form action="zamowienie_nazwa_rezultat.jsp" method="get">
                         <ul>
                             <li>

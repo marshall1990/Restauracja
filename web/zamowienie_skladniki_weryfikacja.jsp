@@ -28,10 +28,10 @@
                 Przekierowania przekierowania = new Przekierowania();
                 przekierowania.zamowienieskladnikiweryfikacja(zalogowany, response, request);
                 %>
-                <h1>Zamówienie złożone, dziękujemy.</h1>          
+                <h1>Zamowienie złożone, dziękujemy.</h1>          
                 </article>
                 <aside>
-                    <h3>Wybierz dania, które chcesz zamówić.</h3>
+                    <h3>Wybierz dania, ktore chcesz zamowić.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

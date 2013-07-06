@@ -12,14 +12,14 @@ import java.sql.Statement;
 
 /**
  * 
- * Ta klasa reprezentuje dostarczanie dań przez kelnera.
+ * Ta klasa reprezentuje dostarczanie dan przez kelnera.
  */
 public class Kelnerprzeniesieniedan {
     private String blad="Nie";
     
     /**
-     * Usuwa z listy dań do dostarczenia przez kelnera, dostarczone dania i przenosi je do listy dań dostarczonych
-     * @param id tablica Stringów zawierająca identyfikatory dań
+     * Usuwa z listy dan do dostarczenia przez kelnera, dostarczone dania i przenosi je do listy dan dostarczonych
+     * @param id tablica Stringow zawierajaca identyfikatory dan
      * @throws SQLException 
      */
     public void przenies(String id[]) throws SQLException {
@@ -61,7 +61,7 @@ public class Kelnerprzeniesieniedan {
                 conn.close();
             }
             catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         }
             finally { conn.close(); }

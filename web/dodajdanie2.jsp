@@ -38,7 +38,7 @@ blad=przekierowania.dodajdanie2(zalogowany,response,session,request);
                     <a href="dodajdanie.jsp" class="btn_submit">OK</a>
                 </article>
                 <aside>
-                    <h3>Dodaj przepis dania, które chcesz skomponować.</h3>
+                    <h3>Dodaj przepis dania, ktore chcesz skomponować.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

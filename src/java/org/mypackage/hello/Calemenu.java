@@ -16,7 +16,7 @@ public class Calemenu {
     private String blad="Nie";
     /**
      * 
-     * @return ArrayList<String> zawierającą listę wszystkich dań w menu
+     * @return ArrayList<String> zawierajaca liste wszystkich dan w menu
      * @throws SQLException 
      */   
     public ArrayList<String> wypisz() throws SQLException {
@@ -42,7 +42,7 @@ public class Calemenu {
                          }
                        }
                       catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         } 
                     finally { conn.close(); }

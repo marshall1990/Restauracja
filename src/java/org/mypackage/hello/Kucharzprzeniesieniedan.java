@@ -12,15 +12,15 @@ import java.sql.Statement;
 
 /**
  * 
- * Ta klasa reprezentuje wykonywanie dań przez kucharza.
+ * Ta klasa reprezentuje wykonywanie dan przez kucharza.
  */
 
 public class Kucharzprzeniesieniedan {
     private String blad="Nie";
       
     /**
-     * Usuwa z listy dań do wykonania przez kucharza, wykonane dania i przenosi je do listy dań do dostarczenia dla kelnera i dostawcy
-     * @param id tablica Stringów zawierająca identyfikatory dań
+     * Usuwa z listy dan do wykonania przez kucharza, wykonane dania i przenosi je do listy dan do dostarczenia dla kelnera i dostawcy
+     * @param id tablica Stringow zawierajaca identyfikatory dan
      * @throws SQLException 
      */
     public void przenies(String id[]) throws SQLException {
@@ -74,7 +74,7 @@ public class Kucharzprzeniesieniedan {
                 statementd.executeUpdate(sqld);
             }
             catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         }
             finally { conn.close(); }

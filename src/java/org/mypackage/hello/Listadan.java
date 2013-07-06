@@ -11,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 /**
  * 
- * Ta klasa reprezentuje wyświetlanie zawartości tabeli z bazy danych
+ * Ta klasa reprezentuje wyswietlanie zawartosci tabeli z bazy danych
  */
 public class Listadan {
    
@@ -19,8 +19,8 @@ public class Listadan {
     
     /**
      * 
-     * @param bazadan nazwa tabeli na której będzie wykonywana operacja
-     * @return ArrayList<String> zawiera listę rekordów bazy danych o nazwie @param bazadan
+     * @param bazadan nazwa tabeli na ktorej bedzie wykonywana operacja
+     * @return ArrayList<String> zawiera liste rekordow bazy danych o nazwie @param bazadan
      * @throws SQLException 
      */
     public ArrayList<String> wyswietl(String bazadan) throws SQLException {    
@@ -47,7 +47,7 @@ public class Listadan {
                  }
         }
         catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         }
         finally { conn.close(); }

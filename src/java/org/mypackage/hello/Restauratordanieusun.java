@@ -8,14 +8,14 @@ import java.sql.Statement;
 
 /**
  * 
- * Ta klasa reprezentuje usuwanie dań z menu restauracji.
+ * Ta klasa reprezentuje usuwanie dan z menu restauracji.
  */
 public class Restauratordanieusun {
     private String blad="Nie";
     
     /**
-     * Usuwa dania z listy dań restauracji
-     * @param id tablica stringów zawierająca identyfikatory dań, które mają być usunięte.
+     * Usuwa dania z listy dan restauracji
+     * @param id tablica stringow zawierajaca identyfikatory dan, ktore maja byc usuniete.
      * @throws SQLException 
      */
     public void usun(String id[]) throws SQLException {
@@ -50,7 +50,7 @@ public class Restauratordanieusun {
                 conn.close();
             }
             catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                        blad="Tak";
                        }
             finally { conn.close(); }

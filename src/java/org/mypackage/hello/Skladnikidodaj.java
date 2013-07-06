@@ -9,15 +9,15 @@ import java.sql.Statement;
 
 /**
  * 
- * Ta klasa reprezentuje dodawanie nowego składnika do bazy danych składników restauracji.
+ * Ta klasa reprezentuje dodawanie nowego skladnika do bazy danych skladnikow restauracji.
  */
 public class Skladnikidodaj {
-    private String blad="Dodałeś danie";
+    private String blad="Dodales danie";
     /**
-     * Weryfikacja czy podana nazwa składnika jest prawidłowa oraz czy taki składnik nie jest już w bazie danych, jeśli nie dodanie nowego składnika.
-     * @param nazwa składnika który chcemy dodać
-     * @param ilosc składnika jaka będzie w magazynie
-     * @param opis składnika
+     * Weryfikacja czy podana nazwa skladnika jest prawidlowa oraz czy taki skladnik nie jest juz w bazie danych, jesli nie dodanie nowego skladnika.
+     * @param nazwa skladnika ktory chcemy dodac
+     * @param ilosc skladnika jaka bedzie w magazynie
+     * @param opis skladnika
      * @throws SQLException
      * @throws ClassNotFoundException
      * @throws InstantiationException
@@ -33,16 +33,16 @@ public class Skladnikidodaj {
 
         
         if ((nazwa.equals("Brak")) || (nazwa.trim().equals(""))) {
-            blad="Wprowadzono niepoprawna nazwę";
+            blad="Wprowadzono niepoprawna nazwe";
          }
         if ((ilosc.equals("Brak")) || (ilosc.trim().equals(""))) {
             if (blad.equals("Nie")) {
-                blad="Wprowadzono niepoprawną ilość";
+                blad="Wprowadzono niepoprawna ilosc";
              } else {
-                blad=blad+",<br />niepoprawna ilość";
+                blad=blad+",<br />niepoprawna ilosc";
              }
         } 
-        if (blad.equals("Dodałeś danie")) {
+        if (blad.equals("Dodales danie")) {
             
                     try {
                         Bazadanych baza = new Bazadanych();
@@ -54,7 +54,7 @@ public class Skladnikidodaj {
                         rst.next();
 
                         if (rst.getInt(1)>0) {
-                            blad="Taki składnik już znajduje się w bazie danych.";
+                            blad="Taki skladnik juz znajduje sie w bazie danych.";
                         }
                         else {
                         
@@ -68,7 +68,7 @@ public class Skladnikidodaj {
                         }
                      }
                      catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                        blad="Tak";
                       } 
                    finally { conn.close(); }

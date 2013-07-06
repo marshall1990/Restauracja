@@ -3,7 +3,7 @@ package org.mypackage.hello;
 
 /**
  *
- * Ta klasa reprezentuje osobę zalogowaną.
+ * Ta klasa reprezentuje osobe zalogowana.
  */
 public class Zalogowany {
     private String login;

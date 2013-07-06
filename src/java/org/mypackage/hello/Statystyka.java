@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * 
- * Ta klasa reprezentuje dane statystyczne na temat dań dostarczonych klientom.
+ * Ta klasa reprezentuje dane statystyczne na temat dan dostarczonych klientom.
  */
 public class Statystyka {
     
@@ -17,7 +17,7 @@ public class Statystyka {
     private String blad="Nie";
     /**
      * 
-     * @return ArrayList<String> zawierającą listę dań które zostały do tej pory dostarczone klientom.
+     * @return ArrayList<String> zawierajaca liste dan ktore zostaly do tej pory dostarczone klientom.
      * @throws SQLException 
      */
     public ArrayList<String> policz() throws SQLException {
@@ -44,7 +44,7 @@ public class Statystyka {
                 }
              }
             catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         }
             finally { conn.close(); }

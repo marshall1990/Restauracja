@@ -28,7 +28,7 @@
                                 <input type="text" name="nazwadania" id="name" />
                             </li>
                             <li>
-                                <label for="recipe">Przepis (500 znaków):</label>
+                                <label for="recipe">Przepis (500 znakow):</label>
                                 <textarea rows="10" cols="50" name="przepis" id="recipe" maxlength="500"></textarea>
                             </li>
                             <li>

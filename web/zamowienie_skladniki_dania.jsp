@@ -29,7 +29,7 @@
                     ArrayList<String> listadan;
                     listadan=przekierowania.zamowienieskladnikidania(response, request);
                   %>
-                         <h1>Dania zawierające podane składniki:</h1>
+                         <h1>Dania zawierajace podane składniki:</h1>
                          <form name="form1" onsubmit="checkBoxValidation()" action="zamowienie_skladniki_potwierdzenie.jsp">
                              <ul>
                                  <%!    int i = 0; %>
@@ -52,7 +52,7 @@
                                  <% } %>                            
                                  <li>
                                     <input id="w" type="checkbox" name="nawynos" value=" na wynos" />
-                                    <label class="css-label" for="w">Zaznacz dla dań na wynos</label>
+                                    <label class="css-label" for="w">Zaznacz dla dan na wynos</label>
                                  </li>
                                  <li>
                                     <input type="submit" value="Dalej"/>  
@@ -61,7 +61,7 @@
                          </form>   
                 </article>
                 <aside>
-                    <h3>Wybierz dania, które chcesz zamówić.</h3>
+                    <h3>Wybierz dania, ktore chcesz zamowić.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

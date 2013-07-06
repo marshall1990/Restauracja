@@ -24,7 +24,7 @@
         <section>
             <div class="container">
                 <article>
-                    <h1>Błąd połączenia z bazą danych.</h1>
+                    <h1>Bład połaczenia z baza danych.</h1>
                      <form name="form1"  action="index.jsp">
                          <ul>
                             <li>

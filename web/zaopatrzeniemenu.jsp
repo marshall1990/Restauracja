@@ -31,7 +31,7 @@ listaskladnikow=przekierowania.zaopatrzeniemenu(response);
         <section>
             <div class="container dostawca">
                 <article>
-                        <h1>Wybierz składniki, które już uzupełniłeś:</h1>
+                        <h1>Wybierz składniki, ktore już uzupełniłeś:</h1>
                         <form name="form1" onsubmit="checkBoxValidation()" action="zaopatrzenieuzupelnij.jsp">
                              <ul>
                                  <% for( int i=0; i<listaskladnikow.size();i++) { %>

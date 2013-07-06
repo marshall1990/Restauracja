@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 /**
  * 
- * Ta klasa reprezentuje listę brakujących składników
+ * Ta klasa reprezentuje liste brakujacych skladnikow
  */
 public class Brakujaceskladniki {
     private String blad="Nie";
     /**
      * 
-     * @return ArrayList<String> zawierającą listę brakujących składników 
+     * @return ArrayList<String> zawierajaca liste brakujacych skladnikow 
      * @throws SQLException 
      */   
     public ArrayList<String> wypisz() throws SQLException {
@@ -39,7 +39,7 @@ public class Brakujaceskladniki {
                          }
                        }
                       catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         } 
                     finally { conn.close(); }

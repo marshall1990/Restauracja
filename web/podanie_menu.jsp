@@ -40,8 +40,8 @@
                 </article>
                 <article>
                     <a class="rose" href="zamowienie_nazwa.jsp"><h3>Wyszukiwanie po nazwie</h3></a>
-                    <img src="img/menu_img3.jpg" alt="zamówienia" />
-                    <p>Lista aktualnych zamówień. Restaurator może przeglądać statystyki zamówień.</p>
+                    <img src="img/menu_img3.jpg" alt="zamowienia" />
+                    <p>Lista aktualnych zamowien. Restaurator może przegladać statystyki zamowien.</p>
                     <a class="btn_submit" href="zamowienie_nazwa.jsp" >Wybierz</a>
                 </article>               
             </div>

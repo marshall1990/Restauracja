@@ -37,7 +37,7 @@ listaskladnikow=przekierowania.kucharzuzupelnijskladniki(response);
                             </li>                                              
                             <% } %> 
                             <li>
-                                <input type="submit" value="Dodaj do brakujących"/>
+                                <input type="submit" value="Dodaj do brakujacych"/>
                             </li>
                         </ul>
                      </form>

@@ -40,7 +40,7 @@ spisdan=przekierowania.kelnerdaniadowykonania(response);
                                      <input id="check<%=i%>" type="checkbox" name="wykonanedania" value="<%=spisdan.get(i+3)%>" />
                                      <label class="css-label" for="check<%=i %>" >
                                          <%=spisdan.get(i)%>
-                                         <%=spisdan.get(i+2)%> dla zamówienia nr 
+                                         <%=spisdan.get(i+2)%> dla zamowienia nr 
                                          <%=spisdan.get(i+1)%>
                                      </label>
                                  </li>

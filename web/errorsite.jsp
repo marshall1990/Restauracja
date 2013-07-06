@@ -21,7 +21,7 @@
             <div class="container errorpage">
                 <img src="img/error.png" alr="blad" />
                 <p>
-                    Przepraszamy wystąpił błąd :(
+                    Przepraszamy wystapił bład :(
                     </br>
                     Nasza restauracja została zamknięta. Zapraszamy jutro!
                 </p> 

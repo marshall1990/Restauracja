@@ -11,13 +11,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 /**
  * 
- * Ta klasa reprezentuje przypisywanie składników do dania
+ * Ta klasa reprezentuje przypisywanie skladnikow do dania
  */
 public class Dodaniedaniaskladniki {
     private String blad="Nie";
     
     /**
-     * Przypisuje daniu o nazwie @param nazwa listę składników @param skladniki, Zapisuje te dane w bazie danych
+     * Przypisuje daniu o nazwie @param nazwa liste skladnikow @param skladniki, Zapisuje te dane w bazie danych
      * @param skladniki dania
      * @param nazwa dania 
      * @throws SQLException 
@@ -50,7 +50,7 @@ public class Dodaniedaniaskladniki {
      
           }
            catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         } 
            finally { conn.close(); }

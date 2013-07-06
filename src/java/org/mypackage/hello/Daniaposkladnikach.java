@@ -9,15 +9,15 @@ import java.util.ArrayList;
 
 /**
  * 
- * Ta klasa reprezentuje listę dań, które zawierają określone składniki.
+ * Ta klasa reprezentuje liste dan, ktore zawieraja okreslone skladniki.
  */
 public class Daniaposkladnikach {
  
     private String blad="Nie";
     /**
      * 
-     * @param skladniki lista składników, które wybrał klient
-     * @return ArrayList<String> zawierającą listę dań, które zawierają składniki składniki znajdujące się na liście @param skladniki
+     * @param skladniki lista skladnikow, ktore wybral klient
+     * @return ArrayList<String> zawierajaca liste dan, ktore zawieraja skladniki skladniki znajdujace sie na liscie @param skladniki
      * @throws SQLException 
      */
     public ArrayList<String> weryfikuj(String skladniki[]) throws SQLException {
@@ -52,7 +52,7 @@ public class Daniaposkladnikach {
             }   
         }
         catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         } 
         finally { conn.close(); }

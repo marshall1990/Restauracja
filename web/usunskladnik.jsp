@@ -40,13 +40,13 @@
                                  </li>
                                  <% } %>                            
                                  <li>
-                                    <input type="submit" value="Usuń"/>  
+                                    <input type="submit" value="Usun"/>  
                                  </li>                            
                             </ul>
                          </form>   
                 </article>
                 <aside>
-                    <h3>Wybierz składnik, który chcesz usunąć.</h3>
+                    <h3>Wybierz składnik, ktory chcesz usunać.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

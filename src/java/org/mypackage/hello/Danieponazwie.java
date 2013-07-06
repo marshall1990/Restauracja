@@ -15,8 +15,8 @@ public class Danieponazwie {
     
     /**
      * 
-     * @param nazwa dania które klient szuka
-     * @return ArrayList<String> zawierającą listę dań o określonej nazwie
+     * @param nazwa dania ktore klient szuka
+     * @return ArrayList<String> zawierajaca liste dan o okreslonej nazwie
      * @throws SQLException 
      */
     public ArrayList<String> wypisz(String nazwa) throws SQLException {
@@ -42,7 +42,7 @@ public class Danieponazwie {
                          }
                        }
                       catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         } 
                     finally { conn.close(); }

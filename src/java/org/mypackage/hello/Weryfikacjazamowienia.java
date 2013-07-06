@@ -9,18 +9,18 @@ import java.sql.Statement;
 
 /**
  * 
- * Ta klasa reprezentuje zatwierdzenie zamówionych dań do realizacji przez kucharza.
+ * Ta klasa reprezentuje zatwierdzenie zamowionych dan do realizacji przez kucharza.
  */
 public class Weryfikacjazamowienia {
     private String blad="Nie";
     
   
     /**
-     * Dodanie dań zamówionych przez klienta do listy dań do wykonania przez kucharza.
-     * @param dania tablica stringów zawierająca listę dań zamówionych przez klienta.
-     * @param ilosc tablica stringów zawierająca infformacje na temat liczby zamówionych dań danego rodzaju.
-     * @param zalogowany login klienta zamawiającego danie
-     * @param nawynos określa czy danie było zamówione w lokalu czy na wynos
+     * Dodanie dan zamowionych przez klienta do listy dan do wykonania przez kucharza.
+     * @param dania tablica stringow zawierajaca liste dan zamowionych przez klienta.
+     * @param ilosc tablica stringow zawierajaca infformacje na temat liczby zamowionych dan danego rodzaju.
+     * @param zalogowany login klienta zamawiajacego danie
+     * @param nawynos okresla czy danie bylo zamowione w lokalu czy na wynos
      * @throws SQLException 
      */
     public void weryfikuj(String dania[], String ilosc[],String zalogowany, String nawynos) throws SQLException  {
@@ -60,7 +60,7 @@ public class Weryfikacjazamowienia {
             
         }
         catch (Exception e) { 
-                        System.out.println("Błąd połączenia z bazą danych."); 
+                        System.out.println("Blad polaczenia z baza danych."); 
                         blad="Tak";
                         }
         finally { conn.close(); }

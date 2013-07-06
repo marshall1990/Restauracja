@@ -40,7 +40,7 @@
                     </form>
                 </article>
                 <aside>
-                    <h3>Dodaj składnik do bazy składników.</h3>
+                    <h3>Dodaj składnik do bazy składnikow.</h3>
                     <img src="img/image_recipe.jpg" alt="przepis" />
                 </aside>
             </div>

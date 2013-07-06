@@ -24,7 +24,7 @@
         <section>
             <div class="container">
                 <article>
-                    <h1>Sprawdź czy usunąłeś dania zawierające usuwany składnik, jeśli już to zrobiłeś to znaczy że wystapił błąd połączenia z bazą danych.</h1>
+                    <h1>Sprawdź czy usunałeś dania zawierajace usuwany składnik, jeśli już to zrobiłeś to znaczy że wystapił bład połaczenia z baza danych.</h1>
                     <form name="form1"  action="index.jsp">
                          <ul>
                             <li>
