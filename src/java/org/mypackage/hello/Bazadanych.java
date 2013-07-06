@@ -3,6 +3,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * 
+ * Ta klasa reprezentuje połączenia z bazami danych.
+ */
 public class Bazadanych {
   
     private String urlMySQL="jdbc:mysql://johnny.heliohost.org:3306/";
