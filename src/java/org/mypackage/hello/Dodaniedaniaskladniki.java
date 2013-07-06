@@ -23,8 +23,8 @@ public class Dodaniedaniaskladniki {
 
         try {
             Bazadanych baza = new Bazadanych(); 
-            Class.forName(baza.getDriver3()).newInstance();
-            conn = DriverManager.getConnection(baza.getUrl3()+baza.getDbName3(), baza.getUserName3(),baza.getPassword3());
+            Class.forName(baza.getDriverMySQL()).newInstance();
+            conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameAdminMySQL(),baza.getPasswordAdminMySQL());
 
             String sql="SELECT ID_Dania FROM danie where nazwa='"+nazwa+"'";
             Statement statement=conn.createStatement();

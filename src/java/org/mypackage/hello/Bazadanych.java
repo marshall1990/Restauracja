@@ -1,176 +1,112 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.mypackage.hello;
 
 
 public class Bazadanych {
-    //Test 2
-    private String url1="jdbc:mysql://johnny.heliohost.org:3306/";
-    private String dbName1="hariseld_dania";
-    private String driver1="com.mysql.jdbc.Driver";
-    private String userName1="hariseld_klient";
-    private String password1="klient";
+  
+    private String urlMySQL="jdbc:mysql://johnny.heliohost.org:3306/";
+    private String dbNameMySQL="hariseld_dania";
+    private String driverMySQL="com.mysql.jdbc.Driver";
+    private String userNameKlientMySQL="hariseld_klient";
+    private String passwordKlientMySQL="klient";
     
-    private String url2="jdbc:postgresql://johnny.heliohost.org:5432/";
-    private String dbName2="hariseld_zlecenia";
-    private String driver2="org.postgresql.Driver";
-    private String userName2="hariseld";
-    private String password2="123qwe";
+    private String urlPostgreSQL="jdbc:postgresql://johnny.heliohost.org:5432/";
+    private String dbNamePostgreSQL="hariseld_zlecenia";
+    private String driverPostgreSQL="org.postgresql.Driver";
+    private String userNameAdminPostgreSQL="hariseld";
+    private String passwordAdminPostgreSQL="123qwe";
     
-    private String url3="jdbc:mysql://johnny.heliohost.org:3306/";
-    private String dbName3="hariseld_dania";
-    private String driver3="com.mysql.jdbc.Driver";
-    private String userName3="hariseld_hari";
-    private String password3="123qwe";
+    private String userNameAdminMySQL="hariseld_hari";
+    private String passwordAdminMySQL="123qwe";
     
-    private String url4="jdbc:postgresql://johnny.heliohost.org:5432/";
-    private String dbName4="hariseld_zlecenia";
-    private String driver4="org.postgresql.Driver";
-    private String userName4="hariseld";
-    private String password4="123qwe";
 
     /**
-     * @return the url1
+     * @return łańcuch zawierający adres url do bazy danych MySQL
      */
-    public String getUrl1() {
-        return url1;
+    public String getUrlMySQL() {
+        return urlMySQL;
     }
 
     /**
-     * @return the dbName1
+     * @return  łańcuch zawierający nazwę bazy danych MySQL
      */
-    public String getDbName1() {
-        return dbName1;
+    public String getDbNameMySQL() {
+        return dbNameMySQL;
     }
 
     /**
-     * @return the driver1
+     * @return łańcuch zawierający nazwę sterownika do połączenia z bażą danych MySQL
      */
-    public String getDriver1() {
-        return driver1;
+    public String getDriverMySQL() {
+        return driverMySQL;
     }
 
     /**
-     * @return the userName1
+     * @return łańcuch zawierający nazwę użytkownika klienta(ograniczone uprawnienia) bazy danych MySQL
      */
-    public String getUserName1() {
-        return userName1;
+    public String getUserNameKlientMySQL() {
+        return userNameKlientMySQL;
     }
 
     /**
-     * @return the password1
+     * @return łańcuch zawierający hasło dla klienta(ograniczone uprawnienia) do bazy danych MySQL
      */
-    public String getPassword1() {
-        return password1;
+    public String getPasswordKlientMySQL() {
+        return passwordKlientMySQL;
     }
 
     /**
-     * @return the url2
+     * @return łańcuch zawierający adres url do bazy danych PostgreSQL
      */
-    public String getUrl2() {
-        return url2;
+    public String getUrlPostgreSQL() {
+        return urlPostgreSQL;
     }
 
     /**
-     * @return the dbName2
+     * @return łańcuch zawierający nazwę bazy danych PostgreSQL
      */
-    public String getDbName2() {
-        return dbName2;
+    public String getDbNamePostgreSQL() {
+        return dbNamePostgreSQL;
     }
 
     /**
-     * @return the driver2
+     * @return łańcuch zawierający nazwę sterownika do połączenia z bażą danych PostgreSQL
      */
-    public String getDriver2() {
-        return driver2;
+    public String getDriverPostgreSQL() {
+        return driverPostgreSQL;
     }
 
     /**
-     * @return the userName2
+     * @return łańcuch zawierający nazwę użytkownika administratora(pełne uprawnienia) bazy danych PostgreSQL
      */
-    public String getUserName2() {
-        return userName2;
+    public String getUserNameAdminPostgreSQL() {
+        return userNameAdminPostgreSQL;
     }
 
     /**
-     * @return the password2
+     * @return łańcuch zawierający hasło dla administratora(pełne uprawnienia) do bazy danych PostgreSQL
      */
-    public String getPassword2() {
-        return password2;
+    public String getPasswordAdminPostgreSQL() {
+        return passwordAdminPostgreSQL;
+    }
+
+    
+
+    /**
+     * @return łańcuch zawierający nazwę użytkownika administratora(pełne uprawnienia) bazy danych MySQL
+     */
+    public String getUserNameAdminMySQL() {
+        return userNameAdminMySQL;
     }
 
     /**
-     * @return the url3
+     * @return łańcuch zawierający hasło dla administratora(pełne uprawnienia) do bazy danych MySQL
      */
-    public String getUrl3() {
-        return url3;
+    public String getPasswordAdminMySQL() {
+        return passwordAdminMySQL;
     }
 
-    /**
-     * @return the dbName3
-     */
-    public String getDbName3() {
-        return dbName3;
-    }
-
-    /**
-     * @return the driver3
-     */
-    public String getDriver3() {
-        return driver3;
-    }
-
-    /**
-     * @return the userName3
-     */
-    public String getUserName3() {
-        return userName3;
-    }
-
-    /**
-     * @return the password3
-     */
-    public String getPassword3() {
-        return password3;
-    }
-
-    /**
-     * @return the url4
-     */
-    public String getUrl4() {
-        return url4;
-    }
-
-    /**
-     * @return the dbName4
-     */
-    public String getDbName4() {
-        return dbName4;
-    }
-
-    /**
-     * @return the driver4
-     */
-    public String getDriver4() {
-        return driver4;
-    }
-
-    /**
-     * @return the userName4
-     */
-    public String getUserName4() {
-        return userName4;
-    }
-
-    /**
-     * @return the password4
-     */
-    public String getPassword4() {
-        return password4;
-    }
-
+    
     
 
    

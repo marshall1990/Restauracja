@@ -21,8 +21,8 @@ public class Dodaniedaniaskladniki2 {
 
                     try {
                         Bazadanych baza = new Bazadanych(); 
-                        Class.forName(baza.getDriver1()).newInstance();
-                        conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());    
+                        Class.forName(baza.getDriverMySQL()).newInstance();
+                        conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameKlientMySQL(),baza.getPasswordKlientMySQL());    
                         
                         String sql="SELECT ID_skladnika,skladnik FROM skladniki ORDER BY skladnik";
 

@@ -33,8 +33,8 @@ public class Weryfikacjazamowienia {
         try {
             Bazadanych baza = new Bazadanych();
             
-            Class.forName(baza.getDriver1()).newInstance();
-            conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());
+            Class.forName(baza.getDriverMySQL()).newInstance();
+            conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameKlientMySQL(),baza.getPasswordKlientMySQL());
             
             sql="select `ID_User` from users where login='"+zalogowany+"'";
             Statement statement0=conn.createStatement();
@@ -44,8 +44,8 @@ public class Weryfikacjazamowienia {
             conn.close();
            
             
-            Class.forName(baza.getDriver2()).newInstance();
-            conn = DriverManager.getConnection(baza.getUrl2()+baza.getDbName2(), baza.getUserName2(),baza.getPassword2());
+            Class.forName(baza.getDriverPostgreSQL()).newInstance();
+            conn = DriverManager.getConnection(baza.getUrlPostgreSQL()+baza.getDbNamePostgreSQL(), baza.getUserNameAdminPostgreSQL(),baza.getPasswordAdminPostgreSQL());
               
             sql="insert into lista_zamowien values (?,?,?)";
             PreparedStatement statement1;

@@ -27,8 +27,8 @@ public class Daniaposkladnikach {
 
         try {
             Bazadanych baza = new Bazadanych(); 
-            Class.forName(baza.getDriver1()).newInstance();
-            conn = DriverManager.getConnection(baza.getUrl1()+baza.getDbName1(), baza.getUserName1(),baza.getPassword1());
+            Class.forName(baza.getDriverMySQL()).newInstance();
+            conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameKlientMySQL(),baza.getPasswordKlientMySQL());
 
             if(skladniki != null) {
                 for(int i=0; i<skladniki.length; i++){ 

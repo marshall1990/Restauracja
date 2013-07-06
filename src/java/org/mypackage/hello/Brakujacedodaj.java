@@ -21,8 +21,8 @@ public class Brakujacedodaj {
         
      try {
             Bazadanych baza= new Bazadanych();
-            Class.forName(baza.getDriver2()).newInstance();
-            conn = DriverManager.getConnection(baza.getUrl2()+baza.getDbName2(), baza.getUserName2(),baza.getPassword2());
+            Class.forName(baza.getDriverPostgreSQL()).newInstance();
+            conn = DriverManager.getConnection(baza.getUrlPostgreSQL()+baza.getDbNamePostgreSQL(), baza.getUserNameAdminPostgreSQL(),baza.getPasswordAdminPostgreSQL());
 
             String sql;
             sql = "insert into braki values (?)";
