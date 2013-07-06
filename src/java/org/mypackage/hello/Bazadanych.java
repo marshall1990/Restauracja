@@ -1,6 +1,10 @@
 
 package org.mypackage.hello;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 
 public class Bazadanych {
   
@@ -19,95 +23,31 @@ public class Bazadanych {
     private String userNameAdminMySQL="hariseld_hari";
     private String passwordAdminMySQL="123qwe";
     
-
-    /**
-     * @return łańcuch zawierający adres url do bazy danych MySQL
-     */
-    public String getUrlMySQL() {
-        return urlMySQL;
-    }
-
-    /**
-     * @return  łańcuch zawierający nazwę bazy danych MySQL
-     */
-    public String getDbNameMySQL() {
-        return dbNameMySQL;
-    }
-
-    /**
-     * @return łańcuch zawierający nazwę sterownika do połączenia z bażą danych MySQL
-     */
-    public String getDriverMySQL() {
-        return driverMySQL;
-    }
-
-    /**
-     * @return łańcuch zawierający nazwę użytkownika klienta(ograniczone uprawnienia) bazy danych MySQL
-     */
-    public String getUserNameKlientMySQL() {
-        return userNameKlientMySQL;
-    }
-
-    /**
-     * @return łańcuch zawierający hasło dla klienta(ograniczone uprawnienia) do bazy danych MySQL
-     */
-    public String getPasswordKlientMySQL() {
-        return passwordKlientMySQL;
-    }
-
-    /**
-     * @return łańcuch zawierający adres url do bazy danych PostgreSQL
-     */
-    public String getUrlPostgreSQL() {
-        return urlPostgreSQL;
-    }
-
-    /**
-     * @return łańcuch zawierający nazwę bazy danych PostgreSQL
-     */
-    public String getDbNamePostgreSQL() {
-        return dbNamePostgreSQL;
-    }
-
-    /**
-     * @return łańcuch zawierający nazwę sterownika do połączenia z bażą danych PostgreSQL
-     */
-    public String getDriverPostgreSQL() {
-        return driverPostgreSQL;
-    }
-
-    /**
-     * @return łańcuch zawierający nazwę użytkownika administratora(pełne uprawnienia) bazy danych PostgreSQL
-     */
-    public String getUserNameAdminPostgreSQL() {
-        return userNameAdminPostgreSQL;
-    }
-
-    /**
-     * @return łańcuch zawierający hasło dla administratora(pełne uprawnienia) do bazy danych PostgreSQL
-     */
-    public String getPasswordAdminPostgreSQL() {
-        return passwordAdminPostgreSQL;
-    }
-
+    public Connection connectKlientMySQL() throws SQLException, ClassNotFoundException{
+        
+        Connection connection;
+        Class.forName(driverMySQL);
+        connection = DriverManager.getConnection(urlMySQL+dbNameMySQL,userNameKlientMySQL,passwordKlientMySQL);
+        return connection;
     
-
-    /**
-     * @return łańcuch zawierający nazwę użytkownika administratora(pełne uprawnienia) bazy danych MySQL
-     */
-    public String getUserNameAdminMySQL() {
-        return userNameAdminMySQL;
     }
-
-    /**
-     * @return łańcuch zawierający hasło dla administratora(pełne uprawnienia) do bazy danych MySQL
-     */
-    public String getPasswordAdminMySQL() {
-        return passwordAdminMySQL;
+    
+    public Connection connectAdminMySQL() throws SQLException, ClassNotFoundException{
+        
+        Connection connection;
+        Class.forName(driverMySQL);
+        connection = DriverManager.getConnection(urlMySQL+dbNameMySQL,userNameAdminMySQL,passwordAdminMySQL);
+        return connection;
+    
     }
-
     
+    public Connection connectAdminPostgreSQL() throws SQLException, ClassNotFoundException{
+        
+        Connection connection;
+        Class.forName(driverPostgreSQL);
+        connection = DriverManager.getConnection(urlPostgreSQL+dbNamePostgreSQL,userNameAdminPostgreSQL,passwordAdminPostgreSQL);
+        return connection;
     
-
+    }
    
 }

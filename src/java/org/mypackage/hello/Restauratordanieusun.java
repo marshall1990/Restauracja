@@ -25,9 +25,8 @@ public class Restauratordanieusun {
             else {
             try {
                 Bazadanych baza= new Bazadanych();
-                Class.forName(baza.getDriverMySQL()).newInstance();
-                conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameAdminMySQL(),baza.getPasswordAdminMySQL());
-
+                conn = baza.connectAdminMySQL();
+                
                 for (int i=0;i<id.length;i++) { ids=ids+id[i]+",";}
 
                 ids=ids.substring(0,ids.length()-1);

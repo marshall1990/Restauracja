@@ -33,10 +33,9 @@ public class Skladnikidodaj {
         if (blad.equals("Dodałeś danie")) {
             
                     try {
-                        Bazadanych baza = new Bazadanych(); 
-                        Class.forName(baza.getDriverMySQL()).newInstance();
-                        conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameKlientMySQL(),baza.getPasswordKlientMySQL());    
-
+                        Bazadanych baza = new Bazadanych();
+                        conn = baza.connectKlientMySQL();
+                        
                         String sql="select count(Skladnik) from skladniki where Skladnik='"+nazwa+"'";
                         Statement statement0=conn.createStatement();
                         rst=statement0.executeQuery(sql);

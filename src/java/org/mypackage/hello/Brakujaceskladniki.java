@@ -21,9 +21,8 @@ public class Brakujaceskladniki {
 
                     try {
                         Bazadanych baza= new Bazadanych();
-                        Class.forName(baza.getDriverPostgreSQL()).newInstance();
-                        conn = DriverManager.getConnection(baza.getUrlPostgreSQL()+baza.getDbNamePostgreSQL(), baza.getUserNameAdminPostgreSQL(),baza.getPasswordAdminPostgreSQL());    
-
+                        conn = baza.connectAdminPostgreSQL();
+                        
                         String sql="SELECT skladnik FROM braki ORDER BY skladnik";
 
                         PreparedStatement statement=conn.prepareStatement( sql );

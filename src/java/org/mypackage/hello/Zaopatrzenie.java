@@ -5,7 +5,6 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,8 +19,7 @@ public class Zaopatrzenie {
             
             try {
                 Bazadanych baza= new Bazadanych();
-                Class.forName(baza.getDriverPostgreSQL()).newInstance();
-                conn = DriverManager.getConnection(baza.getUrlPostgreSQL()+baza.getDbNamePostgreSQL(), baza.getUserNameAdminPostgreSQL(),baza.getPasswordAdminPostgreSQL());
+                conn = baza.connectAdminPostgreSQL();
                 
                 sql="delete from braki where skladnik=?";
                 PreparedStatement statement;

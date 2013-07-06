@@ -21,9 +21,8 @@ public class Danieponazwie {
 
                     try {
                         Bazadanych baza = new Bazadanych(); 
-                        Class.forName(baza.getDriverMySQL()).newInstance();
-                        conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameKlientMySQL(),baza.getPasswordKlientMySQL());    
-
+                        conn = baza.connectKlientMySQL();
+                        
                         String sql="SELECT nazwa FROM danie WHERE nazwa=?";
 
                         PreparedStatement statement=conn.prepareStatement( sql );

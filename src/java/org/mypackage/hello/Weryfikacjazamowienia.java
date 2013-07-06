@@ -5,7 +5,6 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,9 +31,7 @@ public class Weryfikacjazamowienia {
 
         try {
             Bazadanych baza = new Bazadanych();
-            
-            Class.forName(baza.getDriverMySQL()).newInstance();
-            conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameKlientMySQL(),baza.getPasswordKlientMySQL());
+            conn = baza.connectKlientMySQL();
             
             sql="select `ID_User` from users where login='"+zalogowany+"'";
             Statement statement0=conn.createStatement();
@@ -43,10 +40,8 @@ public class Weryfikacjazamowienia {
             ID=rst.getInt("ID_User");
             conn.close();
            
+            conn = baza.connectAdminPostgreSQL();
             
-            Class.forName(baza.getDriverPostgreSQL()).newInstance();
-            conn = DriverManager.getConnection(baza.getUrlPostgreSQL()+baza.getDbNamePostgreSQL(), baza.getUserNameAdminPostgreSQL(),baza.getPasswordAdminPostgreSQL());
-              
             sql="insert into lista_zamowien values (?,?,?)";
             PreparedStatement statement1;
             statement1=conn.prepareStatement(sql);

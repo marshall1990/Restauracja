@@ -112,9 +112,8 @@ public class Rejestrowanie {
             try {
 
                 Bazadanych baza = new Bazadanych(); 
-                Class.forName(baza.getDriverMySQL()).newInstance();
-                conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameKlientMySQL(),baza.getPasswordKlientMySQL());  
-
+                conn = baza.connectKlientMySQL();
+                
                 sql="select count(login) from users where login='"+getLogin()+"'";
                 Statement statement0=conn.createStatement();
                 rst=statement0.executeQuery(sql);

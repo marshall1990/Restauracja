@@ -29,8 +29,7 @@ public class Listadan {
         
         try {
             Bazadanych baza= new Bazadanych();
-            Class.forName(baza.getDriverPostgreSQL()).newInstance();
-            conn = DriverManager.getConnection(baza.getUrlPostgreSQL()+baza.getDbNamePostgreSQL(), baza.getUserNameAdminPostgreSQL(),baza.getPasswordAdminPostgreSQL());
+            conn = baza.connectAdminPostgreSQL();
             
             sql="select * from "+bazadan;
             Statement statement=conn.createStatement();

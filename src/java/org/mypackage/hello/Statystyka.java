@@ -28,9 +28,8 @@ public class Statystyka {
      int ile=0;
             
             try {
-                Bazadanych baza = new Bazadanych(); 
-                Class.forName(baza.getDriverPostgreSQL()).newInstance();
-                conn = DriverManager.getConnection(baza.getUrlPostgreSQL()+baza.getDbNamePostgreSQL(), baza.getUserNameAdminPostgreSQL(),baza.getPasswordAdminPostgreSQL()); 
+                Bazadanych baza = new Bazadanych();
+                conn = baza.connectAdminPostgreSQL();
                 
                 sql= "SELECT \"danie\", count(*) AS \"Ile\" FROM \"lista_dan\" GROUP BY \"danie\" ORDER BY \"danie\"";
                 Statement statement = conn.createStatement();

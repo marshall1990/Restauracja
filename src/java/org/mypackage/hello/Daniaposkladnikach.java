@@ -27,9 +27,8 @@ public class Daniaposkladnikach {
 
         try {
             Bazadanych baza = new Bazadanych(); 
-            Class.forName(baza.getDriverMySQL()).newInstance();
-            conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameKlientMySQL(),baza.getPasswordKlientMySQL());
-
+            conn = baza.connectKlientMySQL();
+            
             if(skladniki != null) {
                 for(int i=0; i<skladniki.length; i++){ 
                        sql=sql+"SELECT `Nazwa` FROM danie where `ID_dania` in (SELECT `ID_dania` FROM `daniaskladniki` where `ID_skladnika` in (SELECT `ID_skladnika` from `skladniki` where `Skladnik`=?))";

@@ -21,9 +21,8 @@ public class Skladniki {
 
                     try {
                         Bazadanych baza = new Bazadanych(); 
-                        Class.forName(baza.getDriverMySQL()).newInstance();
-                        conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameKlientMySQL(),baza.getPasswordKlientMySQL());    
-
+                        conn = baza.connectKlientMySQL();
+                        
                         String sql="SELECT ID_Skladnika,skladnik FROM skladniki ORDER BY skladnik";
 
                         PreparedStatement statement=conn.prepareStatement( sql );

@@ -5,7 +5,6 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -70,8 +69,7 @@ public class Dodaniedaniadanie {
             try {
                 
                 Bazadanych baza = new Bazadanych(); 
-                Class.forName(baza.getDriverMySQL()).newInstance();
-                conn = DriverManager.getConnection(baza.getUrlMySQL()+baza.getDbNameMySQL(), baza.getUserNameAdminMySQL(),baza.getPasswordAdminMySQL());
+                conn = baza.connectAdminMySQL();
                 
                 sql="select count(nazwa) from danie where nazwa='"+getNazwadania()+"'";
                 Statement statement=conn.createStatement();

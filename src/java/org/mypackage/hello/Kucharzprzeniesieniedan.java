@@ -26,9 +26,8 @@ public class Kucharzprzeniesieniedan {
             else {
             try {
                 Bazadanych baza= new Bazadanych();
-                Class.forName(baza.getDriverPostgreSQL()).newInstance();
-                conn = DriverManager.getConnection(baza.getUrlPostgreSQL()+baza.getDbNamePostgreSQL(), baza.getUserNameAdminPostgreSQL(),baza.getPasswordAdminPostgreSQL());
-
+                conn = baza.connectAdminPostgreSQL();
+                
                 for (int i=0;i<id.length;i++) { ids=ids+id[i]+",";}
 
                 ids=ids.substring(0,ids.length()-1);
