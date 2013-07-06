@@ -1,25 +1,28 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
+/**
+ * 
+ * Ta klasa reprezentuje listę dań, które zawierają określone składniki.
+ */
 public class Daniaposkladnikach {
  
     private String blad="Nie";
-
+    /**
+     * 
+     * @param skladniki lista składników, które wybrał klient
+     * @return ArrayList<String> zawierającą listę dań, które zawierają składniki składniki znajdujące się na liście @param skladniki
+     * @throws SQLException 
+     */
     public ArrayList<String> weryfikuj(String skladniki[]) throws SQLException {
         
-        ArrayList<String> dania;
-        dania = new ArrayList<String>();
+        ArrayList<String> dania = new ArrayList<String>();
         Connection conn = null;
         ResultSet rst;
         String sql="";

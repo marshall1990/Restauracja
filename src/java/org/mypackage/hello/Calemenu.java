@@ -2,15 +2,23 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+     * 
+     * Ta klasa reprezentuje menu
+     */ 
+
 public class Calemenu {
     private String blad="Nie";
-       
+    /**
+     * 
+     * @return ArrayList<String> zawierającą listę wszystkich dań w menu
+     * @throws SQLException 
+     */   
     public ArrayList<String> wypisz() throws SQLException {
         
         ArrayList<String> skladniki;

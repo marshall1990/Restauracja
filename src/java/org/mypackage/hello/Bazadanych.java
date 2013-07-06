@@ -1,10 +1,7 @@
-
 package org.mypackage.hello;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 
 public class Bazadanych {
   
@@ -23,6 +20,12 @@ public class Bazadanych {
     private String userNameAdminMySQL="hariseld_hari";
     private String passwordAdminMySQL="123qwe";
     
+    /**
+     * 
+     * @return połączenie z bazą danych MySQL - ograniczone uprawnienia.
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public Connection connectKlientMySQL() throws SQLException, ClassNotFoundException{
         
         Connection connection;
@@ -32,6 +35,12 @@ public class Bazadanych {
     
     }
     
+    /**
+     * 
+     * @return połączenie z bazą danych MySQL - pełne uprawnienia.
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public Connection connectAdminMySQL() throws SQLException, ClassNotFoundException{
         
         Connection connection;
@@ -41,6 +50,12 @@ public class Bazadanych {
     
     }
     
+    /**
+     * 
+     * @return połączenie z bazą danych PostgreSQL - pełne uprawnienia.
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public Connection connectAdminPostgreSQL() throws SQLException, ClassNotFoundException{
         
         Connection connection;

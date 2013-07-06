@@ -2,15 +2,23 @@
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+/**
+ * 
+ * Ta klasa reprezentuje wyszukiwanie dania po nazwie
+ */
 public class Danieponazwie {
     private String blad="Nie";
-       
+    
+    /**
+     * 
+     * @param nazwa dania które klient szuka
+     * @return ArrayList<String> zawierającą listę dań o określonej nazwie
+     * @throws SQLException 
+     */
     public ArrayList<String> wypisz(String nazwa) throws SQLException {
         
         ArrayList<String> skladniki;

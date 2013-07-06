@@ -1,30 +1,29 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.mypackage.hello;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/**
+ * dodaje brakujące składniki do listy brakujących składników 
+ * 
+ */
 public class Brakujacedodaj {
 
     private String blad="Nie";
-    
+    /**
+     * dodaje brakujące składniki do listy brakujących składników 
+     * @param braki Tablica łańcuchów zawierająca brakujące składniki
+     * @throws SQLException 
+     */
     public void dodaj(String[] braki) throws SQLException  {
     
         Connection conn = null;
-        ResultSet rst;
         
      try {
             Bazadanych baza= new Bazadanych();
             conn = baza.connectAdminPostgreSQL();
             
-            String sql;
-            sql = "insert into braki values (?)";
+            String sql = "insert into braki values (?)";
             PreparedStatement statement1=conn.prepareStatement(sql);
 
             for(int i=0; i<braki.length; i++) {      
